@@ -1,0 +1,41 @@
+@import '../../styles/settings.scss';
+
+.fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.custom-carousel {
+  margin-top: 20px;;
+  border-radius: 30px; /* Zaokrąglenie brzegów karuzeli */
+  overflow: hidden; /* Ukrycie zawartości poza zaokrąglonym obszarem */
+  border: 2px solid yellow;
+}
+
+.portfolio {
+  text-align: center;
+  padding: 50px 0;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  .googleInfo {
+    background-color: yellow;
+    padding: 20px;
+    color: black;
+    margin: 0 auto 20px;
+    animation: pulse 2s infinite alternate;
+    max-width: 40%;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+}

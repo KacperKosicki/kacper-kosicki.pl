@@ -1,0 +1,167 @@
+@import '../../styles/settings.scss';
+
+.footer {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 80%;
+  padding: 40px;
+  margin: 0 auto;
+  border: 2px solid yellow;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex; /* Ustawienie kontenera na flexbox */
+  align-items: center; /* Wyśrodkowanie zawartości w pionie */
+}
+  
+.contactInfo {
+  flex: 1; /* Kontakt zajmuje całą dostępną przestrzeń */
+  text-align: left; /* Tekst w sekcji kontakt wyrównany do lewej */
+  text-align: center;
+
+  h3 {
+    color: yellow;
+  }
+}
+  
+  .iconsAndNewsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
+  .socialMedia {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .iconFacebook {
+    color: yellow;
+    margin-right: 20px;
+  }
+
+  .iconInstagram {
+    color: yellow;
+    margin-right: 20px;
+  }
+  
+  .iconYouTube {
+    color: yellow;
+    margin-right: 20px;
+  }
+
+  .iconGithub {
+    color: yellow;
+    margin-right: 20px;
+  }
+
+  .iconDiscord {
+    color: yellow;
+  }
+  
+  .newsletter {
+    text-align: center;
+  }
+  
+  .newsletter h3 {
+    font-size: 18px;
+  }
+  
+  .newsletter p {
+    margin-bottom: 10px;
+  }
+  
+  .newsletter form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .newsletter input[type="email"] {
+    padding: 10px;
+    width: 75%;
+    text-align: center;
+    margin-right: 10px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+  
+  .newsletter button {
+    padding: 10px 20px;
+    border: 2px solid yellow;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    transition: background-color 0.5s ease;
+  }
+  
+  .newsletter button:hover {
+    background-color: yellow;
+    color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .error {
+    margin-top: 20px;
+    color: $color-warning;
+  }
+  
+  .portfolio {
+    flex: 1; /* Portfolio zajmuje całą dostępną przestrzeń */
+    text-align: right; /* Tekst w sekcji portfolio wyrównany do prawej */
+    text-align: center;
+
+    h3 {
+      color: yellow;
+    }
+  }
+  
+  .copyRight {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 15px;
+    color: grey;
+  }
+
+  .headerText::before {
+    content: "|"; /* Znak pionowej kreski */
+    margin-right: 10px; /* Dystans między linią a tekstem */
+    font-size: 18px; /* Rozmiar tekstu */
+  }
+  
+  .headerText {
+    font-size: 18px; /* Rozmiar tekstu */
+  }
+  
+  .additionalLinks {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .additionalLinks ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .additionalLinks ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .additionalLinks ul li a {
+    color: #666;
+    text-decoration: none;
+  }
+  
+  .additionalLinks ul li a:hover {
+    text-decoration: underline;
+  }

@@ -1,0 +1,154 @@
+@import '../../styles/settings.scss';
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.banner {
+  width: 10%;
+  margin-right: 50px;
+  border-radius: 30px;
+  border: 2px solid yellow;
+}
+
+.navbarItems {
+  display: flex;
+}
+
+.navbarItem {
+  margin-right: 20px;
+}
+
+.navbarItem:first-child {
+  margin-left: 10px;
+}
+
+.navbarItem:last-child {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.navbarLink {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid yellow;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  transition: background-color 0.5s ease;
+}
+
+.navbarIcon {
+  margin-right: 5px;
+}
+
+.navbarText {
+  margin-left: 5px;
+}
+
+.navbarLink:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.navbarLink:hover {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  background-color: yellow;
+  color: black;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+  position: absolute;
+  top: 0; /* Początkowa pozycja komunikatu */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  padding: 20px;
+  border: 2px solid yellow;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  overflow: auto;
+  animation: slideIn 0.5s ease forwards; /* Animacja pojawienia się */
+}
+
+@keyframes slideIn {
+  from {
+    top: -100%; /* Początkowa pozycja komunikatu poza widokiem */
+  }
+  to {
+    top: 12%; /* Końcowa pozycja komunikatu */
+  }
+}
+
+
+.modalHeader {
+  color: $color-warning;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalBody {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.closeButton {
+  padding: 10px 20px;
+  border: 2px solid yellow;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  transition: background-color 0.5s ease;
+}
+
+.navbarButton {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  background-color: black;
+  border: 2px solid yellow;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  transition: background-color 0.5s ease;
+}
+
+.navbarButton:hover {
+  background-color: yellow;
+  color: black;
+}

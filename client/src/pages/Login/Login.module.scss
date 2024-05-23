@@ -1,0 +1,60 @@
+@import '../../styles/settings.scss';
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.login {
+    text-align: center;
+    padding: 50px 0;
+
+    h2 {
+        margin-bottom: 30px;
+      }
+
+    .technologyInfo {
+        background-color: yellow; // Żółte tło
+        padding: 20px; // Odstęp wewnętrzny
+        color: black;
+        margin: 0 auto 20px; // Odstęp od innych elementów, automatyczne wyśrodkowanie w poziomie
+        animation: pulse 2s infinite alternate; // Animacja
+        max-width: 40%; // Maksymalna szerokość
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 30px;
+    }
+    
+    // Animacja pulsowania
+    @keyframes pulse {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.1);
+        }
+    }
+  }
+  
+  .googleButton {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .googleButton:hover {
+    background-color: #357ae8;
+  }
+  
