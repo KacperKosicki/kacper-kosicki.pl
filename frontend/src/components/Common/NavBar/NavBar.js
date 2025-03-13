@@ -85,7 +85,7 @@ const NavBar = () => {
           </button>
           <button className={styles.languageButton} onClick={handleToggleLanguage}>
             <img
-              src={`/images/flags/${language === "pl" ? "us" : "pl"}.png`}
+              src={`${process.env.PUBLIC_URL}/images/flags/${language === "pl" ? "us" : "pl"}.png`}
               width="30"
               height="20"
               alt={language === "pl" ? "English" : "Polski"}
@@ -105,7 +105,7 @@ const NavBar = () => {
         </button>
         <button className={styles.languageButton} onClick={handleToggleLanguage} aria-label="Toggle language">
           <img
-            src={`/images/flags/${language === "pl" ? "us" : "pl"}.png`}
+            src={`${process.env.PUBLIC_URL}/images/flags/${language === "pl" ? "us" : "pl"}.png`}
             width="30"
             height="20"
             alt={language === "pl" ? "English" : "Polski"}

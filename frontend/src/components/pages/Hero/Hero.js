@@ -50,7 +50,7 @@ const Hero = () => {
 
         {/* Zdjęcie */}
         <div className={styles.heroImage}>
-          <img src="/images/kosa.jpg" alt={t.heroImageAlt} />
+          <img src={`${process.env.PUBLIC_URL}/images/kosa.jpg`} alt={t.heroImageAlt} />
         </div>
       </div>
 

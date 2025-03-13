@@ -13,13 +13,11 @@ const projects = [
       { icon: <FaMobileAlt />, text: "Pełna responsywność" },
     ],
     technologies: ["JavaScript", "HTML", "CSS", "SASS", "JSON Server", "Handlebars"],
-    github: "https://github.com/example/venezuelan-coffee",
-    live: "https://venezuelan-coffee.example.com",
     images: [
-      "/projects/project1.png",
-      "/projects/project1-2.png",
-      "/projects/project1-3.png",
-    ],
+      `${process.env.PUBLIC_URL}/projects/project1.png`,
+      `${process.env.PUBLIC_URL}/projects/project1-2.png`,
+      `${process.env.PUBLIC_URL}/projects/project1-3.png`,
+    ],    
   },
   {
     title: "Projekt 2",
@@ -28,14 +26,14 @@ const projects = [
     github: "https://github.com/example/project2",
     live: "https://project2.example.com",
     images: [
-      "/projects/project2-1.png",
-      "/projects/project2-2.png",
-      "/projects/project2-3.png",
-      "/projects/project2-4.png",
-      "/projects/project2-5.png",
-      "/projects/project2-6.png",
-      "/projects/project2-7.png",
-      "/projects/project2-8.png",
+      `${process.env.PUBLIC_URL}/projects/project2-1.png`,
+      `${process.env.PUBLIC_URL}/projects/project2-2.png`,
+      `${process.env.PUBLIC_URL}/projects/project2-3.png`,
+      `${process.env.PUBLIC_URL}/projects/project2-4.png`,
+      `${process.env.PUBLIC_URL}/projects/project2-5.png`,
+      `${process.env.PUBLIC_URL}/projects/project2-6.png`,
+      `${process.env.PUBLIC_URL}/projects/project2-7.png`,
+      `${process.env.PUBLIC_URL}/projects/project2-8.png`,
     ],
   },
   {
@@ -45,10 +43,10 @@ const projects = [
     github: "https://github.com/example/project3",
     live: "https://project3.example.com",
     images: [
-      "/projects/project3.jpg",
-      "/projects/project3-1.jpg",
-      "/projects/project3-2.jpg",
-    ],
+      `${process.env.PUBLIC_URL}/projects/project3-1.png`,
+      `${process.env.PUBLIC_URL}/projects/project3-2.png`,
+      `${process.env.PUBLIC_URL}/projects/project3-3.png`,
+    ], 
   },
 ];
 
@@ -150,7 +148,7 @@ const Portfolio = () => {
             <div className={styles.lightboxContent}>
 
               {/* 🔹 Obrazek w lightboxie */}
-              <img src={selectedImage} alt="Podgląd zdjęcia" className={styles.largePreview} />
+              <img src={`${selectedImage}`} alt="Podgląd zdjęcia" className={styles.largePreview} />
 
               {/* 🔹 Kontener przycisków nawigacyjnych */}
               <div className={styles.lightboxControls}>
