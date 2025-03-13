@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=/kacper-kosicki.com/#" />
     <script>
-      window.location.replace("/kacper-kosicki.com" + window.location.pathname);
+      // Pobiera aktualny URL i przekierowuje do HashRouter
+      var path = window.location.pathname;
+      var newUrl = "/kacper-kosicki.com/#" + path;
+      window.location.replace(newUrl);
     </script>
   </head>
+  <body>
+    <h1>Przekierowywanie...</h1>
+  </body>
 </html>
