@@ -1,0 +1,71 @@
+@import "../../../styles/variables";
+
+.workflow {
+  text-align: center;
+  margin: 4rem auto;
+  max-width: 1200px;
+  padding: 4rem 2rem;
+  background: var(--secondary-bg);
+  border-radius: 15px;
+}
+
+.workflow h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+/* 🔹 UKŁAD GRID - RÓWNE KROKI */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 🔹 Automatyczne dopasowanie */
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* 🔹 POJEDYNCZY KROK */
+.step {
+  background: var(--primary-bg);
+  padding: 2rem;
+  color: var(--secondary-text);
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  min-width: 200px;
+  min-height: 250px; /* 🔹 Zapewnia równą wysokość */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 🔹 Rozciąga zawartość */
+  align-items: center;
+}
+
+.step:hover {
+  transform: scale(1.05);
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* 🔹 RESPONSYWNOŚĆ */
+@media (max-width: 768px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr); /* 🔹 Na mniejszych ekranach 2 kolumny */
+    gap: 1rem;
+  }
+
+  .step {
+    padding: 1.5rem; /* 🔹 Mniejszy padding */
+    min-height: 220px; /* 🔹 Dopasowanie wysokości */
+  }
+}
+
+@media (max-width: 480px) {
+  .steps {
+    grid-template-columns: repeat(1, 1fr); /* 🔹 Na bardzo małych ekranach jedna kolumna */
+  }
+}

@@ -1,0 +1,92 @@
+@import "../../../styles/variables";
+
+/* 🔹 SEKCJA SKILLS */
+.skills {
+  background: var(--skills-bg);
+  color: var(--text-color);
+  text-align: center;
+  padding: 6rem 2rem;
+  border-radius: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* 🔹 TYTUŁ SEKCJI */
+.skills h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+/* 🔹 KONTENER KART */
+.skillsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+/* 🔹 KARTA UMIEJĘTNOŚCI */
+.skillCard {
+  background: var(--secondary-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  color: var(--secondary-text);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 220px;
+  cursor: pointer;
+}
+
+.skillCard:hover {
+  transform: translateY(-5px);
+}
+
+/* 🔹 IKONY */
+.icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.skillCard:hover .icon {
+  transform: rotate(10deg);
+}
+
+/* 🔹 TEKST W KARCIE */
+.skillContent h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.skillContent p {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+/* 🔹 PRZYCISK CTA */
+.button {
+  display: inline-block;
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.8rem 1.8rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}

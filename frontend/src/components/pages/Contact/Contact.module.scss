@@ -1,0 +1,235 @@
+@import '../../../styles/variables';
+
+/* 🔹 KONTAINER */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--primary-bg);
+  color: var(--text-color);
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* 📅 Calendly Button */
+.calendlyButton {
+  display: inline-block;
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.8rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  text-align: center;
+}
+
+.calendlyButton:hover {
+  transform: scale(1.05);
+}
+
+/* 🔹 Przycisk wysyłania i wiadomość sukcesu */
+.submitButton, .successMessage {
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.8rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  width: 100%; /* ✅ Pełna szerokość */
+  height: 50px; /* ✅ Stała wysokość */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 25px;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+/* 🔹 Efekt hover */
+.submitButton:hover, .successMessage:hover {
+  transform: scale(1.05);
+}
+
+/* 🔹 Gdy przycisk jest nieaktywny (WYSYŁANIE...) */
+.submitButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* 🔹 Wiadomość "WYSŁANO!" – pełna szerokość + hover */
+.successMessage {
+  background: var(--primary-color);
+  color: var(--button-text);
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  margin-top: 10px;
+  transition: opacity 0.5s ease-in-out, transform 0.2s ease-in-out;
+  cursor: default; /* 🔥 Nie wygląda jak klikalny, ale zachowuje animację */
+}
+
+/* 🔹 SEKCJA KONTAKT */
+.contact {
+  background: var(--secondary-bg);
+  color: var(--text-color);
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 100px auto 50px;
+  border-radius: 15px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* 🔹 LEWA STRONA - INFORMACJE KONTAKTOWE */
+.contactInfo {
+  flex: 1;
+  text-align: left;
+  padding: 1rem;
+  animation: fadeInLeft 0.8s ease-in-out;
+
+  p {
+    font-family: $heading-font;
+  }
+}
+
+.contactInfo h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.contactInfo p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* 🔹 ANIMACJA TEKSTU */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* 🔹 PRAWY PANEL - FORMULARZ */
+.contactForm {
+  flex: 1;
+  background: var(--primary-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  animation: fadeInRight 0.8s ease-in-out;
+}
+
+/* 🔹 ANIMACJA FORMULARZA */
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* 🔹 GRUPA FORMULARZA */
+.formGroup {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* 🔹 POPRAWIONE STYLE POL FORMULARZA */
+.contact input,
+.contact select,
+.contact textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  font-size: 1rem;
+  color: var(--text-color);
+  background: var(--input-bg);
+  transition: border-color 0.3s ease-in-out;
+}
+
+.contact textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* 🔹 DODANY JEDNOLITY EFEKT FOCUS */
+.contact input:focus,
+.contact select:focus,
+.contact textarea:focus {
+  border-color: var(--button-hover);
+  outline: none;
+}
+
+/* 🔹 PRZYCISK FORMULARZA */
+.contact button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.8rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  width: 100%;
+}
+
+.contact button:hover {
+  transform: scale(1.05);
+}
+
+/* 🔹 KOMUNIKAT BŁĘDU */
+.contact .errorMessage {
+  color: var(--error-color);
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* 🔹 RESPONSYWNOŚĆ */
+@media (max-width: 900px) {
+  .contact {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .contactInfo {
+    text-align: center;
+  }
+
+  .contactForm {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 3rem 1.5rem;
+  }
+
+  .contactInfo h2 {
+    font-size: 2rem;
+  }
+
+  .contactInfo p {
+    font-size: 1rem;
+  }
+
+  .contact button {
+    font-size: 1rem;
+  }
+}

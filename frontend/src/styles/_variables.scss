@@ -1,0 +1,29 @@
+// _variables.scss
+
+// 🎨 Główne kolory
+$primary-color: #4CAF50; // Zielony jako akcent
+$secondary-color: #FF9800; // Pomarańczowy dla CTA
+$color-warning: #E74C3C; // Czerwony w stylu Material Design (ładny i pasujący)
+
+// 🎨 Tło i obramowania
+$background-color: #F5F5F5; // Jasne tło
+$background-color-dark: #E0E0E0; // Ciemniejsze tło dla sekcji
+$border-color: #ddd; // Standardowy kolor obramowań
+
+// 🎨 Tekst
+$text-color: #333; // Główny kolor tekstu
+$text-secondary: #555; // Używane w mniej ważnych tekstach
+$text-light: #777; // Lżejszy kolor do mniej widocznych elementów
+$text-dark: #222; // Bardziej kontrastowy kolor do ciemnych sekcji
+
+// 🎨 Neutralne kolory (szarości i czerń)
+$gray-light: #f0f0f0; // Bardzo jasnoszary
+$gray-medium: #bbb; // Średni szary (do obramowań, separatorów)
+$gray-dark: #666; // Ciemniejszy szary (do tekstów, ikon)
+$black: #000; // Czysta czerń
+$white: #fff; // Czysta biel
+
+// 🎨 Czcionki
+$heading-font: 'Poppins', sans-serif;
+$body-font: 'Roboto', sans-serif;
+$footer-font: 'Montserrat', sans-serif;

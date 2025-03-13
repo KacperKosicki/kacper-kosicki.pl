@@ -1,0 +1,159 @@
+@import '../../../styles/variables';
+
+/* 🔹 KONTAINER */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--primary-bg);
+  color: var(--text-color);
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* 🔹 HERO */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 6rem 2rem;
+  background: var(--hero-bg);
+  color: var(--text-color);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* 🔹 STATYSTYKI */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch; // ✅ Wszystkie statBox będą miały tę samą wysokość
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  gap: 1.5rem; // ✅ Dodaje odstęp między boxami
+}
+
+.statBox {
+  background: var(--secondary-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out;
+  flex: 1; // ✅ Sprawia, że wszystkie boxy będą tej samej szerokości
+  display: flex;
+  flex-direction: column; // ✅ Zachowanie układu pionowego
+  justify-content: center; // ✅ Tekst zawsze będzie wyśrodkowany
+  align-items: center;
+  min-height: 150px; // ✅ Wymuszona minimalna wysokość dla spójnego wyglądu
+  color: var(--secondary-text);
+}
+
+.statBox:hover {
+  transform: scale(1.1);
+}
+
+.icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* 🔹 OPINIE */
+.testimonials {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.testimonialGrid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.testimonialBox {
+  background: var(--secondary-bg);
+  padding: 1.5rem;
+  border-radius: 15px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.testimonialIcon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.testimonialBox h4 {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* 🔹 CTA */
+.cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  border-radius: 15px;
+  margin-top: 4rem;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+/* 🔹 PRZYCISK CTA */
+.cta .button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-weight: bold;
+  padding: 0.8rem 1.8rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.cta .button:hover {
+  transform: scale(1.05);
+}
+
+/* 🔹 RESPONSYWNOŚĆ */
+@media (max-width: 768px) {
+  .stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .statBox {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  .testimonialGrid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta {
+    padding: 3rem 1.5rem;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+}
