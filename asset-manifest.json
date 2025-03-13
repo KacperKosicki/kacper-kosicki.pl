@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/kacper-kosicki.com/static/css/main.5bcfc25b.css",
-    "main.js": "/kacper-kosicki.com/static/js/main.5c2ec313.js",
+    "main.js": "/kacper-kosicki.com/static/js/main.0bc4a382.js",
     "index.html": "/kacper-kosicki.com/index.html",
     "main.5bcfc25b.css.map": "/kacper-kosicki.com/static/css/main.5bcfc25b.css.map",
-    "main.5c2ec313.js.map": "/kacper-kosicki.com/static/js/main.5c2ec313.js.map"
+    "main.0bc4a382.js.map": "/kacper-kosicki.com/static/js/main.0bc4a382.js.map"
   },
   "entrypoints": [
     "static/css/main.5bcfc25b.css",
-    "static/js/main.5c2ec313.js"
+    "static/js/main.0bc4a382.js"
   ]
 }
