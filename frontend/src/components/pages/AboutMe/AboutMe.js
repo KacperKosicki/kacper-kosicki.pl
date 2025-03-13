@@ -23,7 +23,7 @@ const AboutMe = () => {
         </p>
 
         {/* Przycisk CTA */}
-        <a href="#portfolio" className={styles.button}>
+        <a href="/portfolio" className={styles.button}>
           🔍 {t.viewProjects}
         </a>
       </div>
