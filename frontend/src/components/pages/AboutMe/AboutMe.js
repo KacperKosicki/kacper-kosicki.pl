@@ -9,7 +9,7 @@ const AboutMe = () => {
     <section className={styles.about}>
       {/* Zdjęcie */}
       <div className={styles.imageSection} data-aos="fade-right">
-        <img src="/images/kosa.jpg" alt={t.aboutImageAlt} />
+        <img src={`${process.env.PUBLIC_URL}/images/kosa.jpg`} alt={t.aboutImageAlt} />
       </div>
 
       {/* Tekst */}
