@@ -37,7 +37,11 @@ const ChatBot = () => {
     if (lowerCaseMessage.includes('koszt') || lowerCaseMessage.includes('cena')) {
       botResponse = 'Koszt wykonania strony zależy od wielu czynników. Możemy omówić szczegóły w prywatnej rozmowie. Przejdź proszę na podstronę "Kontakt", lub jeśli już na niej jesteś, napisz prywatną wiadomość wypełniając formularz kontaktowy oraz zaznacz z podanego pola opcję "Cennik".';
     } else if (lowerCaseMessage.includes('kontakt')) {
-      botResponse = 'Możesz skontaktować się z nami pod adresem email@example.com lub telefonicznie pod numerem 123-456-789.';
+      botResponse = 'Możesz skontaktować się z nami pod adresem kosickikacper1@gmail.com lub telefonicznie pod numerem 799-030-616.';
+    } else if (lowerCaseMessage.includes('błąd')) {
+      botResponse = 'Jeśli zauważyłeś błąd na stronie, możesz opisać go w wiadomości prywatnej. Przejdź proszę na podstronę "Kontakt", lub jeśli już na niej jesteś, napisz prywatną wiadomość wypełniając formularz kontaktowy oraz zaznacz z podanego pola opcję "Błąd".';
+    } else if (lowerCaseMessage.includes('współpraca')) {
+      botResponse = 'Jestem otwarty na propzycję współpracy. Jeśli chcesz skorzystać z moich usług lub nawiązać współpracę, możemy omówić szczegóły w prywatnej rozmowie. Przejdź proszę na podstronę "Kontakt", lub jeśli już na niej jesteś, napisz prywatną wiadomość wypełniając formularz kontaktowy oraz zaznacz z podanego pola opcję "Współpraca".';
     } else {
       botResponse = 'Przepraszam, nie rozumiem Twojego pytania. Proszę spróbuj jeszcze raz.';
     }
