@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router } from 'react-router-dom'; // ✅ Używamy HashRouter
+import { BrowserRouter as Router } from 'react-router-dom'; // Używamy BrowserRouter
 import App from './App';
 
 import './styles/global.scss';
