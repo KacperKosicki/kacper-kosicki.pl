@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Common/Header/Header";
 import Footer from "./components/Common/Footer/Footer";
@@ -14,21 +14,19 @@ import Help from './components/pages/Help/Help';
 const App = () => {
   return (
     <LanguageProvider>
-      <Router>
-        <div>
-          <Header />
-          <ChatBot />
-          <Help />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<AboutMe />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
-        </div>
-      </Router>
+      <div>
+        <Header />
+        <ChatBot />
+        <Help />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<AboutMe />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </div>
     </LanguageProvider>
   );
 };
