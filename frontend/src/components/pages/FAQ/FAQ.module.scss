@@ -85,7 +85,9 @@
 /* 🔹 RESPONSYWNOŚĆ */
 @media (max-width: 768px) {
   .faq {
-    padding: 2rem 1.5rem;
+    max-width: 100%;
+    width: 100vw;
+    padding: 3rem 1rem;
   }
 
   .faq h2 {
@@ -94,5 +96,8 @@
 
   .question button {
     font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 }
