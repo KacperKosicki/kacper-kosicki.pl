@@ -45,8 +45,8 @@
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   align-items: center;
   gap: 20px;
-  width: 100%;
-  max-width: 90%; /* 🔹 Karty zajmują 90% szerokości ekranu */
+  width: 1200px;
+  max-width: 100%; /* 🔹 Karty zajmują 90% szerokości ekranu */
   margin: 0 auto;
 
   h3 {
