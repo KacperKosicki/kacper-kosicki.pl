@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Common/Header/Header";
@@ -11,7 +11,21 @@ import NotFound from './components/pages/NotFound/NotFound';
 import ChatBot from './components/Common/ChatBot/ChatBot';
 import Help from './components/pages/Help/Help';
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const App = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: false });
+
+    const handleScroll = () => {
+      AOS.refresh(); // 🔹 Wymuszamy odświeżanie AOS na każdym scrollu
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <LanguageProvider>
       <div>

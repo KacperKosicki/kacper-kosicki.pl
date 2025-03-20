@@ -12,7 +12,7 @@
 
 /* 🔹 Sekcja Portfolio */
 .portfolio {
-  background: var(--secondary-bg);
+  //background: var(--secondary-bg);
   color: var(--text-color);
   text-align: center;
   padding: 2rem;
@@ -35,27 +35,24 @@
 
 /* 🔹 Siatka projektów */
 .projectGrid {
-  display: flex;
-  flex-direction: column;
-  /* 🔹 Projekty układają się pionowo */
+  display: flex; /* ✅ Zmieniamy z `grid` na `flex` */
+  flex-direction: column; /* 🔹 Karty będą układać się jedna pod drugą */
   gap: 40px;
-  /* 🔹 Dodatkowa przestrzeń między projektami */
+  justify-content: center;
+  align-items: center; /* 🔹 Wyśrodkowanie */
 }
 
 /* 🔹 Pojedyncza karta projektu */
 .projectCard {
-  background: var(--primary-bg);
+  background: var(--secondary-bg);
   padding: 2rem;
   border-radius: 15px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   align-items: center;
   gap: 20px;
   width: 100%;
-  /* 🔹 Pełna szerokość */
-  max-width: 1000px;
-  /* 🔹 Maksymalna szerokość */
+  max-width: 90%; /* 🔹 Karty zajmują 90% szerokości ekranu */
   margin: 0 auto;
-  /* 🔹 Wycentrowanie */
 
   h3 {
     margin-top: 1rem;
@@ -64,9 +61,8 @@
 
 /* 🔹 Miniatura projektu */
 .previewImage {
-  width: 40%;
-  /* 🔹 Szerokość obrazka */
-  max-width: 400px;
+  width: 100%;
+  max-width: 500px;
   height: auto;
   border-radius: 15px;
   transition: transform 0.3s ease-in-out;
@@ -134,7 +130,7 @@
   /* 🔹 Wyśrodkowanie */
   max-width: 600px;
   /* 🔹 Ograniczamy szerokość sekcji */
-  background: var(--input-bg);
+  background: var(--primary-bg);
   padding: 15px 20px;
   border-radius: 15px;
   text-align: center;
@@ -316,7 +312,6 @@ body.lightbox-open {
 @media (max-width: 1024px) {
   .projectGrid {
     flex-wrap: wrap;
-    /* 🔹 Dla mniejszych ekranów pozwalamy na łamanie się */
     justify-content: center;
   }
 
@@ -328,6 +323,10 @@ body.lightbox-open {
 }
 
 @media (max-width: 768px) {
+  .portfolio {
+    padding: 0;
+  }
+
   .portfolio h2 {
     font-size: 2rem;
   }
@@ -382,6 +381,5 @@ body.lightbox-open {
     right: 20%;
     transform: translateX(50%);
     font-size: 1rem;
-    //padding: 8px 12px;
   }
 }
