@@ -14,7 +14,7 @@ const AboutMe = () => {
 
       {/* Tekst */}
       <div className={styles.textSection} data-aos="fade-left">
-        <h2>🎨 {t.aboutTitle}</h2>
+        <h2>📝 {t.aboutTitle}</h2>
         <p>
           {t.aboutIntro1} <strong>Kacper Kosicki</strong>, {t.aboutIntro2} 🚀
         </p>
@@ -24,7 +24,7 @@ const AboutMe = () => {
 
         {/* Przycisk CTA */}
         <a href="/portfolio" className={styles.button}>
-          🔍 {t.viewProjects}
+          {t.viewProjects}
         </a>
       </div>
     </section>

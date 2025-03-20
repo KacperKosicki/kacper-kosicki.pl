@@ -124,10 +124,10 @@ const Portfolio = () => {
                 {/* 🔹 Przyciski akcji */}
                 <div className={styles.actions}>
                   <button className={styles.viewGalleryButton} onClick={(e) => openLightbox(e, index)}>
-                    📸 Zobacz galerię
+                    Zobacz galerię
                   </button>
                   <button className={styles.expandButton} onClick={() => toggleExpand(index)}>
-                    {expandedProject === index ? "Zwiń opis" : "📖 Zobacz więcej"}
+                    {expandedProject === index ? "Zwiń opis" : "Zobacz więcej"}
                   </button>
                 </div>
 
@@ -153,15 +153,15 @@ const Portfolio = () => {
               {/* 🔹 Kontener przycisków nawigacyjnych */}
               <div className={styles.lightboxControls}>
                 <button className={styles.prevButton} onClick={prevImage}>
-                  ⬅️ Poprzednie zdjęcie
+                  Poprzednie zdjęcie
                 </button>
                 <button className={styles.nextButton} onClick={nextImage}>
-                  Następne zdjęcie ➡️
+                  Następne zdjęcie
                 </button>
               </div>
 
               <button className={styles.closeButton} onClick={closeLightbox}>
-                ❌ Zamknij
+                Zamknij
               </button>
 
             </div>

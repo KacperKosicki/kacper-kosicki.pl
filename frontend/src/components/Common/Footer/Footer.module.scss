@@ -9,6 +9,10 @@
   border-top: 2px solid var(--border-color);
   animation: fadeIn 1.5s ease-in-out;
   transition: background-color 0.3s ease-in-out, transform 0.2s;
+
+  p {
+    font-family: $heading-font;
+  }
 }
 
 /* 🔹 FADE-IN ANIMATION */
@@ -101,12 +105,23 @@ ul li a {
   border: 1px solid var(--border-color);
   border-radius: 15px;
   font-size: 1rem;
+  margin-top: 1rem;
   width: 100%;
   width: 400px;
   text-align: center;
   font-family: $body-font;
   background: var(--primary-bg);
   color: var(--text-color);
+}
+
+/* 🔹 LINIA ODDZIELAJĄCA SEKCJE */
+.divider {
+  display: block;
+  width: 50%; /* 🔥 Zmniejszona szerokość */
+  max-width: 600px; /* 🔥 Ograniczona szerokość */
+  height: 2px;
+  background: var(--border-color);
+  margin: 2rem auto; /* 🔥 Auto wyśrodkowanie */
 }
 
 /* 🔹 PRZYCISK NEWSLETTERA */
@@ -167,7 +182,7 @@ ul li a {
   bottom: 25px;
   right: 25px;
   background: var(--button-footer-bg); /* ✅ Dynamiczny kolor */
-  color: white;
+  color: var(--button-text);;
   width: 55px; /* ✅ Gwarantujemy okrągły kształt */
   height: 55px; /* ✅ Powinno być równe szerokości */
   border: none;
@@ -199,6 +214,10 @@ ul li a {
     max-width: 400px;
   }
 
+  .divider {
+    width: 100%; /* 🔥 Zmniejszona szerokość */
+  }
+
   .newsletter {
     padding: 1.5rem;
   }
@@ -212,6 +231,6 @@ ul li a {
   }
 
   .copyright p {
-    margin-bottom: 20px;
+    margin-bottom: 100px;
   }
 }

@@ -64,7 +64,7 @@ const Skills = () => {
       </div>
 
       <a href="/portfolio" className={styles.button}>
-       🔍 {t.viewProjects}
+       {t.viewProjects}
       </a>
     </section>
   );

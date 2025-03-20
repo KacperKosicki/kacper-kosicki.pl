@@ -4,7 +4,7 @@
 .hero {
   color: var(--text-color); /* ✅ Dynamiczny kolor tekstu */
   text-align: center;
-  padding: 6rem 2rem;
+  padding: 7rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,8 +137,10 @@
 .scrollIndicator {
   position: absolute;
   bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%); /* ✅ Strzałka idealnie wyśrodkowana */
+  left: 0;   /* 🔥 Wyśrodkowanie względem rodzica */
+  right: 0;  /* 🔥 Zapewnia pełną szerokość */
+  margin: auto; /* 🔥 Automatyczne wyśrodkowanie */
+  text-align: center; /* 🔥 Zapewnia, że strzałka jest na środku */
   font-size: 2rem;
   animation: bounce 2s infinite;
   color: var(--secondary-text);
@@ -208,5 +210,9 @@
   .button {
     font-size: 1rem;
     padding: 0.8rem 1.8rem;
+  }
+
+  .scrollIndicator {
+    bottom: 20px; /* 🔹 Można dać mniejszy margines */
   }
 }

@@ -13,7 +13,6 @@ const ChatBot = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [isTyping, setIsTyping] = useState(false);
 
-  // ✅ Użycie useCallback do stabilizacji funkcji handleBotResponse
   const handleBotResponse = useCallback((message) => {
     if (!message) return;
 
@@ -41,14 +40,13 @@ const ChatBot = () => {
       ]);
       setIsTyping(false);
     }, 5000);
-  }, [t.chatbotKeywords, t.chatbotResponses]); // ✅ Dodano do zależności
+  }, [t.chatbotKeywords, t.chatbotResponses]);
 
-  // ✅ Teraz useEffect zna handleBotResponse i nie wywołuje ostrzeżeń
   useEffect(() => {
     if (!lastMessageFromUser) return;
     handleBotResponse(messages[messages.length - 1]?.text);
     setLastMessageFromUser(false);
-  }, [messages, lastMessageFromUser, handleBotResponse]); // ✅ Dodano handleBotResponse do zależności
+  }, [messages, lastMessageFromUser, handleBotResponse]);
 
   const handleSendMessage = (message) => {
     if (message.length > 50) {
@@ -70,7 +68,7 @@ const ChatBot = () => {
   return (
     <div className={styles.chatBot}>
       <button className={styles.toggleButton} onClick={toggleChatBot}>
-        🤖 {showChatBot ? t.chatbotHide : t.chatbotOpen}
+        {showChatBot ? t.chatbotHide : t.chatbotOpen}
       </button>
 
       {showChatBot && (
@@ -111,10 +109,10 @@ const ChatBot = () => {
 
           <div className={styles.pagination}>
             <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
-              ⬅️ {t.chatbotPrev}
+              {t.chatbotPrev}
             </button>
             <button onClick={() => setCurrentPage(currentPage + 1)} disabled={paginatedMessages.length < pageSize}>
-              ➡️ {t.chatbotNext}
+              {t.chatbotNext}
             </button>
           </div>
         </div>

@@ -86,7 +86,7 @@ const Contact = () => {
 
           {/* 📅 Integracja z Calendly */}
           <a href="https://calendly.com/twoj-link" target="_blank" rel="noopener noreferrer">
-            <button className={styles.calendlyButton}>📅 {t.scheduleAMeeting} {t.bookMeeting}</button>
+            <button className={styles.calendlyButton}>{t.scheduleAMeeting} {t.bookMeeting}</button>
           </a>
         </div>
 

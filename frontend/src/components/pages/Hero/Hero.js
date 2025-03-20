@@ -43,8 +43,8 @@ const Hero = () => {
           <h1>👋{t.heroTitle}</h1>
           <p className={styles.subtitle}>{text}<span className={styles.cursor}>|</span></p>
           <div className={styles.buttons}>
-            <a href="/portfolio" className={styles.button}>🔍 {t.viewProjects}</a>
-            <a href="/contact" className={`${styles.button} ${styles.secondary}`}>📞 {t.contactMe}</a>
+            <a href="/portfolio" className={styles.button}>{t.viewProjects}</a>
+            <a href="/contact" className={`${styles.button} ${styles.secondary}`}>{t.contactMe}</a>
           </div>
         </div>
 

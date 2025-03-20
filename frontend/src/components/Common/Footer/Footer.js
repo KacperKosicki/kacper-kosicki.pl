@@ -6,6 +6,8 @@ import {
   FaLinkedin,
   FaEnvelope,
 } from "react-icons/fa";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   const { t } = useContext(LanguageContext); // Pobranie tłumaczeń
@@ -72,16 +74,19 @@ const Footer = () => {
             <li><a href="/blog/nextjs-vs-react">{t.post3}</a></li>
           </ul>
         </div>
+      </div>
 
-        {/* Newsletter */}
-        <div className={`${styles.section} ${styles.newsletter}`}>
-          <h3>📩 {t.newsletter}</h3>
-          <p>{t.newsletterText}</p>
-          <form className={styles.newsletterForm}>
-            <input type="email" placeholder={t.emailPlaceholder} required />
-            <button type="submit">📝 {t.subscribe}</button>
-          </form>
-        </div>
+      {/* 🔹 Dodaj linię ODDZIELAJĄCĄ poza kontenerem */}
+      <div className={styles.divider}></div>
+
+      {/* Newsletter */}
+      <div className={`${styles.section} ${styles.newsletter}`}>
+        <h3>📩 {t.newsletter}</h3>
+        <p>{t.newsletterText}</p>
+        <form className={styles.newsletterForm}>
+          <input type="email" placeholder={t.emailPlaceholder} required />
+          <button type="submit">{t.subscribe}</button>
+        </form>
       </div>
 
       {/* Social Media */}
@@ -107,7 +112,7 @@ const Footer = () => {
       {/* Przycisk przewijania do góry */}
       {isVisible && (
         <button className={`${styles.scrollTop} ${styles.pulse}`} onClick={scrollToTop} title={t.scrollTop}>
-          ⬆️
+          <FontAwesomeIcon icon={faArrowUp} />
         </button>
       )}
     </footer>

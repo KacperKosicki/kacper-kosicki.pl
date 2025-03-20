@@ -4,7 +4,6 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
   background: var(--primary-bg);
   color: var(--text-color);
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -12,16 +11,12 @@
 
 /* 🔹 Sekcja Portfolio */
 .portfolio {
-  //background: var(--secondary-bg);
   color: var(--text-color);
   text-align: center;
-  padding: 2rem;
   max-width: 1200px;
   border-radius: 15px;
   margin: 100px auto 50px;
-  /* ✅ Większy margines u góry i na dole */
   min-height: 100vh;
-  /* ✅ Portfolio zajmuje całą stronę */
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -284,7 +279,7 @@ body.lightbox-open {
 /* 🔹 Przycisk zamknięcia - poprawiona pozycja */
 .closeButton {
   position: absolute;
-  top: -60px; /* 🔹 Umieszczony wyżej nad lightboxem */
+  top: -70px; /* 🔹 Umieszczony wyżej nad lightboxem */
   right: 50%;
   transform: translateX(50%); /* 🔹 Wyśrodkowanie */
   background: var(--color-warning);
@@ -323,8 +318,12 @@ body.lightbox-open {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
   .portfolio {
     padding: 0;
+    margin: 50px auto 50px;
   }
 
   .portfolio h2 {

@@ -15,7 +15,7 @@ const FAQ = () => {
 
   return (
     <section className={styles.faq}>
-      <h2>❓ {t.faqTitle}</h2>
+      <h2>❓{t.faqTitle}</h2>
       <div className={styles.questions}>
         {questions.map((item, index) => (
           <div key={index} className={styles.question}>

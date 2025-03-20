@@ -73,7 +73,7 @@ const Home = () => {
       <section className={styles.cta}>
         <h2>🚀 {t.ctaTitle}</h2>
         <p>{t.ctaDescription}</p>
-        <a href="/contact" className={styles.button}>📞 {t.contactMe}</a>
+        <a href="/contact" className={styles.button}>{t.contactMe}</a>
       </section>
 
       <FAQ />

@@ -10,7 +10,7 @@ const NotFound = () => {
     <div className={styles.container}>
       <h1 className={styles.notFoundTitle}>404 - {t.notFound}</h1>
       <p className={styles.notFoundText}>⛔️ {t.notFoundText}</p>
-      <Link to="/" className={styles.backButton}>◀️ {t.goBack}</Link>
+      <Link to="/" className={styles.backButton}>{t.goBack}</Link>
     </div>
   );
 };

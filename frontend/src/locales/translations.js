@@ -136,11 +136,11 @@ const translations = {
 
     //FAQ
     faqTitle: "Najczęściej zadawane pytania",
-    faqQuestion1: "Jak wygląda współpraca?",
+    faqQuestion1: "🤝 Jak wygląda współpraca?",
     faqAnswer1: "Proces zaczynamy od analizy potrzeb, następnie przechodzimy do projektowania i implementacji.",
-    faqQuestion2: "Jakie technologie używasz?",
+    faqQuestion2: "💻 Jakie technologie używasz?",
     faqAnswer2: "Specjalizuję się w React, Node.js, MongoDB, a także w Next.js i TypeScript.",
-    faqQuestion3: "Czy oferujesz wsparcie po wdrożeniu?",
+    faqQuestion3: "✅ Czy oferujesz wsparcie po wdrożeniu?",
     faqAnswer3: "Tak! Zapewniam wsparcie techniczne oraz dalszy rozwój projektu.",
 
     //Contact
@@ -165,11 +165,11 @@ const translations = {
 
     scheduleAMeeting: "Umów spotkanie",
 
-    sendButton: "✉️ Wyślij",
+    sendButton: "Wyślij",
     messageError: "Wiadomość musi zawierać co najmniej 25 znaków.",
 
-    sending: "🚀 Wysyłanie...",
-    sent: "✅ Wysłano!",
+    sending: "Wysyłanie...",
+    sent: "Wysłano!",
 
     //Help
     helpButton: "Szybka pomoc",
@@ -348,11 +348,11 @@ const translations = {
 
     //FAQ
     faqTitle: "Frequently Asked Questions",
-    faqQuestion1: "How does the cooperation work?",
+    faqQuestion1: "🤝 How does the cooperation work?",
     faqAnswer1: "We start with a needs analysis, then move on to design and implementation.",
-    faqQuestion2: "What technologies do you use?",
+    faqQuestion2: "💻 What technologies do you use?",
     faqAnswer2: "I specialize in React, Node.js, MongoDB, as well as Next.js and TypeScript.",
-    faqQuestion3: "Do you offer support after deployment?",
+    faqQuestion3: "✅ Do you offer support after deployment?",
     faqAnswer3: "Yes! I provide technical support and further project development.",
 
     //Contact
@@ -377,11 +377,11 @@ const translations = {
 
     scheduleAMeeting: "Schedule a Meeting",
 
-    sendButton: "✉️ Send",
+    sendButton: "Send",
     messageError: "The message must be at least 25 characters long.",
     
-    sending: "🚀 Sending...",
-    sent: "✅ Sent!",
+    sending: "Sending...",
+    sent: "Sent!",
 
     //Help
     helpButton: "Quick Help",

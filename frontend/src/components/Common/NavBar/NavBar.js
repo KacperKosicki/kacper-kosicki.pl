@@ -37,7 +37,7 @@ const NavBar = () => {
 
   return (
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""} ${isDarkMode ? styles.darkMode : ""}`}>
-      <div className={styles.logo}>kacper-kosicki.com</div>
+      <div className={styles.logo}>kacper-kosicki.pl</div>
 
       {/* 🔹 Hamburger tylko na mobile */}
       <button className={styles.hamburger} onClick={toggleMenu} aria-label="Toggle menu">
@@ -50,7 +50,7 @@ const NavBar = () => {
           <NavLink to="/" className={({ isActive }) => (isActive ? styles.active : "")} onClick={closeMenu}>
             {({ isActive }) => (
               <>
-                {isActive && "🏠 "} {t.home}
+                {isActive && ""} {t.home}
               </>
             )}
           </NavLink>
@@ -59,7 +59,7 @@ const NavBar = () => {
           <NavLink to="/portfolio" className={({ isActive }) => (isActive ? styles.active : "")} onClick={closeMenu}>
             {({ isActive }) => (
               <>
-                {isActive && "💼 "} {t.portfolio}
+                {isActive && ""} {t.portfolio}
               </>
             )}
           </NavLink>
@@ -68,7 +68,7 @@ const NavBar = () => {
           <NavLink to="/contact" className={({ isActive }) => (isActive ? styles.active : "")} onClick={closeMenu}>
             {({ isActive }) => (
               <>
-                {isActive && "📩 "} {t.contact}
+                {isActive && ""} {t.contact}
               </>
             )}
           </NavLink>

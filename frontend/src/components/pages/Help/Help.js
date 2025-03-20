@@ -22,7 +22,7 @@ const Help = () => {
   return (
     <div className={styles.help}>
       <button className={styles.helpButton} onClick={() => setIsOpen(true)}>
-        ❓ {t.helpButton}
+        {t.helpButton}
       </button>
 
       {isOpen && (
@@ -32,11 +32,11 @@ const Help = () => {
             <p>{steps[step].description}</p>
 
             <div className={styles.buttons}>
-              {step > 0 && <button onClick={prevStep}>⬅️ {t.previous}</button>}
+              {step > 0 && <button onClick={prevStep}>{t.previous}</button>}
               {step < steps.length - 1 ? (
-                <button onClick={nextStep}>➡️ {t.next}</button>
+                <button onClick={nextStep}>{t.next}</button>
               ) : (
-                <button onClick={() => setIsOpen(false)}>❌ {t.close}</button>
+                <button onClick={() => setIsOpen(false)}>{t.close}</button>
               )}
             </div>
           </div>
