@@ -49,7 +49,7 @@ const Hero = () => {
         </div>
 
         {/* Zdjęcie */}
-        <div className={styles.heroImage}>
+        <div className={styles.heroImage} data-aos="fade-left">
           <img src={`${process.env.PUBLIC_URL}/images/kosa.jpg`} alt={t.heroImageAlt} />
         </div>
       </div>
