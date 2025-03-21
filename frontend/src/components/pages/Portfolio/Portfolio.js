@@ -14,7 +14,7 @@ const projects = [
     ],
     technologies: ["JavaScript", "HTML", "CSS", "SASS", "JSON Server", "Handlebars"],
     images: [
-      `${process.env.PUBLIC_URL}/projects/project1.png`,
+      `${process.env.PUBLIC_URL}/projects/project1-1.png`,
       `${process.env.PUBLIC_URL}/projects/project1-2.png`,
       `${process.env.PUBLIC_URL}/projects/project1-3.png`,
     ],    
