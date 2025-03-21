@@ -10,6 +10,7 @@ import AboutMe from './components/pages/AboutMe/AboutMe';
 import NotFound from './components/pages/NotFound/NotFound';
 import ChatBot from './components/Common/ChatBot/ChatBot';
 import Help from './components/pages/Help/Help';
+import ScrollToTop from "./components/Common/ScrollToTop"; // ✅ IMPORT NOWEGO KOMPONENTU
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -32,6 +33,7 @@ const App = () => {
         <Header />
         <ChatBot />
         <Help />
+        <ScrollToTop />  {/* 🔥 DODAJEMY TUTAJ 🔥 */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
