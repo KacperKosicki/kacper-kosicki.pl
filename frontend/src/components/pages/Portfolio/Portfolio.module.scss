@@ -21,6 +21,32 @@
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+/* 🔹 FILTRY I SORTOWANIE */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  select {
+    padding: 12px;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: var(--input-bg);
+    transition: border-color 0.3s ease-in-out;
+    cursor: pointer;
+    font-family: $heading-font;
+
+    &:focus {
+      border-color: var(--button-hover);
+      outline: none;
+    }
+  }
+}
+
 /* 🔹 Tytuł sekcji */
 .portfolio h2 {
   font-size: 2.5rem;

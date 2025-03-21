@@ -17,7 +17,8 @@ const projects = [
       `${process.env.PUBLIC_URL}/projects/project1-1.png`,
       `${process.env.PUBLIC_URL}/projects/project1-2.png`,
       `${process.env.PUBLIC_URL}/projects/project1-3.png`,
-    ],    
+    ],
+    category: "kurs", // lub: "strona", "własne"
   },
   {
     title: "Projekt 2",
@@ -35,6 +36,8 @@ const projects = [
       `${process.env.PUBLIC_URL}/projects/project2-7.png`,
       `${process.env.PUBLIC_URL}/projects/project2-8.png`,
     ],
+    category: "kurs", // lub: "strona", "własne"
+
   },
   {
     title: "Projekt 3",
@@ -46,7 +49,8 @@ const projects = [
       `${process.env.PUBLIC_URL}/projects/project3-1.png`,
       `${process.env.PUBLIC_URL}/projects/project3-2.png`,
       `${process.env.PUBLIC_URL}/projects/project3-3.png`,
-    ], 
+    ],
+    category: "kurs", // lub: "strona", "własne"
   },
 ];
 
@@ -56,6 +60,16 @@ const Portfolio = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
   const [expandedProject, setExpandedProject] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [sortBy, setSortBy] = useState("default");
+
+  const filteredProjects = projects
+  .filter(p => selectedCategory ? p.category === selectedCategory : true)
+  .sort((a, b) => {
+    if (sortBy === "az") return a.title.localeCompare(b.title);
+    if (sortBy === "za") return b.title.localeCompare(a.title);
+    return 0;
+  });
 
   const toggleGallery = (index) => {
     setOpenProject(openProject === index ? null : index);
@@ -98,8 +112,22 @@ const Portfolio = () => {
     <div className={styles.container}>
       <section className={styles.portfolio} id="portfolio">
         <h2 data-aos="fade-up">📦 Moje projekty</h2>
+        <div className={styles.filters} data-aos="fade-up">
+          <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+            <option value="">Wszystkie kategorie</option>
+            <option value="strona">Projekty stron</option>
+            <option value="kurs">Projekty kursu</option>
+            <option value="własne">Projekty własne</option>
+          </select>
+
+          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+            <option value="default">Domyślnie</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+          </select>
+        </div>
         <div className={styles.projectGrid}>
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <div key={index} className={styles.projectCard} data-aos="zoom-in">
               <img
                 src={project.images[0]}
