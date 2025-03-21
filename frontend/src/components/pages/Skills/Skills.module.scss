@@ -90,3 +90,9 @@
 .button:hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+  .skills h2 {
+    font-size: 2rem;
+  }
+}

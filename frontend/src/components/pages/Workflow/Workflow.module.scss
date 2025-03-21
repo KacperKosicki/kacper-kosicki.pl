@@ -62,6 +62,10 @@
     padding: 1.5rem; /* 🔹 Mniejszy padding */
     min-height: 220px; /* 🔹 Dopasowanie wysokości */
   }
+
+  .workflow h2 {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
