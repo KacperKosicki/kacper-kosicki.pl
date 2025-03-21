@@ -4,7 +4,7 @@
 .hero {
   color: var(--text-color); /* ✅ Dynamiczny kolor tekstu */
   text-align: center;
-  padding: 7rem 2rem;
+  padding: 6rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,12 +64,15 @@
   color: var(--secondary-text);
   margin-bottom: 2rem;
   font-family: $heading-font;
-  min-height: 40px;
   display: block;
-  overflow: hidden;
   max-width: 90vw;
-  word-break: break-word; /* ✅ Zawijanie długich wyrazów */
   text-align: left;
+  overflow: hidden;
+  word-break: break-word;
+
+  min-height: 40px; /* ✅ Zabezpiecza przed skakaniem */
+  white-space: nowrap; /* ✅ Jeśli chcesz wymusić 1 linię */
+  text-overflow: ellipsis;
 }
 
 /* 🔹 KURSOR */
@@ -199,9 +202,10 @@
 
   .subtitle {
     font-size: 1.2rem;
-    max-width: 80vw;
-    text-align: center; /* ✅ Wyrównanie do środka na małych ekranach */
+    min-height: 48px; /* dopasuj do rzeczywistej wysokości tekstu */
+    text-align: center;
   }
+  
   .buttons {
     flex-direction: column;
     gap: 0.8rem;
