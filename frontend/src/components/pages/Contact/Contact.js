@@ -78,7 +78,7 @@ const Contact = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.contact}>
+      <div className={styles.contact} data-aos="zoom-in">
         {/* LEWA STRONA */}
         <div className={styles.contactInfo}>
           <h2>📩 {t.contactTitle}</h2>

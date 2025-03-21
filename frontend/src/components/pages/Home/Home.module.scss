@@ -4,6 +4,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 2rem;
   background: var(--primary-bg);
   color: var(--text-color);
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
