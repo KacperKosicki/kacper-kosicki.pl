@@ -4,11 +4,10 @@
 .hero {
   color: var(--text-color); /* ✅ Dynamiczny kolor tekstu */
   text-align: center;
-  padding: 6rem 2rem;
+  padding: 5rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 85vh;
   position: relative;
   background: var(--hero-bg); /* ✅ Dynamiczne tło */
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
