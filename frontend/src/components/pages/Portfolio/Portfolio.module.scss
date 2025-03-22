@@ -21,6 +21,11 @@
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* 🔹 FILTRY I SORTOWANIE */
 .filters {
   display: flex;
@@ -46,6 +51,15 @@
     }
   }
 }
+
+.noProjects {
+  color: var(--error-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+}
+
 
 /* 🔹 Tytuł sekcji */
 .portfolio h2 {
