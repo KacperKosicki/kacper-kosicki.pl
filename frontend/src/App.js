@@ -12,6 +12,9 @@ import ChatBot from './components/Common/ChatBot/ChatBot';
 import Help from './components/pages/Help/Help';
 import ScrollToTop from "./components/Common/ScrollToTop"; // ✅ IMPORT NOWEGO KOMPONENTU
 import Login from './components/pages/Login/Login'; // Dodaj to
+import AdminPanel from './components/pages/AdminPanel/AdminPanel';
+import ClientPanel from './components/pages/ClientPanel/ClientPanel';
+import ProtectedRoute from './components/pages/ProtectedRoute';
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -41,6 +44,23 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<AboutMe />} />
           <Route path="/login" element={<Login />} /> {/* 🔐 Nowa trasa */}
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute allowedRoles={['admin']}>
+                <AdminPanel />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/panel"
+            element={
+              <ProtectedRoute allowedRoles={['client']}>
+                <ClientPanel />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
