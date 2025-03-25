@@ -11,6 +11,7 @@ import NotFound from './components/pages/NotFound/NotFound';
 import ChatBot from './components/Common/ChatBot/ChatBot';
 import Help from './components/pages/Help/Help';
 import ScrollToTop from "./components/Common/ScrollToTop"; // ✅ IMPORT NOWEGO KOMPONENTU
+import Login from './components/pages/Login/Login'; // Dodaj to
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<AboutMe />} />
+          <Route path="/login" element={<Login />} /> {/* 🔐 Nowa trasa */}
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
