@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import styles from './LogoutButton.module.scss';
 
 const LogoutButton = () => {
   const navigate = useNavigate();
@@ -10,15 +11,7 @@ const LogoutButton = () => {
   };
 
   return (
-    <button onClick={handleLogout} style={{
-      margin: '1rem',
-      padding: '0.5rem 1rem',
-      background: '#c0392b',
-      color: 'white',
-      border: 'none',
-      borderRadius: '5px',
-      cursor: 'pointer'
-    }}>
+    <button onClick={handleLogout} className={styles.logoutButton}>
       Wyloguj się
     </button>
   );

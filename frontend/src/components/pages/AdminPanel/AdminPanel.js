@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoutButton from '../../Common/LogoutButton';
+import LogoutButton from '../../Common/LogoutButton/LogoutButton';
 
 const AdminPanel = () => {
   return (
