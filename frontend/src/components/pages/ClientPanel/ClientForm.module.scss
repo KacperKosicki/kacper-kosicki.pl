@@ -1,0 +1,58 @@
+@import '../../../styles/variables';
+
+.clientForm__container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: var(--secondary-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 10px var(--box-shadow);
+}
+
+.clientForm__title {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.clientForm__label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.clientForm__input,
+.clientForm__select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+.clientForm__colorInput {
+  padding: 0.2rem;
+  height: 40px;
+}
+
+.clientForm__submit {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: var(--button-hover);
+  }
+}

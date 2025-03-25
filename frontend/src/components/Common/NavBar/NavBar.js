@@ -10,6 +10,8 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem("theme") === "dark");
+  const token = localStorage.getItem('token');
+  const userRole = localStorage.getItem('userRole');
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", isDarkMode ? "dark" : "light");
@@ -72,6 +74,33 @@ const NavBar = () => {
               </>
             )}
           </NavLink>
+        </li>
+        <li>
+          {!token ? (
+            <NavLink
+              to="/login"
+              className={({ isActive }) => (isActive ? styles.active : "")}
+              onClick={closeMenu}
+            >
+              Zaloguj
+            </NavLink>
+          ) : userRole === 'admin' ? (
+            <NavLink
+              to="/admin"
+              className={({ isActive }) => (isActive ? styles.active : "")}
+              onClick={closeMenu}
+            >
+              Admin
+            </NavLink>
+          ) : (
+            <NavLink
+              to="/panel"
+              className={({ isActive }) => (isActive ? styles.active : "")}
+              onClick={closeMenu}
+            >
+              Panel
+            </NavLink>
+          )}
         </li>
 
         {/* 🔹 Wyraźna przestrzeń oddzielająca linki od przycisków */}

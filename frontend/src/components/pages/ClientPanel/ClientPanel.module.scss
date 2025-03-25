@@ -1,0 +1,39 @@
+@import '../../../styles/variables';
+
+/* 🔹 KONTAINER */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--primary-bg);
+    color: var(--text-color);
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+.panelContainer {
+    max-width: 1200px;
+    margin: 100px auto 50px;
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-color);
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.description {
+    color: var(--secondary-text);
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+    .panelContainer {
+        padding: 3rem 1.5rem;
+        margin: 50px auto 50px;
+    }
+}
+  

@@ -1,12 +1,19 @@
 import React from 'react';
 import LogoutButton from '../../Common/LogoutButton/LogoutButton';
+import ClientForm from './ClientForm';
+import styles from './ClientPanel.module.scss';
 
 const ClientPanel = () => {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Panel Klienta</h1>
-      <LogoutButton />
-      <p>Witaj, kliencie! Tutaj w przyszłości skonfigurujesz swoją stronę.</p>
+    <div className={styles.container}>
+      <div className={styles.panelContainer}>
+        <h1 className={styles.title}>Panel Klienta</h1>
+        <LogoutButton />
+        <p className={styles.description}>
+          Witaj, kliencie! Tutaj w przyszłości skonfigurujesz swoją stronę.
+        </p>
+      </div>
+      <ClientForm />
     </div>
   );
 };
