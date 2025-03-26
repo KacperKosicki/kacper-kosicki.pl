@@ -60,7 +60,7 @@ const ClientForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.clientForm__container}>
+    <form onSubmit={handleSubmit} className={styles.clientForm__container} data-aos="zoom-in">
       <h2 className={styles.clientForm__title}>🛠️ Konfiguruj swoją stronę</h2>
       <div className={styles.clientForm__labelWithToggle}>
         <label className={styles.clientForm__label}>Nazwa projektu</label>

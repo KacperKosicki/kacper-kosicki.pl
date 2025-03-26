@@ -6,7 +6,7 @@ import styles from './ClientPanel.module.scss';
 const ClientPanel = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.panelContainer}>
+      <div className={styles.panelContainer} data-aos="zoom-in-down">
         <h1 className={styles.title}>🖥️ Panel Klienta</h1>
         <LogoutButton />
         <p className={styles.description}>

@@ -46,7 +46,7 @@ const Login = ({ onLoginSuccess }) => {
   };
 
   return (
-    <div className={styles.loginContainer}>
+    <div className={styles.loginContainer} data-aos="zoom-in">
       <h2>🔐 Logowanie</h2>
       <form onSubmit={handleLogin} className={styles.form}>
         <input
