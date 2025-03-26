@@ -30,6 +30,43 @@
   margin-bottom: 2rem;
 }
 
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.projectCard {
+  background: var(--primary-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 15px;
+  padding: 1.5rem;
+  color: var(--text-color);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0.2rem 0;
+    font-size: 0.95rem;
+  }
+}
+
+.error {
+  color: var(--error-color);
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
 @media (max-width: 600px) {
   .panelContainer {
       padding: 3rem 1.5rem;

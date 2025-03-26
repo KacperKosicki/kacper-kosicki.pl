@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './ClientForm.module.scss';
 
 const ClientForm = () => {
@@ -15,6 +15,33 @@ const ClientForm = () => {
     showSiteInfo: false, // 👈 dodaj to
     showPagesInfo: false, // ← nowa właściwość
   });
+
+  useEffect(() => {
+    const fetchClientConfig = async () => {
+      const token = localStorage.getItem('token');
+  
+      try {
+        const res = await fetch('https://kacper-kosickipl-production.up.railway.app/api/client-config', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+  
+        if (!res.ok) throw new Error('Brak danych klienta');
+  
+        const data = await res.json();
+  
+        setFormData((prev) => ({
+          ...prev,
+          ...data, // dane z bazy (siteName, pages, themeColors itd.)
+        }));
+      } catch (err) {
+        console.error('Błąd pobierania konfiguracji klienta:', err);
+      }
+    };
+  
+    fetchClientConfig();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;

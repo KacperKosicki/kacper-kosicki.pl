@@ -46,4 +46,20 @@ router.get('/client-projects', protect, restrictTo('admin'), async (req, res) =>
   }
 });
 
+// 🧠 Pobierz konfigurację danego klienta (tylko jego własną)
+router.get('/client-config', protect, async (req, res) => {
+    try {
+      const config = await Project.findOne({ userId: req.user.id });
+  
+      if (!config) {
+        return res.status(404).json({ message: 'Brak konfiguracji' });
+      }
+  
+      res.status(200).json(config);
+    } catch (err) {
+      console.error('Błąd pobierania konfiguracji:', err);
+      res.status(500).json({ error: 'Wystąpił błąd przy pobieraniu konfiguracji' });
+    }
+});  
+
 module.exports = router;
