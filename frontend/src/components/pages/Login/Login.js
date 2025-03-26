@@ -47,7 +47,7 @@ const Login = ({ onLoginSuccess }) => {
 
   return (
     <div className={styles.loginContainer}>
-      <h2>Logowanie</h2>
+      <h2>🔐 Logowanie</h2>
       <form onSubmit={handleLogin} className={styles.form}>
         <input
           type="email"

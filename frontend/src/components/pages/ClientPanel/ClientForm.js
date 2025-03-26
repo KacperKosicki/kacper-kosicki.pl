@@ -4,18 +4,14 @@ import styles from './ClientForm.module.scss';
 const ClientForm = () => {
   const [formData, setFormData] = useState({
     siteName: '',
-    pages: {
-      home: false,
-      blog: false,
-      contact: false,
-      portfolio: false,
-      booking: false,
-    },
+    pages: [],
     themeColor: '#4CAF50',
     font: 'Poppins',
     animations: 'medium',
     type: 'onepage',
     translations: ['pl'],
+    showSiteInfo: false, // 👈 dodaj to
+    showPagesInfo: false, // ← nowa właściwość
   });
 
   const handleChange = (e) => {
@@ -64,8 +60,30 @@ const ClientForm = () => {
   return (
     <form onSubmit={handleSubmit} className={styles.clientForm__container}>
       <h2 className={styles.clientForm__title}>🛠️ Konfiguruj swoją stronę</h2>
+      <div className={styles.clientForm__labelWithToggle}>
+        <label className={styles.clientForm__label}>Nazwa projektu</label>
+        <button
+          type="button"
+          className={`${styles.clientForm__toggleButton} ${formData.showSiteInfo ? styles.active : ''}`}
+          onClick={() =>
+            setFormData((prev) => ({
+              ...prev,
+              showSiteInfo: !prev.showSiteInfo,
+            }))
+          }
+          aria-label="Pokaż opis"
+        >
+          ▼
+        </button>
+      </div>
 
-      <label className={styles.clientForm__label}>Nazwa projektu:</label>
+      {formData.showSiteInfo && (
+        <p className={styles.clientForm__infoText}>
+          Wpisz roboczą nazwę projektu – np. „Strona firmy KOSICKI” lub „Portfolio – Ania Kowalska”.
+          Ta nazwa pomoże w identyfikacji Twojej strony i może być wykorzystana przy dalszej komunikacji z administratorem.
+        </p>
+      )}
+
       <input
         type="text"
         name="siteName"
@@ -75,18 +93,82 @@ const ClientForm = () => {
         className={styles.clientForm__input}
       />
 
-      <label className={styles.clientForm__label}>Wybierz podstrony:</label>
-      {Object.keys(formData.pages).map((pageKey) => (
-        <div key={pageKey}>
-          <input
-            type="checkbox"
-            name={`pages.${pageKey}`}
-            checked={formData.pages[pageKey]}
-            onChange={handleChange}
-          />
-          <label>{pageKey}</label>
-        </div>
-      ))}
+      <div className={styles.clientForm__labelWithToggle}>
+        <label className={styles.clientForm__label}>Dodaj podstronę</label>
+        <button
+          type="button"
+          className={`${styles.clientForm__toggleButton} ${formData.showPagesInfo ? styles.active : ''
+            }`}
+          onClick={() =>
+            setFormData((prev) => ({
+              ...prev,
+              showPagesInfo: !prev.showPagesInfo,
+            }))
+          }
+          aria-label="Pokaż opis"
+        >
+          ▼
+        </button>
+      </div>
+
+      {formData.showPagesInfo && (
+        <p className={styles.clientForm__infoText}>
+          Tutaj możesz dodać własne podstrony strony WWW – np. „o mnie”, „rezerwacja”, „opinie klientów”.
+          Kliknij „Dodaj”, aby dodać je do listy. Możesz je też usunąć, zanim zapiszesz konfigurację.
+        </p>
+      )}
+
+      <div className={styles.clientForm__pagesWrapper}>
+        <input
+          type="text"
+          value={formData.newPage || ''}
+          onChange={(e) =>
+            setFormData((prev) => ({ ...prev, newPage: e.target.value }))
+          }
+          placeholder="np. rezerwacja, blog, portfolio"
+          className={styles.clientForm__input}
+        />
+        <button
+          type="button"
+          onClick={() => {
+            const trimmed = formData.newPage?.trim();
+            if (trimmed && !formData.pages.includes(trimmed)) {
+              setFormData((prev) => ({
+                ...prev,
+                pages: [...prev.pages, trimmed],
+                newPage: '',
+              }));
+            }
+          }}
+          className={styles.clientForm__addButton}
+        >
+          Dodaj
+        </button>
+      </div>
+
+      {formData.pages.length > 0 && (
+        <ul className={styles.clientForm__pagesList}>
+          {formData.pages.map((page, idx) => (
+            <li key={idx} className={styles.clientForm__pageItem}>
+              {page}
+              <button
+                type="button"
+                onClick={() =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    pages: prev.pages.filter((p) => p !== page),
+                  }))
+                }
+                className={styles.clientForm__removeBtn}
+              >
+                ✖
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <div className={styles.divider}></div>
 
       <label className={styles.clientForm__label}>Kolor główny:</label>
       <input
