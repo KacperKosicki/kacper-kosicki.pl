@@ -6,10 +6,10 @@ const AdminPanel = () => {
   return (
     <div className={styles.container}>
       <div className={styles.panelContainer}>
-        <h1 className={styles.title}>Panel Administratora</h1>
+        <h1 className={styles.title}>🛡️ Panel Administratora</h1>
         <LogoutButton />
         <p className={styles.description}>
-          Witaj, admin! Tutaj w przyszłości dodasz możliwość zarządzania projektami klientów.
+          Witaj, Kacper Kosicki! Tutaj w przyszłości dodasz możliwość zarządzania projektami klientów.
         </p>
       </div>
     </div>

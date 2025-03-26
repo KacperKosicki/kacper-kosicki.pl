@@ -6,7 +6,6 @@
   background: var(--secondary-bg);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 0 10px var(--box-shadow);
 }
 
 .clientForm__title {
@@ -42,17 +41,16 @@
 .clientForm__submit {
   margin-top: 2rem;
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.8rem 1.8rem;
   background-color: var(--button-bg);
   color: var(--button-text);
   border: none;
-  border-radius: 25px;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease-in-out, transform 0.2s;
 
   &:hover {
-    background-color: var(--button-hover);
+    transform: scale(1.05);
   }
 }

@@ -7,7 +7,7 @@ const ClientPanel = () => {
   return (
     <div className={styles.container}>
       <div className={styles.panelContainer}>
-        <h1 className={styles.title}>Panel Klienta</h1>
+        <h1 className={styles.title}>🖥️ Panel Klienta</h1>
         <LogoutButton />
         <p className={styles.description}>
           Witaj, kliencie! Tutaj w przyszłości skonfigurujesz swoją stronę.
