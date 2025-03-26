@@ -89,6 +89,10 @@ ul li a {
   padding: 2rem 0;
   max-width: 1000px;
   margin: 2rem auto;
+
+  p {
+    color: var(--secondary-text);
+  }
 }
 
 .newsletterForm {

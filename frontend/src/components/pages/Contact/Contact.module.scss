@@ -107,7 +107,7 @@
 
 .contactInfo p {
   font-size: 1.2rem;
-  color: var(--text-secondary);
+  color: var(--secondary-text);
   line-height: 1.5;
 }
 
@@ -170,7 +170,6 @@
 .contact input:focus,
 .contact select:focus,
 .contact textarea:focus {
-  border-color: var(--button-hover);
   outline: none;
 }
 
