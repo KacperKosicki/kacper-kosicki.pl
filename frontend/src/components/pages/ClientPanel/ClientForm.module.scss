@@ -2,7 +2,7 @@
 
 .clientForm__container {
   max-width: 600px;
-  margin: 2rem auto;
+  margin: 0 auto;
   background: var(--secondary-bg);
   padding: 2rem;
   border-radius: 15px;
@@ -73,6 +73,33 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.clientForm__colorField {
+  position: relative;
+  width: 100%;
+}
+
+.clientForm__inputWithColor {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.6rem 3rem 0.6rem 0.6rem; // padding right większy
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+.clientForm__colorInline {
+  position: absolute;
+  top: 58%;
+  right: 0.6rem;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .clientForm__addButton {

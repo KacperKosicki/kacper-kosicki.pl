@@ -5,11 +5,13 @@ const ClientForm = () => {
   const [formData, setFormData] = useState({
     siteName: '',
     pages: [],
-    themeColor: '#4CAF50',
+    themeColors: [], // 👉 domyślny kolor
     font: 'Poppins',
     animations: 'medium',
     type: 'onepage',
     translations: ['pl'],
+    newColor: '', // tymczasowe pole do wpisywania koloru
+    showColorInfo: false, // 🔽 opis
     showSiteInfo: false, // 👈 dodaj to
     showPagesInfo: false, // ← nowa właściwość
   });
@@ -90,6 +92,7 @@ const ClientForm = () => {
         value={formData.siteName}
         onChange={handleChange}
         required
+        placeholder="np. twoja-strona.pl lub inna"
         className={styles.clientForm__input}
       />
 
@@ -114,7 +117,11 @@ const ClientForm = () => {
       {formData.showPagesInfo && (
         <p className={styles.clientForm__infoText}>
           Tutaj możesz dodać własne podstrony strony WWW – np. „o mnie”, „rezerwacja”, „opinie klientów”.
-          Kliknij „Dodaj”, aby dodać je do listy. Możesz je też usunąć, zanim zapiszesz konfigurację.
+          Kliknij „Dodaj”, aby dodać je do listy. Możesz je też usunąć, zanim zapiszesz konfigurację. <br /><br />
+          Nie ma problemu z dodaniem kolejnej podstrony również po zatwierdzeniu konfiguracji.
+          Chodzi o to, żebym dokładnie wiedział, czego potrzebujesz, a Ty mógł na bieżąco śledzić moje postępy.
+          To Ty decydujesz, jakie podstrony mają się pojawić – a po finalnym zatwierdzeniu projektu, który sam sobie skonfigurujesz,
+          będziesz widział wszystkie zmiany i etapy realizacji swoich podstron.
         </p>
       )}
 
@@ -170,14 +177,94 @@ const ClientForm = () => {
 
       <div className={styles.divider}></div>
 
-      <label className={styles.clientForm__label}>Kolor główny:</label>
-      <input
-        type="color"
-        name="themeColor"
-        value={formData.themeColor}
-        onChange={handleChange}
-        className={styles.clientForm__colorInput}
-      />
+      <div className={styles.clientForm__labelWithToggle}>
+        <label className={styles.clientForm__label}>Kolory strony</label>
+        <button
+          type="button"
+          className={`${styles.clientForm__toggleButton} ${formData.showColorInfo ? styles.active : ''}`}
+          onClick={() =>
+            setFormData((prev) => ({ ...prev, showColorInfo: !prev.showColorInfo }))
+          }
+          aria-label="Pokaż opis"
+        >
+          ▼
+        </button>
+      </div>
+
+      {formData.showColorInfo && (
+        <p className={styles.clientForm__infoText}>
+          Dodaj dowolną liczbę kolorów (np. główny, tło, akcenty). Możesz używać nazw kolorów (np. "red"),
+          kodów HEX (np. "#4CAF50") lub RGB. Kolory zostaną wykorzystane do zaprojektowania Twojej strony.
+        </p>
+      )}
+
+      <div className={styles.clientForm__pagesWrapper}>
+        <div className={styles.clientForm__colorField}>
+          <input
+            type="text"
+            placeholder="#4CAF50 lub red"
+            value={formData.newColor}
+            onChange={(e) => setFormData((prev) => ({ ...prev, newColor: e.target.value }))}
+            className={styles.clientForm__inputWithColor}
+          />
+          <input
+            type="color"
+            value={formData.newColor}
+            onChange={(e) => setFormData((prev) => ({ ...prev, newColor: e.target.value }))}
+            className={styles.clientForm__colorInline}
+          />
+        </div>
+
+        <button
+          type="button"
+          onClick={() => {
+            const trimmed = formData.newColor?.trim();
+            if (trimmed && !formData.themeColors.includes(trimmed)) {
+              setFormData((prev) => ({
+                ...prev,
+                themeColors: [...prev.themeColors, trimmed],
+                newColor: '',
+              }));
+            }
+          }}
+          className={styles.clientForm__addButton}
+        >
+          Dodaj
+        </button>
+      </div>
+
+      {formData.themeColors.length > 0 && (
+        <ul className={styles.clientForm__pagesList}>
+          {formData.themeColors.map((color, idx) => (
+            <li key={idx} className={styles.clientForm__pageItem}>
+              <div
+                style={{
+                  backgroundColor: color,
+                  width: '20px',
+                  height: '20px',
+                  borderRadius: '50%',
+                  border: '2px solid #ccc',
+                }}
+              />
+              <span>{color}</span>
+              <button
+                type="button"
+                onClick={() =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    themeColors: prev.themeColors.filter((c) => c !== color),
+                  }))
+                }
+                className={styles.clientForm__removeBtn}
+              >
+                ✖
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <div className={styles.divider}></div>
 
       <label className={styles.clientForm__label}>Czcionka:</label>
       <select
