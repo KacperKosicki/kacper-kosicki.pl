@@ -4,7 +4,7 @@ const Project = require('../models/Project');
 const User = require('../models/User');
 
 // ✅ poprawny import nazwanych funkcji z middleware
-const { protect, restrictTo } = require('../middleware/authMiddleware');
+const { protect, restrictTo } = require('../middlewares/authMiddleware');
 
 // 🔒 Zapisz lub zaktualizuj konfigurację projektu klienta
 router.post('/client-config', protect, async (req, res) => {
