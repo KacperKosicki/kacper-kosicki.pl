@@ -28,6 +28,9 @@ const ClientPanel = () => {
         <p className={styles.description}>
           Witaj, {user?.email || 'kliencie'}! Tutaj w przyszłości skonfigurujesz swoją stronę.
         </p>
+        <p className={styles.infoBox}>
+          <span className={styles.arrow}>▼</span> Kliknij ikonkę, aby rozwinąć szczegółowy opis każdej sekcji konfiguracji.
+        </p>
       </div>
       <ClientForm />
     </div>

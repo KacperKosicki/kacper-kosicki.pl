@@ -29,6 +29,27 @@
     color: var(--secondary-text);
 }
 
+.infoBox {
+    margin: 2rem auto 0;
+    background-color: var(--input-bg);
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--primary-color);
+    border-radius: 15px;
+    font-family: $heading-font;
+    animation: fadeIn 0.5s ease-in-out;
+    max-width: 600px; // 🔽 zmniejszona szerokość
+    width: 100%;
+  }
+  
+  
+.arrow {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}  
+
 @media (max-width: 600px) {
     .panelContainer {
         padding: 3rem 1.5rem;
