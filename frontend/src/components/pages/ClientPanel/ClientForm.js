@@ -18,6 +18,9 @@ const ClientForm = () => {
     showPurposeInfo: false,
     hasOwnDomain: '',
     showDomainInfo: false,
+    hasReference: null,
+    referenceSite: '',
+    referenceDescription: '',
     fonts: [],
     fontsPreset: ['Poppins', 'Roboto', 'Montserrat', 'Open Sans', 'Raleway'],
     newFont: '',
@@ -257,7 +260,6 @@ const ClientForm = () => {
           <input
             type="radio"
             name="hasReference"
-            value={true}
             checked={formData.hasReference === true}
             onChange={() =>
               setFormData((prev) => ({
