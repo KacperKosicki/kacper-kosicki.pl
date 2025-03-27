@@ -382,13 +382,15 @@ const ClientForm = () => {
         </button>
       </div>
 
-      <p className={styles.clientForm__infoText}>
-        Podaj roboczą nazwę swojego projektu – np. <strong>„Strona firmy KOSICKI”</strong> lub <strong>„Portfolio – Ania Kowalska”</strong>.
-        <br /><br />
-        Nazwa ta będzie wykorzystywana wewnętrznie do identyfikacji Twojej strony oraz przy komunikacji z administratorem. Może również pojawić się np. w tytule panelu klienta lub w wiadomościach e-mail związanych z projektem.
-        <br /><br />
-        Nie martw się – tę nazwę będzie można później zmienić.
-      </p>
+      {formData.showSiteInfo && (
+        <p className={styles.clientForm__infoText}>
+          Podaj roboczą nazwę swojego projektu – np. <strong>„Strona firmy KOSICKI”</strong> lub <strong>„Portfolio – Ania Kowalska”</strong>.
+          <br /><br />
+          Nazwa ta będzie wykorzystywana wewnętrznie do identyfikacji Twojej strony oraz przy komunikacji z administratorem. Może również pojawić się np. w tytule panelu klienta lub w wiadomościach e‑mail związanych z projektem.
+          <br /><br />
+          Nie martw się – tę nazwę będzie można później zmienić.
+        </p>
+      )}
 
       <input
         type="text"
@@ -498,24 +500,26 @@ const ClientForm = () => {
         </button>
       </div>
 
-      <p className={styles.clientForm__infoText}>
-        Możesz dodać dowolną liczbę kolorów, które zostaną wykorzystane podczas projektowania Twojej strony – np. kolor główny, tło, akcenty itp.
-        <br /><br />
-        Wpisz nazwę koloru (<code>red</code>, <code>blue</code>), kod HEX (<code>#4CAF50</code>), lub RGB (<code>rgb(255, 0, 0)</code>).
-        <br /><br />
-        Po prawej stronie znajdziesz również wbudowaną paletę – możesz z niej skorzystać, klikając wybrany kolor. Zostanie on automatycznie wpisany do pola, gotowy do dodania.
-        <br /><br />
-        Jeśli nie jesteś pewny, jakie kolory wybrać – skorzystaj z gotowych palet online.
-        <br /><br />
-        <a
-          href="https://coolors.co/palettes/trending"
-          target="_blank"
-          rel="noreferrer"
-          style={{ color: 'var(--primary-color)', fontWeight: 'bold' }}
-        >
-          ➤ &nbsp;Coolors – trendy palety kolorów
-        </a>
-      </p>
+      {formData.showColorInfo && (
+        <p className={styles.clientForm__infoText}>
+          Możesz dodać dowolną liczbę kolorów, które zostaną wykorzystane podczas projektowania Twojej strony – np. kolor główny, tło, akcenty itp.
+          <br /><br />
+          Wpisz nazwę koloru (<code>red</code>, <code>blue</code>), kod HEX (<code>#4CAF50</code>), lub RGB (<code>rgb(255, 0, 0)</code>).
+          <br /><br />
+          Po prawej stronie znajdziesz również wbudowaną paletę – możesz z niej skorzystać, klikając wybrany kolor. Zostanie on automatycznie wpisany do pola, gotowy do dodania.
+          <br /><br />
+          Jeśli nie jesteś pewny, jakie kolory wybrać – skorzystaj z gotowych palet online.
+          <br /><br />
+          <a
+            href="https://coolors.co/palettes/trending"
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: 'var(--primary-color)', fontWeight: 'bold' }}
+          >
+            ➤ &nbsp;Coolors – trendy palety kolorów
+          </a>
+        </p>
+      )}
 
       <div className={styles.clientForm__pagesWrapper}>
         <div className={styles.clientForm__colorField}>
