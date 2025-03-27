@@ -13,6 +13,7 @@ const projectSchema = new mongoose.Schema({
   translations: [String],
   purpose: String, // ✅ dodane
   hasOwnDomain: String, // ✅ dodane
+  hasReference: Boolean, // 👈 DODAJ TO
   referenceSite: String, // ✅ dodane
   referenceDescription: String, // ✅ dodane
   createdAt: { type: Date, default: Date.now }
