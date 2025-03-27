@@ -96,6 +96,7 @@ const ChatBot = () => {
           <div className={styles.inputContainer}>
             <input
               type="text"
+              className={styles.chatInput}
               placeholder={t.chatbotPlaceholder}
               onKeyPress={(e) => {
                 if (e.key === 'Enter') {

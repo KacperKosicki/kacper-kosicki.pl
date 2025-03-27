@@ -121,14 +121,14 @@
   padding-bottom: 10px;
 }
 
-input[type='text'] {
+.chatInput {
   width: 100%;
   padding: 10px;
   border-radius: 15px;
   background: var(--input-bg);
   border: 2px solid var(--primary-color);
   color: var(--text-color);
-  transition: background-color 0.3s ease-in-out, transform 0.2s;;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
 
   &:focus {
     border-color: var(--button-hover);
