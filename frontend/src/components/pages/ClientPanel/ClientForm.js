@@ -49,10 +49,13 @@ const ClientForm = () => {
 
         const data = await res.json();
 
+        // 💡 TUTAJ WRZUĆ TO ZAMIENIONE SETFORMDATA:
         setFormData((prev) => ({
           ...prev,
-          ...data, // dane z bazy (siteName, pages, themeColors itd.)
+          ...data,
+          hasReference: data.hasReference === true, // 👈 tu wymuszamy boolean
         }));
+
       } catch (err) {
         console.error('Błąd pobierania konfiguracji klienta:', err);
       }
@@ -274,7 +277,6 @@ const ClientForm = () => {
           <input
             type="radio"
             name="hasReference"
-            value={false}
             checked={formData.hasReference === false}
             onChange={() =>
               setFormData((prev) => ({
