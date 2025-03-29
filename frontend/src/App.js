@@ -15,6 +15,7 @@ import Login from './components/pages/Login/Login'; // Dodaj to
 import AdminPanel from './components/pages/AdminPanel/AdminPanel';
 import ClientPanel from './components/pages/ClientPanel/ClientPanel';
 import ProtectedRoute from './components/pages/ProtectedRoute';
+import CookiesPanel from './components/Common/Cookies/CookiesPanel'; // dostosuj ścieżkę
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -36,14 +37,13 @@ const App = () => {
       <div>
         <Header />
         <ChatBot />
-        <Help />
         <ScrollToTop />  {/* 🔥 DODAJEMY TUTAJ 🔥 */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<AboutMe />} />
-          <Route path="/login" element={<Login />} /> {/* 🔐 Nowa trasa */}
+          <Route path="/login" element={<Login />} />
           <Route
             path="/admin"
             element={
@@ -63,6 +63,7 @@ const App = () => {
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CookiesPanel />
         <Footer />
       </div>
     </LanguageProvider>

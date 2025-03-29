@@ -188,7 +188,7 @@ ul li a {
   background: var(--button-footer-bg); /* ✅ Dynamiczny kolor */
   color: var(--button-text);;
   width: 55px; /* ✅ Gwarantujemy okrągły kształt */
-  height: 55px; /* ✅ Powinno być równe szerokości */
+  height: 51px; /* ✅ Powinno być równe szerokości */
   border: none;
   display: flex;
   border-radius: 25px; /* ✅ Zapewnia pełną okrągłość */
@@ -236,5 +236,10 @@ ul li a {
 
   .copyright p {
     margin-bottom: 150px;
+  }
+
+  .scrollTop {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.8rem;
   }
 }

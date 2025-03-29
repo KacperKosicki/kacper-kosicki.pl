@@ -1,0 +1,121 @@
+@import '../../../styles/variables';
+
+.cookiesPanel {
+    position: fixed;
+    bottom: 100px; // ⬆️ Nad ChatBotem
+    left: 25px;    // ⬅️ Po lewej stronie
+    z-index: 1000; // 🔝 Nad ChatBotem
+  }
+
+.toggleButton {
+  padding: 0.8rem 1.8rem;
+  border: 2px solid var(--primary-color);
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.panel {
+    position: fixed;
+    bottom: 175px; // ⬆️ Jeszcze wyżej
+    left: 25px;
+    background: var(--primary-bg);
+    border: 2px solid var(--primary-color);
+    color: var(--text-color);
+    border-radius: 15px;
+    padding: 20px;
+    width: auto;
+    min-width: 420px;
+    max-width: 500px;
+    z-index: 1300;
+    height: auto;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+.panel h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.panel p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.option {
+    margin: 10px 0;
+
+    label {
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+.acceptButton {
+    margin-top: 15px;
+    padding: 0.8rem 1.8rem;
+    background: var(--primary-color);
+    border: none;
+    color: var(--button-text);
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🔹 RESPONSYWNOŚĆ */
+@media (max-width: 768px) {
+    .cookiesPanel {
+      margin-top: 1rem;
+    }
+
+    .panel {
+        min-width: 280px;
+        max-width: 90%;
+        height: auto;
+        max-height: 400px;
+    }
+  
+    .toggleButton {
+      font-size: 1rem;
+      padding: 0.8rem 1.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .toggleButton {
+      font-size: 0.9rem;
+      padding: 0.8rem 1.8rem;
+    }
+  }
