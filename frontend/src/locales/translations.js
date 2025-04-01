@@ -25,7 +25,7 @@ const translations = {
       error: "błąd",
       collaboration: "współpraca"
     },
-    
+
     chatbotResponses: {
       cost: "Koszt wykonania strony zależy od wielu czynników. Możemy omówić szczegóły w prywatnej rozmowie. Przejdź proszę na podstronę 'Kontakt', lub jeśli już na niej jesteś, napisz prywatną wiadomość.",
       contact: "Możesz skontaktować się z nami pod adresem kosickikacper1@gmail.com lub telefonicznie pod numerem 799-030-616.",
@@ -40,7 +40,7 @@ const translations = {
     cookiesNecessary: "Niezbędne (zawsze aktywne)",
     cookiesAnalytics: "Statystyczne (np. Google Analytics)",
     cookiesMarketing: "Marketingowe (np. Facebook Pixel)",
-    cookiesSave: "Zapisz ustawienia",    
+    cookiesSave: "Zapisz ustawienia",
 
     // Home
     codeHours: "Godzin kodowania",
@@ -129,18 +129,20 @@ const translations = {
     collaboration: "Współpraca",
     collaborationDesc: "Cenię sobie dobrą komunikację i zaangażowanie w projekty klientów.",
 
-    //Workflow
+    // Workflow
     workflowTitle: "Jak wygląda współpraca?",
-    workflowStep1Title: "Analiza & Brief",
-    workflowStep1Desc: "Ustalamy potrzeby, cel projektu i główne funkcjonalności.",
-    workflowStep2Title: "Projektowanie & Kodowanie",
-    workflowStep2Desc: "Tworzę nowoczesny design, a następnie implementuję kod.",
-    workflowStep3Title: "Testowanie",
-    workflowStep3Desc: "Optymalizuję wydajność i usuwam ewentualne błędy.",
-    workflowStep4Title: "Wdrożenie",
-    workflowStep4Desc: "Finalna wersja projektu jest gotowa do uruchomienia.",
-    workflowStep5Title: "Wsparcie i rozwój",
-    workflowStep5Desc: "Oferuję aktualizacje i dalszą optymalizację strony.",
+    workflowStep1Title: "Analiza potrzeb",
+    workflowStep1Desc: "Na początku omawiamy Twoje cele i potrzeby, aby zrozumieć wizję projektu.",
+    workflowStep2Title: "Dostęp do konfiguratora",
+    workflowStep2Desc: "Osoby poważnie zainteresowane otrzymują dostęp do mojego konfiguratora, gdzie mogą samodzielnie przygotować strukturę swojej strony.",
+    workflowStep3Title: "Projektowanie & Kodowanie",
+    workflowStep3Desc: "Na podstawie konfiguracji tworzę indywidualny projekt graficzny i implementuję kod strony.",
+    workflowStep4Title: "Podgląd & Aktualizacje",
+    workflowStep4Desc: "Na bieżąco otrzymujesz podgląd gotowych sekcji oraz możesz zgłaszać zmiany — wszystko widoczne w Twoim panelu.",
+    workflowStep5Title: "Wdrożenie",
+    workflowStep5Desc: "Po zatwierdzeniu wszystkiego uruchamiam stronę na Twojej domenie i konfiguruję hosting.",
+    workflowStep6Title: "Wsparcie & Utrzymanie",
+    workflowStep6Desc: "Oferuję dalszą pomoc, optymalizację i rozwój Twojej strony w razie potrzeby.",
 
     //FAQ
     faqTitle: "Najczęściej zadawane pytania",
@@ -267,7 +269,7 @@ const translations = {
     projectsCompleted: "Completed projects",
     happyClients: "Happy clients",
     yearsExperience: "Years of experience",
-    
+
     testimonialsTitle: "What do people say about me?",
     testimonial1: "Great cooperation! The project was delivered on time and works flawlessly.",
     testimonial2: "Full professionalism and great knowledge. I recommend!",
@@ -349,18 +351,20 @@ const translations = {
     collaboration: "Collaboration",
     collaborationDesc: "I value good communication and engagement in client projects.",
 
-    //Workflow
-    workflowTitle: "How does the cooperation look like?",
-    workflowStep1Title: "Analysis & Brief",
-    workflowStep1Desc: "We define the needs, project goals, and main functionalities.",
-    workflowStep2Title: "Design & Coding",
-    workflowStep2Desc: "I create a modern design and then implement the code.",
-    workflowStep3Title: "Testing",
-    workflowStep3Desc: "I optimize performance and fix potential bugs.",
-    workflowStep4Title: "Deployment",
-    workflowStep4Desc: "The final version of the project is ready to launch.",
-    workflowStep5Title: "Support & Development",
-    workflowStep5Desc: "I provide updates and further optimization of the website.",
+    // Workflow
+    workflowTitle: "How does the cooperation work?",
+    workflowStep1Title: "Needs Analysis",
+    workflowStep1Desc: "We start by discussing your goals and needs to understand the project vision.",
+    workflowStep2Title: "Access to Configurator",
+    workflowStep2Desc: "If you're seriously interested, you'll get access to my configurator where you can prepare the structure of your website.",
+    workflowStep3Title: "Design & Development",
+    workflowStep3Desc: "Based on your configuration, I create a personalized design and implement the website code.",
+    workflowStep4Title: "Preview & Updates",
+    workflowStep4Desc: "You will continuously see the progress of your project and can request changes — everything is visible in your panel.",
+    workflowStep5Title: "Deployment",
+    workflowStep5Desc: "Once everything is approved, I launch your website on your domain and configure hosting.",
+    workflowStep6Title: "Support & Maintenance",
+    workflowStep6Desc: "I offer ongoing support, optimization, and further development of your website if needed.",
 
     //FAQ
     faqTitle: "Frequently Asked Questions",
@@ -395,7 +399,7 @@ const translations = {
 
     sendButton: "Send",
     messageError: "The message must be at least 25 characters long.",
-    
+
     sending: "Sending...",
     sent: "Sent!",
 
@@ -416,7 +420,7 @@ const translations = {
     previous: "Back",
     next: "Next",
     close: "Close",
-    
+
     // Footer
     usefulLinks: "Useful Links",
     recentProjects: "Recent Projects",

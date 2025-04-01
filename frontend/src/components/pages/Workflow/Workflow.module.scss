@@ -4,7 +4,7 @@
   text-align: center;
   margin: 4rem auto;
   max-width: 1200px;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   background: var(--secondary-bg);
   border-radius: 15px;
 }
@@ -16,11 +16,11 @@
   margin-bottom: 2rem;
 }
 
-/* 🔹 UKŁAD GRID - RÓWNE KROKI */
+/* 🔹 UKŁAD GRID - 3x2 */
 .steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 🔹 Automatyczne dopasowanie */
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr); /* 🔹 Dokładnie 3 kolumny */
+  gap: 2rem;
   justify-content: center;
   align-items: stretch;
 }
@@ -33,11 +33,10 @@
   border-radius: 15px;
   text-align: center;
   transition: transform 0.3s ease-in-out;
-  min-width: 200px;
-  min-height: 250px; /* 🔹 Zapewnia równą wysokość */
+  min-height: 280px; /* Większa wysokość dla wyrównania */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 🔹 Rozciąga zawartość */
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -51,25 +50,38 @@
   margin-bottom: 1rem;
 }
 
+.step h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  flex: 1; /* 🔹 Rozciąga opis */
+  margin-top: auto; /* 🔹 Wypycha do dołu */
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--secondary-text);
+}
+
 /* 🔹 RESPONSYWNOŚĆ */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .steps {
-    grid-template-columns: repeat(2, 1fr); /* 🔹 Na mniejszych ekranach 2 kolumny */
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolumny na średnich ekranach */
+  }
+}
+
+@media (max-width: 600px) {
+  .steps {
+    grid-template-columns: 1fr; /* 1 kolumna na bardzo małych ekranach */
   }
 
   .step {
-    padding: 1.5rem; /* 🔹 Mniejszy padding */
-    min-height: 220px; /* 🔹 Dopasowanie wysokości */
+    padding: 1.5rem;
+    min-height: 240px;
   }
 
   .workflow h2 {
     font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .steps {
-    grid-template-columns: repeat(1, 1fr); /* 🔹 Na bardzo małych ekranach jedna kolumna */
   }
 }
