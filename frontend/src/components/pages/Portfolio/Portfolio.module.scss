@@ -35,15 +35,17 @@ button:disabled {
   margin-bottom: 2rem;
 
   select {
-    padding: 12px;
-    border: 2px solid var(--primary-color);
+    padding: 1rem;
     border-radius: 15px;
     font-size: 1rem;
-    color: var(--text-color);
-    background: var(--input-bg);
-    transition: border-color 0.3s ease-in-out;
-    cursor: pointer;
+    border: 2px solid var(--primary-color);
+    width: 100%;
+    max-width: 300px;
     font-family: $heading-font;
+    cursor: pointer;
+    text-align: center;
+    background: var(--primary-bg);
+    color: var(--text-color);
 
     &:focus {
       outline: none;
@@ -58,7 +60,6 @@ button:disabled {
   text-align: center;
   margin-top: 2rem;
 }
-
 
 /* 🔹 Tytuł sekcji */
 .portfolio h2 {

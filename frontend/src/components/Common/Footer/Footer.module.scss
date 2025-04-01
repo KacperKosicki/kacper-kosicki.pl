@@ -100,20 +100,23 @@ ul li a {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  max-width: 400px;
-  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 1rem;
 }
 
+
 .newsletterForm input {
-  padding: 12px;
-  border: 1px solid var(--border-color);
+  padding: 1rem;
   border-radius: 15px;
-  font-size: 1rem;
   margin-top: 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--primary-color);
+  max-width: 600px; // 🔥 szersze inputy na desktopie
   width: 100%;
-  width: 400px;
+  font-family: $heading-font;
+  cursor: pointer;
   text-align: center;
-  font-family: $body-font;
   background: var(--primary-bg);
   color: var(--text-color);
 }

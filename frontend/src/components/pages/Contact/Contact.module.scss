@@ -152,14 +152,16 @@
 .contact input,
 .contact select,
 .contact textarea {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid var(--primary-color);
+  padding: 1rem;
   border-radius: 15px;
   font-size: 1rem;
+  border: 2px solid var(--primary-color);
+  width: 100%;
+  max-width: 600px;
+  font-family: $heading-font;
+  cursor: pointer;
+  background: var(--primary-bg);
   color: var(--text-color);
-  background: var(--input-bg);
-  transition: border-color 0.3s ease-in-out;
 }
 
 .contact textarea {
