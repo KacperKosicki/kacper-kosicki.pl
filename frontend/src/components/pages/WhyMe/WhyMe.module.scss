@@ -33,7 +33,7 @@
   .featureCard {
     background: var(--secondary-bg);
     border-radius: 15px;
-    padding: 20px;
+    padding: 2rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
@@ -83,10 +83,6 @@
     .subtitle {
       font-size: 1rem;
       margin-bottom: 3rem; // ✅ teraz zadziała
-    }
-
-    .featureCard {
-      padding: 15px;
     }
   }
 }

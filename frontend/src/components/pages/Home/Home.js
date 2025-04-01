@@ -54,14 +54,14 @@ const Home = () => {
 
       {/* OPINIE KLIENTÓW */}
       <section className={styles.testimonials}>
-        <h2>💬 {t.testimonialsTitle}</h2>
+        <h2 data-aos="zoom-in" data-aos-delay="200">💬 {t.testimonialsTitle}</h2>
         <div className={styles.testimonialGrid}>
-          <div className={styles.testimonialBox}>
+          <div className={styles.testimonialBox} data-aos="fade-right" data-aos-delay="400">
             <FaCommentDots className={styles.testimonialIcon} />
-            <p>{t.testimonial1}</p>
+            <p >{t.testimonial1}</p>
             <h4>- {t.client1}</h4>
           </div>
-          <div className={styles.testimonialBox}>
+          <div className={styles.testimonialBox} data-aos="fade-left" data-aos-delay="400">
             <FaCommentDots className={styles.testimonialIcon} />
             <p>{t.testimonial2}</p>
             <h4>- {t.client2}</h4>
@@ -70,7 +70,7 @@ const Home = () => {
       </section>
 
       {/* CTA */}
-      <section className={styles.cta}>
+      <section className={styles.cta} data-aos="fade-up">
         <h2>🚀 {t.ctaTitle}</h2>
         <p>{t.ctaDescription}</p>
         <a href="/contact" className={styles.button}>{t.contactMe}</a>

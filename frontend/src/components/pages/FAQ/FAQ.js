@@ -15,16 +15,24 @@ const FAQ = () => {
 
   return (
     <section className={styles.faq}>
-      <h2>❓{t.faqTitle}</h2>
+      <h2 data-aos="zoom-in">❓{t.faqTitle}</h2>
       <div className={styles.questions}>
         {questions.map((item, index) => (
-          <div key={index} className={styles.question}>
+          <div
+            key={index}
+            className={styles.question}
+            data-aos="fade-up"
+            data-aos-delay={index * 300} // 🔹 opóźnienie animacji
+          >
             <button onClick={() => setOpenIndex(openIndex === index ? null : index)}>
               {item.question} {openIndex === index ? <FaMinus /> : <FaPlus />}
             </button>
-            {openIndex === index && <p className={styles.answer}>{item.answer}</p>}
+            {openIndex === index && (
+              <p className={styles.answer}>{item.answer}</p>
+            )}
           </div>
         ))}
+
       </div>
     </section>
   );
