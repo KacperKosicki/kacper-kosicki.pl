@@ -74,18 +74,17 @@
 /* 🔹 RESPONSYWNOŚĆ */
 @media (max-width: 768px) {
   .whyMe {
-    padding: 50px 15px;
-  }
+    .title {
+      font-size: 2rem;
+    }
 
-  .title {
-    font-size: 2rem;
-  }
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 3rem; // ✅ teraz zadziała
+    }
 
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .featureCard {
-    padding: 15px;
+    .featureCard {
+      padding: 15px;
+    }
   }
 }
