@@ -67,6 +67,10 @@
   margin-top: 4rem;
 }
 
+.overflowWrapper {
+  overflow-x: hidden; // ✅ ZAPOBIEGA przesuwaniu poziomemu
+}
+
 .testimonialGrid {
   display: flex;
   justify-content: center;

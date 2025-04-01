@@ -54,17 +54,19 @@ const Home = () => {
 
       {/* OPINIE KLIENTÓW */}
       <section className={styles.testimonials}>
-        <h2 data-aos="zoom-in" data-aos-delay="200">💬 {t.testimonialsTitle}</h2>
-        <div className={styles.testimonialGrid}>
-          <div className={styles.testimonialBox} data-aos="fade-right" data-aos-delay="400">
-            <FaCommentDots className={styles.testimonialIcon} />
-            <p >{t.testimonial1}</p>
-            <h4>- {t.client1}</h4>
-          </div>
-          <div className={styles.testimonialBox} data-aos="fade-left" data-aos-delay="400">
-            <FaCommentDots className={styles.testimonialIcon} />
-            <p>{t.testimonial2}</p>
-            <h4>- {t.client2}</h4>
+        <div className={styles.overflowWrapper}>
+          <h2 data-aos="zoom-in" data-aos-delay="200">💬 {t.testimonialsTitle}</h2>
+          <div className={styles.testimonialGrid}>
+            <div className={styles.testimonialBox} data-aos="fade-right" data-aos-delay="400">
+              <FaCommentDots className={styles.testimonialIcon} />
+              <p>{t.testimonial1}</p>
+              <h4>- {t.client1}</h4>
+            </div>
+            <div className={styles.testimonialBox} data-aos="fade-left" data-aos-delay="400">
+              <FaCommentDots className={styles.testimonialIcon} />
+              <p>{t.testimonial2}</p>
+              <h4>- {t.client2}</h4>
+            </div>
           </div>
         </div>
       </section>
@@ -77,7 +79,7 @@ const Home = () => {
       </section>
 
       <FAQ />
-      
+
     </div>
   );
 };
