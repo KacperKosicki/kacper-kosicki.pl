@@ -34,6 +34,14 @@ const translations = {
       unknown: "Przepraszam, nie rozumiem Twojego pytania. Spróbuj jeszcze raz."
     },
 
+    //Cookies
+    cookiesTitle: "Twoje ustawienia cookies",
+    cookiesDescription: "Używam plików cookies, aby ulepszyć Twoje doświadczenie na mojej stronie.",
+    cookiesNecessary: "Niezbędne (zawsze aktywne)",
+    cookiesAnalytics: "Statystyczne (np. Google Analytics)",
+    cookiesMarketing: "Marketingowe (np. Facebook Pixel)",
+    cookiesSave: "Zapisz ustawienia",    
+
     // Home
     codeHours: "Godzin kodowania",
     projectsCompleted: "Zrealizowanych projektów",
@@ -245,6 +253,14 @@ const translations = {
       collaboration: "I am open to collaboration proposals. We can discuss the details in a private conversation.",
       unknown: "Sorry, I don't understand your question. Please try again."
     },
+
+    //Cookies
+    cookiesTitle: "Your cookie settings",
+    cookiesDescription: "I use cookies to improve your experience on my website.",
+    cookiesNecessary: "Necessary (always active)",
+    cookiesAnalytics: "Analytics (e.g. Google Analytics)",
+    cookiesMarketing: "Marketing (e.g. Facebook Pixel)",
+    cookiesSave: "Save settings",
 
     // Home
     codeHours: "Hours of coding",
