@@ -50,3 +50,41 @@ exports.getMe = async (req, res) => {
     res.status(401).json({ error: 'Nieautoryzowany' });
   }
 };
+
+// ✅ POBIERZ WSZYSTKICH UŻYTKOWNIKÓW (dla admina)
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find().select('-passwordHash');
+    res.status(200).json(users);
+  } catch (err) {
+    res.status(500).json({ error: 'Błąd podczas pobierania użytkowników' });
+  }
+};
+
+// ✅ USUŃ UŻYTKOWNIKA
+exports.deleteUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await User.findByIdAndDelete(id);
+    res.status(200).json({ message: 'Użytkownik usunięty' });
+  } catch (err) {
+    res.status(500).json({ error: 'Błąd usuwania użytkownika' });
+  }
+};
+
+// ✅ ZMIEŃ ROLĘ UŻYTKOWNIKA
+exports.updateUserRole = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { role } = req.body;
+
+    if (!['admin', 'client'].includes(role)) {
+      return res.status(400).json({ error: 'Nieprawidłowa rola' });
+    }
+
+    const user = await User.findByIdAndUpdate(id, { role }, { new: true }).select('-passwordHash');
+    res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json({ error: 'Błąd aktualizacji roli użytkownika' });
+  }
+};
