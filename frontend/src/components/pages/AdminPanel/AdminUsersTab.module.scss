@@ -143,6 +143,15 @@
   }
 }
 
+.divider {
+  display: block;
+  width: 100%; /* 🔥 Zmniejszona szerokość */
+  max-width: 600px; /* 🔥 Ograniczona szerokość */
+  height: 2px;
+  background: var(--border-color);
+  margin: 2rem auto; /* 🔥 Auto wyśrodkowanie */
+}
+
 /* 🔹 RWD */
 @media (max-width: 600px) {
   .form {

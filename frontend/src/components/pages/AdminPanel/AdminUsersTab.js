@@ -119,7 +119,7 @@ const AdminUsersTab = () => {
   };  
 
   return (
-    <div className={styles.adminUsersTab}>
+    <div className={styles.adminUsersTab} data-aos="zoom-in">
       <h2>👥 Zarządzanie użytkownikami</h2>
 
       {error && <p className={styles.error}>{error}</p>}
@@ -150,6 +150,8 @@ const AdminUsersTab = () => {
         </select>
         <button type="submit">Dodaj użytkownika</button>
       </form>
+
+      <div className={styles.divider}></div>
 
       {/* 🔁 Lista użytkowników */}
       <div className={styles.userList}>
