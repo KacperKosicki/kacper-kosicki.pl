@@ -12,5 +12,6 @@ router.get('/me', protect, auth.getMe);
 router.get('/users', protect, restrictTo('admin'), auth.getAllUsers);
 router.delete('/users/:id', protect, restrictTo('admin'), auth.deleteUser);
 router.patch('/users/:id/role', protect, restrictTo('admin'), auth.updateUserRole);
+router.put('/users/:id/password', protect, restrictTo('admin'), auth.updateUserPassword);
 
 module.exports = router;

@@ -1,0 +1,146 @@
+@import '../../../styles/variables';
+
+.adminUsersTab {
+  background: var(--secondary-bg);
+  color: var(--text-color);
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+  }
+}
+
+/* 🔹 Komunikaty */
+.error {
+  color: var(--error-color);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.success {
+  color: var(--success-color, #00c851);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* 🔹 Formularz tworzenia użytkownika */
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  input, select {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+    background: var(--primary-bg);
+    color: var(--text-color);
+    font-family: $heading-font;
+    min-width: 220px;
+  }
+
+  button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* 🔹 Lista użytkowników */
+.userList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.userCard {
+  background: var(--primary-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    color: var(--secondary-text);
+  }
+
+  strong {
+    color: var(--text-color);
+  }
+
+  .controls {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    select, input {
+      padding: 0.6rem 0.8rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      border: 2px solid var(--primary-color);
+      background: var(--primary-bg);
+      color: var(--text-color);
+      font-family: $heading-font;
+    }
+
+    button {
+      background: var(--error-color);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.95rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+/* 🔹 RWD */
+@media (max-width: 600px) {
+  .form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form input, .form select, .form button {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .userCard {
+    padding: 1rem;
+  }
+}

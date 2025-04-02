@@ -88,3 +88,21 @@ exports.updateUserRole = async (req, res) => {
     res.status(500).json({ error: 'Błąd aktualizacji roli użytkownika' });
   }
 };
+
+// ✅ ZMIEŃ HASŁO UŻYTKOWNIKA (admin)
+exports.updateUserPassword = async (req, res) => {
+  const { id } = req.params;
+  const { password } = req.body;
+
+  if (!password || password.length < 6) {
+    return res.status(400).json({ error: 'Hasło musi mieć min. 6 znaków' });
+  }
+
+  try {
+    const passwordHash = await bcrypt.hash(password, 10);
+    await User.findByIdAndUpdate(id, { passwordHash });
+    res.status(200).json({ message: 'Hasło zaktualizowane' });
+  } catch (err) {
+    res.status(500).json({ error: 'Błąd aktualizacji hasła' });
+  }
+};

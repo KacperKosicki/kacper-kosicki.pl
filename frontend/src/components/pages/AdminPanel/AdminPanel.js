@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import LogoutButton from '../../Common/LogoutButton/LogoutButton';
 import styles from './AdminPanel.module.scss';
+import AdminUsersTab from './AdminUsersTab';
 
 const AdminPanel = () => {
   const [projects, setProjects] = useState([]);
@@ -100,16 +101,7 @@ const AdminPanel = () => {
 
       {/* 🔹 Zakładka UŻYTKOWNICY */}
       {activeTab === 'users' && (
-        <div className={styles.usersGrid}>
-          {users.map((user) => (
-            <div key={user._id} className={styles.userCard} data-aos="zoom-in">
-              <h3>{user.email}</h3>
-              <p><strong>Rola:</strong> {user.role}</p>
-              <p><strong>Utworzony:</strong> {new Date(user.createdAt).toLocaleString()}</p>
-              {/* 🔧 Tu możesz dodać przyciski do usuwania / edytowania */}
-            </div>
-          ))}
-        </div>
+        <AdminUsersTab users={users} setUsers={setUsers} />
       )}
     </div>
   );

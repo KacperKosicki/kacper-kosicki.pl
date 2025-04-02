@@ -74,23 +74,22 @@
   gap: 2rem;
 
   button {
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 1.8rem;
     font-weight: bold;
-    border: 2px solid var(--primary-color);
     background: var(--button-bg);
+    border: none;
     color: var(--button-text);
-    border-radius: 30px;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, transform 0.2s;
 
     &:hover {
-      background: var(--button-hover);
+      transform: scale(1.05);
     }
   }
 
   .activeTab {
     background: var(--primary-color);
-    color: #fff;
   }
 }
 
@@ -111,8 +110,13 @@
 
 @media (max-width: 600px) {
   .panelContainer {
-      padding: 3rem 1.5rem;
-      margin: 50px auto 50px;
+    padding: 3rem 1.5rem;
+    margin: 50px auto 50px;
+  }
+
+  .tabs {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
