@@ -4,15 +4,17 @@ import styles from './AdminUsersTab.module.scss';
 const AdminUsersTab = () => {
   const [users, setUsers] = useState([]);
   const [formData, setFormData] = useState({ email: '', password: '', role: 'client' });
+  const [editingData, setEditingData] = useState({});
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const token = localStorage.getItem('token');
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch('https://kacper-kosickipl-production.up.railway.app/api/admin/users', {
+      const res = await fetch('https://kacper-kosickipl-production.up.railway.app/api/users', {
         headers: { Authorization: `Bearer ${token}` }
       });
+
       const data = await res.json();
       setUsers(data);
     } catch (err) {
@@ -28,7 +30,7 @@ const AdminUsersTab = () => {
     if (!window.confirm('Czy na pewno chcesz usunąć użytkownika?')) return;
 
     try {
-      await fetch(`https://kacper-kosickipl-production.up.railway.app/api/admin/users/${userId}`, {
+      await fetch(`https://kacper-kosickipl-production.up.railway.app/api/users/${userId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -38,36 +40,47 @@ const AdminUsersTab = () => {
     }
   };
 
-  const handleRoleChange = async (userId, newRole) => {
+  const handleUpdate = async (userId) => {
+    const { role, password } = editingData[userId] || {};
+
     try {
-      await fetch(`https://kacper-kosickipl-production.up.railway.app/api/admin/users/${userId}/role`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
-        },
-        body: JSON.stringify({ role: newRole })
-      });
+      if (role) {
+        await fetch(`https://kacper-kosickipl-production.up.railway.app/api/users/${userId}/role`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+          },
+          body: JSON.stringify({ role })
+        });
+      }
+
+      if (password && password.length >= 6) {
+        await fetch(`https://kacper-kosickipl-production.up.railway.app/api/users/${userId}/password`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+          },
+          body: JSON.stringify({ password }) // ✅ poprawione
+        });
+      }      
+
+      setSuccess('Dane użytkownika zaktualizowane');
       fetchUsers();
     } catch (err) {
-      setError('Błąd zmiany roli');
+      setError('Błąd aktualizacji użytkownika');
     }
   };
 
-  const handlePasswordChange = async (userId, newPassword) => {
-    try {
-      await fetch(`https://kacper-kosickipl-production.up.railway.app/api/admin/users/${userId}/password`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
-        },
-        body: JSON.stringify({ password: newPassword })
-      });
-      fetchUsers();
-    } catch (err) {
-      setError('Błąd zmiany hasła');
-    }
+  const handleInputChange = (userId, field, value) => {
+    setEditingData(prev => ({
+      ...prev,
+      [userId]: {
+        ...prev[userId],
+        [field]: value
+      }
+    }));
   };
 
   const handleCreateUser = async (e) => {
@@ -75,9 +88,7 @@ const AdminUsersTab = () => {
     try {
       const res = await fetch('https://kacper-kosickipl-production.up.railway.app/api/register', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
 
@@ -132,24 +143,22 @@ const AdminUsersTab = () => {
         {users.map(user => (
           <div key={user._id} className={styles.userCard}>
             <p><strong>Email:</strong> {user.email}</p>
-            <p><strong>Rola:</strong> {user.role}</p>
             <p><strong>Data utworzenia:</strong> {new Date(user.createdAt).toLocaleString()}</p>
 
             <div className={styles.controls}>
-              <select value={user.role} onChange={(e) => handleRoleChange(user._id, e.target.value)}>
+              <select
+                value={editingData[user._id]?.role || user.role}
+                onChange={(e) => handleInputChange(user._id, 'role', e.target.value)}
+              >
                 <option value="client">Client</option>
                 <option value="admin">Admin</option>
               </select>
               <input
                 type="password"
                 placeholder="Nowe hasło"
-                onBlur={(e) => {
-                  if (e.target.value) {
-                    handlePasswordChange(user._id, e.target.value);
-                    e.target.value = '';
-                  }
-                }}
+                onChange={(e) => handleInputChange(user._id, 'password', e.target.value)}
               />
+              <button className={styles.updateButton} onClick={() => handleUpdate(user._id)}>Zaktualizuj</button>
               <button onClick={() => handleDelete(user._id)}>Usuń</button>
             </div>
           </div>

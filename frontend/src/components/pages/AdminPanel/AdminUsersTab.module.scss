@@ -7,12 +7,11 @@
   margin: 4rem auto;
   padding: 3rem 2rem;
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 
   h2 {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: bold;
     margin-bottom: 2rem;
     color: var(--primary-color);
     text-align: center;
@@ -57,8 +56,7 @@
     background: var(--button-bg);
     color: var(--button-text);
     border: none;
-    border-radius: 10px;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.8rem;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
@@ -79,7 +77,6 @@
 
 .userCard {
   background: var(--primary-bg);
-  border: 2px solid var(--border-color);
   border-radius: 15px;
   padding: 1.5rem;
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -101,23 +98,41 @@
     gap: 0.5rem;
 
     select, input {
-      padding: 0.6rem 0.8rem;
-      border-radius: 10px;
+      padding: 1rem;
+      border-radius: 15px;
       font-size: 1rem;
       border: 2px solid var(--primary-color);
+      width: 100%;
+      max-width: 600px;
+      font-family: $heading-font;
       background: var(--primary-bg);
       color: var(--text-color);
-      font-family: $heading-font;
+    }
+
+    .updateButton {
+      margin-top: 1rem;
+      padding: 0.8rem 1.8rem;
+      font-weight: bold;
+      background: var(--button-bg);
+      border: none;
+      color: var(--button-text);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out, transform 0.2s;
+  
+      &:hover {
+        transform: scale(1.05);
+      }
     }
 
     button {
+      margin-top: 1rem;
       background: var(--error-color);
-      color: #fff;
       border: none;
-      border-radius: 10px;
-      padding: 0.6rem 1.2rem;
-      font-size: 0.95rem;
+      padding: 0.8rem 1.8rem;
+      font-size: 1.2rem;
       font-weight: bold;
+      color: var(--button-text);
       cursor: pointer;
       transition: transform 0.2s ease-in-out;
 
