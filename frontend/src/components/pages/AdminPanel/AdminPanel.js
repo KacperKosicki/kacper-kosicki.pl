@@ -71,7 +71,7 @@ const AdminPanel = () => {
             className={activeTab === 'users' ? styles.activeTab : ''}
             onClick={() => setActiveTab('users')}
           >
-            Użytkownicy / Klienci
+            Użytkownicy
           </button>
         </div>
       </div>
