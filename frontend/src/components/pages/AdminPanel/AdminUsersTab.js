@@ -173,8 +173,8 @@ const AdminUsersTab = () => {
                 placeholder="Nowe hasło"
                 onChange={(e) => handleInputChange(user._id, 'password', e.target.value)}
               />
-              <button className={styles.updateButton} onClick={() => handleUpdate(user._id)}>Zaktualizuj</button>
-              <button onClick={() => handleDelete(user._id)}>Usuń</button>
+              <button className={styles.updateButton} onClick={() => handleUpdate(user._id)}>Zaktualizuj dane</button>
+              <button onClick={() => handleDelete(user._id)}>Usuń użytkownika</button>
             </div>
           </div>
         ))}
