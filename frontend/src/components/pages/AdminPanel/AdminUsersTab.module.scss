@@ -58,7 +58,7 @@
     color: var(--button-text);
     border: none;
     padding: 0.8rem 1.8rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s ease, background 0.3s ease-in-out;
@@ -186,7 +186,7 @@
 @media (max-width: 480px) {
   .buttonUpdateUser,
   .buttonDeleteUser {
-    font-size: 0.95rem !important;
+    font-size: 1rem !important;
     padding: 0.7rem 1.3rem !important;
   }
 }

@@ -2,9 +2,9 @@
 
 .cookiesPanel {
     position: fixed;
-    bottom: 100px; // ⬆️ Nad ChatBotem
-    left: 25px;    // ⬅️ Po lewej stronie
-    z-index: 1000; // 🔝 Nad ChatBotem
+    bottom: 100px;
+    left: 25px;
+    z-index: 1000;
   }
 
 .toggleButton {
@@ -12,7 +12,7 @@
   border: 2px solid var(--primary-color);
   background-color: var(--button-bg);
   color: var(--button-text);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.2s;
@@ -24,7 +24,7 @@
 
 .panel {
     position: fixed;
-    bottom: 175px; // ⬆️ Jeszcze wyżej
+    bottom: 175px;
     left: 25px;
     background: var(--primary-bg);
     border: 2px solid var(--primary-color);

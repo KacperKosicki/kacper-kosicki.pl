@@ -16,7 +16,7 @@
   border: 2px solid var(--primary-color);
   background-color: var(--button-bg);
   color: var(--button-text);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease-in-out, transform 0.2s;
@@ -37,8 +37,8 @@
   border-radius: 15px;
   padding: 20px;
   width: auto;
-  min-width: 500px;
-  max-width: 500px;
+  min-width: 600px;
+  max-width: 600px;
   z-index: 1300; /* 🔹 Nad przyciskiem szybkiej pomocy */
   height: auto;
   max-height: 500px;
@@ -147,7 +147,7 @@
     border: 2px solid var(--primary-color);
     background-color: var(--button-bg);
     color: var(--button-text);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.2s; 

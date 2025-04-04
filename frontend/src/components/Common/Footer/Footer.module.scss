@@ -137,7 +137,7 @@ ul li a {
   border: 2px solid var(--primary-color);
   background: var(--button-footer-bg); /* ✅ Dynamiczny kolor */
   color: var(--button-text);
-  font-size: 1rem;
+  font-size: 1.2em;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.2s;
@@ -188,13 +188,13 @@ ul li a {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  background: var(--button-footer-bg); /* ✅ Dynamiczny kolor */
+  background: var(--button-footer-bg);
   color: var(--button-text);;
-  width: 55px; /* ✅ Gwarantujemy okrągły kształt */
-  height: 51px; /* ✅ Powinno być równe szerokości */
+  width: 55px;
+  height: 51px;
   border: none;
   display: flex;
-  border-radius: 25px; /* ✅ Zapewnia pełną okrągłość */
+  border-radius: 25px;
   font-size: 1.5rem;
   align-items: center;
   justify-content: center;
