@@ -42,12 +42,12 @@ const AdminUsersTab = () => {
 
   const handleUpdate = async (userId) => {
     const { role, password } = editingData[userId] || {};
-  
+
     if (password && password.length < 6) {
       setError('Nowe hasło musi mieć minimum 6 znaków');
       return;
     }
-  
+
     try {
       if (role) {
         await fetch(`https://kacper-kosickipl-production.up.railway.app/api/users/${userId}/role`, {
@@ -59,7 +59,7 @@ const AdminUsersTab = () => {
           body: JSON.stringify({ role })
         });
       }
-  
+
       if (password) {
         await fetch(`https://kacper-kosickipl-production.up.railway.app/api/users/${userId}/password`, {
           method: 'PUT',
@@ -70,14 +70,14 @@ const AdminUsersTab = () => {
           body: JSON.stringify({ password })
         });
       }
-  
+
       setSuccess('Dane użytkownika zaktualizowane');
       setError('');
       fetchUsers();
     } catch (err) {
       setError('Błąd aktualizacji użytkownika');
     }
-  };  
+  };
 
   const handleInputChange = (userId, field, value) => {
     setEditingData(prev => ({
@@ -91,24 +91,24 @@ const AdminUsersTab = () => {
 
   const handleCreateUser = async (e) => {
     e.preventDefault();
-  
+
     if (formData.password.length < 6) {
       setError('Hasło musi mieć minimum 6 znaków');
       return;
     }
-  
+
     try {
       const res = await fetch('https://kacper-kosickipl-production.up.railway.app/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-  
+
       if (!res.ok) {
         const data = await res.json();
         throw new Error(data.error || 'Błąd tworzenia użytkownika');
       }
-  
+
       setSuccess('Użytkownik dodany');
       setError('');
       setFormData({ email: '', password: '', role: 'client' });
@@ -116,7 +116,7 @@ const AdminUsersTab = () => {
     } catch (err) {
       setError(err.message);
     }
-  };  
+  };
 
   return (
     <div className={styles.adminUsersTab} data-aos="zoom-in">
@@ -173,8 +173,12 @@ const AdminUsersTab = () => {
                 placeholder="Nowe hasło"
                 onChange={(e) => handleInputChange(user._id, 'password', e.target.value)}
               />
-              <button className={styles.updateButton} onClick={() => handleUpdate(user._id)}>Zaktualizuj dane</button>
-              <button onClick={() => handleDelete(user._id)}>Usuń użytkownika</button>
+              <button className={styles.buttonUpdateUser} onClick={() => handleUpdate(user._id)}>
+                Zaktualizuj dane
+              </button>
+              <button className={styles.buttonDeleteUser} onClick={() => handleDelete(user._id)}>
+                Usuń użytkownika
+              </button>
             </div>
           </div>
         ))}
