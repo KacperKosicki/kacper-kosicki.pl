@@ -408,8 +408,7 @@ body.lightbox-open {
   .prevButton,
   .nextButton {
     font-size: 1rem;
-    padding: 0.8rem 1.2rem;
-    border-radius: 20px;
+    padding: 0.5rem 1rem;
   }
 
   .closeButton {
@@ -417,7 +416,6 @@ body.lightbox-open {
     right: 50%;
     transform: translateX(50%);
     font-size: 1rem;
-    padding: 0.8rem 1.2rem;
-    border-radius: 20px;
+    padding: 0.5rem 1rem;
   }
 }
