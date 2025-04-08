@@ -122,20 +122,21 @@
 }
 
 /* 🔹 PRZYCISK CTA */
-.cta .button {
-  background: var(--button-bg);
-  color: var(--button-text);
+.ctaButton {
+  background: var(--primary-bg);
+  color: var(--primary-color);
   font-weight: bold;
   padding: 0.8rem 1.8rem;
   text-decoration: none;
   font-size: 1.2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  display: inline-block; // <- DODAJ TO!
   transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
-.cta .button:hover {
-  transform: scale(1.05);
-}
 
 /* 🔹 RESPONSYWNOŚĆ */
 @media (max-width: 768px) {

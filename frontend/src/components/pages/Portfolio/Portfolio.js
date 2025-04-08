@@ -31,7 +31,6 @@ const projects = [
       `${process.env.PUBLIC_URL}/projects/project2-3.png`,
       `${process.env.PUBLIC_URL}/projects/project2-4.png`,
       `${process.env.PUBLIC_URL}/projects/project2-5.png`,
-      `${process.env.PUBLIC_URL}/projects/project2-6.png`,
       `${process.env.PUBLIC_URL}/projects/project2-7.png`,
       `${process.env.PUBLIC_URL}/projects/project2-8.png`,
     ],
