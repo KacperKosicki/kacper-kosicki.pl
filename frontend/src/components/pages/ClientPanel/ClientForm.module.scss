@@ -284,3 +284,15 @@
     transform: scale(1.05);
   }
 }
+
+/* 🔧 Fix: Stylizacja <select> w ClientForm – spójny wygląd + poprawka iOS */
+.clientForm__select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%204%205%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M2%205L0%200h4z%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 0.6rem;
+  padding-right: 2.5rem;
+}
