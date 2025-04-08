@@ -117,6 +117,20 @@ const translations = {
     skillChatGPT: "Chat GPT",
     skillChatGPTDesc: "Korzystanie z narzędzia Chat GPT.",
 
+    //RandomTip
+    tipsArray: [
+      "Pamiętaj o faviconce – to drobiazg, który robi różnicę.",
+      "Zadbaj o kontrast – strona ma być czytelna!",
+      "Nie przesadzaj z animacjami – mniej znaczy więcej.",
+      "Strona ładuje się długo? Sprawdź rozmiar grafik!",
+      "Twoja domena to Twoja marka. Wybierz ją mądrze.",
+      "CTA (przycisk akcji) powinien być widoczny na pierwszy rzut oka.",
+      "Zadbaj o wersję mobilną – 70% ruchu pochodzi z telefonów.",
+      "Google Fonts? Wybierz maksymalnie 2–3 kroje.",
+      "Zadbaj o tekst alternatywny (alt) przy obrazach.",
+      "Nie masz logo? Tekstowe logo z dobrym fontem też działa!",
+    ],    
+
     //WhyMe
     whyMeTitle: "Dlaczego ja?",
     whyMeSubtitle: "Poznaj moje podejście i cechy, które sprawiają, że warto ze mną współpracować.",
@@ -338,6 +352,20 @@ const translations = {
     skillReduxDesc: "State management in React.js applications.",
     skillChatGPT: "Chat GPT",
     skillChatGPTDesc: "Using Chat GPT as a tool.",
+
+    //RandomTip
+    tipsArray: [
+      "Don't forget the favicon – small detail, big difference.",
+      "Mind the contrast – your site must be readable!",
+      "Don't overdo animations – less is more.",
+      "Slow loading? Check your image sizes!",
+      "Your domain is your brand. Choose it wisely.",
+      "Your CTA (call-to-action) should be visible at first glance.",
+      "Optimize for mobile – 70% of traffic comes from phones.",
+      "Google Fonts? Stick to 2–3 typefaces max.",
+      "Add alt text to your images – it's good for SEO and accessibility.",
+      "No logo? A well-chosen font-based name works too!",
+    ],    
 
     //WhyMe
     whyMeTitle: "Why Me?",

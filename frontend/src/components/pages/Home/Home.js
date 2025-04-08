@@ -14,6 +14,7 @@ import Hero from "../Hero/Hero";
 import Workflow from "../Workflow/Workflow"; // Import nowego komponentu
 import FAQ from "../FAQ/FAQ";
 import WhyMe from "../WhyMe/WhyMe"
+import RandomTip from "../RandomTip/RandomTip";
 
 const Home = () => {
   const { t } = useContext(LanguageContext); // Pobieramy tłumaczenia
@@ -49,6 +50,7 @@ const Home = () => {
       {/* SEKCJE */}
       <AboutMe />
       <Skills />
+      <RandomTip />
       <WhyMe />
       <Workflow />
 

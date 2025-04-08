@@ -95,7 +95,7 @@ const Footer = () => {
         <div className={styles.socialIcons}>
           <a href="https://github.com/KacperKosicki"><FaGithub /></a>
           <a href="https://www.linkedin.com/in/kacper-kosicki-17b7752a2/"><FaLinkedin /></a>
-          <a href="mailto:kacper@example.com"><FaEnvelope /></a>
+          <a href="mailto:kosickikacper1@gmail.com"><FaEnvelope /></a>
         </div>
       </div>
 

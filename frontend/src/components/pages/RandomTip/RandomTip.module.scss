@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.tipBox {
+    background: var(--input-bg);
+    color: var(--text-color);
+    border-left: 3px solid var(--primary-color);
+    padding: 1.5rem;
+    margin: 0 auto 6rem;
+    border-radius: 15px;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+  }
+  
+  .text {
+    flex: 1;
+  }
+  
