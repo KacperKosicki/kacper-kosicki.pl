@@ -6,8 +6,7 @@ import {
   FaLinkedin,
   FaEnvelope,
 } from "react-icons/fa";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { FiArrowUp } from "react-icons/fi"; // zamiast FontAwesome
 
 const Footer = () => {
   const { t } = useContext(LanguageContext); // Pobranie tłumaczeń
@@ -112,7 +111,7 @@ const Footer = () => {
       {/* Przycisk przewijania do góry */}
       {isVisible && (
         <button className={`${styles.scrollTop} ${styles.pulse}`} onClick={scrollToTop} title={t.scrollTop}>
-          <FontAwesomeIcon icon={faArrowUp} />
+          <FiArrowUp className={styles.arrowIcon} />
         </button>
       )}
     </footer>

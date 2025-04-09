@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Common/Header/Header";
@@ -10,22 +10,26 @@ import AboutMe from './components/pages/AboutMe/AboutMe';
 import NotFound from './components/pages/NotFound/NotFound';
 import ChatBot from './components/Common/ChatBot/ChatBot';
 import Help from './components/pages/Help/Help';
-import ScrollToTop from "./components/Common/ScrollToTop"; // ✅ IMPORT NOWEGO KOMPONENTU
-import Login from './components/pages/Login/Login'; // Dodaj to
+import ScrollToTop from "./components/Common/ScrollToTop";
+import Login from './components/pages/Login/Login';
 import AdminPanel from './components/pages/AdminPanel/AdminPanel';
 import ClientPanel from './components/pages/ClientPanel/ClientPanel';
 import ProtectedRoute from './components/pages/ProtectedRoute';
-import CookiesPanel from './components/Common/Cookies/CookiesPanel'; // dostosuj ścieżkę
+import CookiesPanel from './components/Common/Cookies/CookiesPanel';
+import ToolsToggle from './components/Common/ToolsToggle/ToolsToggle';
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const App = () => {
+  const [showChatbot, setShowChatbot] = useState(false);
+  const [showCookies, setShowCookies] = useState(false);
+
   useEffect(() => {
     AOS.init({ duration: 800, once: false });
 
     const handleScroll = () => {
-      AOS.refresh(); // 🔹 Wymuszamy odświeżanie AOS na każdym scrollu
+      AOS.refresh();
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -36,8 +40,8 @@ const App = () => {
     <LanguageProvider>
       <div>
         <Header />
-        <ChatBot />
-        <ScrollToTop />  {/* 🔥 DODAJEMY TUTAJ 🔥 */}
+        <ScrollToTop />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
@@ -52,7 +56,6 @@ const App = () => {
               </ProtectedRoute>
             }
           />
-
           <Route
             path="/panel"
             element={
@@ -63,7 +66,18 @@ const App = () => {
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <CookiesPanel />
+
+        {/* ✅ render tylko jeśli aktywne */}
+        {showChatbot && <ChatBot />}
+        {showCookies && <CookiesPanel />}
+
+        <ToolsToggle
+          onToggleChatbot={() => setShowChatbot((prev) => !prev)}
+          onToggleCookies={() => setShowCookies((prev) => !prev)}
+          isChatbotVisible={showChatbot}
+          isCookiesVisible={showCookies}
+        />
+
         <Footer />
       </div>
     </LanguageProvider>

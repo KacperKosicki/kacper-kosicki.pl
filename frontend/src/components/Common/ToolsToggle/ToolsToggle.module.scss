@@ -1,0 +1,98 @@
+@import '../../../styles/variables';
+
+.toolsToggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1100;
+
+  .mainButton {
+    padding: 0.8rem 1.8rem;
+    border: 2px solid var(--primary-color);
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .menu {
+    margin-top: 10px;
+    background: var(--primary-bg);
+    border: 2px solid var(--primary-color);
+    color: var(--text-color);
+    border-radius: 15px;
+    padding: 15px;
+    min-width: 240px;
+    max-width: 300px;
+    animation: fadeIn 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 3000;
+  }
+
+  .toggleButton {
+    padding: 0.8rem 1.4rem;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .statusIcon {
+    margin-left: auto;
+  }
+  
+
+  /* RESPONSYWNOŚĆ */
+  @media (max-width: 768px) {
+    .menu {
+      min-width: 200px;
+      max-width: 90%;
+    }
+
+    .mainButton {
+      font-size: 1rem;
+      padding: 0.6rem 1.6rem;
+    }
+
+    .toggleButton {
+      font-size: 0.95rem;
+      padding: 0.6rem 1.4rem;
+    }
+  }
+}
