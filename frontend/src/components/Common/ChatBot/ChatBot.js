@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
 import styles from './ChatBot.module.scss';
 import { LanguageContext } from '../../../context/LanguageContext';
+import { FiMessageCircle, FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 
 const ChatBot = () => {
   const { t } = useContext(LanguageContext);
@@ -68,7 +69,7 @@ const ChatBot = () => {
   return (
     <div className={styles.chatBot}>
       <button className={styles.toggleButton} onClick={toggleChatBot}>
-        {showChatBot ? t.chatbotHide : t.chatbotOpen}
+        <FiMessageCircle className={styles.icon} />
       </button>
 
       {showChatBot && (
@@ -109,13 +110,23 @@ const ChatBot = () => {
           </div>
 
           <div className={styles.pagination}>
-            <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
-              {t.chatbotPrev}
+            <button
+              onClick={() => setCurrentPage(currentPage - 1)}
+              disabled={currentPage === 1}
+              title={t.chatbotPrev}
+            >
+              <FiArrowLeft className={styles.icon} />
             </button>
-            <button onClick={() => setCurrentPage(currentPage + 1)} disabled={paginatedMessages.length < pageSize}>
-              {t.chatbotNext}
+
+            <button
+              onClick={() => setCurrentPage(currentPage + 1)}
+              disabled={paginatedMessages.length < pageSize}
+              title={t.chatbotNext}
+            >
+              <FiArrowRight className={styles.icon} />
             </button>
           </div>
+
         </div>
       )}
     </div>

@@ -21,6 +21,10 @@
   font-weight: bold;
   transition: background-color 0.3s ease-in-out, transform 0.2s;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   &:hover {
     transform: scale(1.05);
   }
@@ -37,8 +41,8 @@
   border-radius: 15px;
   padding: 20px;
   width: auto;
-  min-width: 600px;
-  max-width: 600px;
+  min-width: 500px;
+  max-width: 500px;
   z-index: 1300; /* 🔹 Nad przyciskiem szybkiej pomocy */
   height: auto;
   max-height: 500px;
@@ -150,7 +154,11 @@
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.2s; 
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       transform: scale(1.05);
@@ -175,6 +183,8 @@
 @media (max-width: 768px) {
   .chatBot {
     margin-top: 1rem;
+    bottom: 25px;
+    left: 25px;
   }
   .chatWindow {
     min-width: 280px;

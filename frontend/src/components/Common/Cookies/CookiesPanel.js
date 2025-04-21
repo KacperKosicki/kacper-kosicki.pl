@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import styles from './CookiesPanel.module.scss';
 import { LanguageContext } from '../../../context/LanguageContext';
+import { FaCookieBite } from 'react-icons/fa';
 
 const CookiesPanel = () => {
   const { t } = useContext(LanguageContext);
@@ -39,7 +40,7 @@ const CookiesPanel = () => {
   return (
     <div className={styles.cookiesPanel}>
       <button className={styles.toggleButton} onClick={() => setIsPanelOpen(!isPanelOpen)}>
-        🍪
+        <FaCookieBite className={styles.icon} />
       </button>
 
       {isPanelOpen && (

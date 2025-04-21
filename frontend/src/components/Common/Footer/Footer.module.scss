@@ -194,7 +194,6 @@ ul li a {
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
-  //border-radius: 50px;
   transition: background-color 0.3s ease-in-out, transform 0.2s;
   display: flex;
   align-items: center;
@@ -236,13 +235,14 @@ ul li a {
   }
 
   .copyright p {
-    margin-bottom: 150px;
+    margin-bottom: 50px;
   }
 
   .scrollTop {
     font-size: 0.9rem;
     padding: 0.8rem 1.8rem;
-    bottom: 80px;
+    bottom: 25px;
+    right: 120px;
   }
 
   .newsletterForm button {
