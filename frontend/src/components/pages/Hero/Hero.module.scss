@@ -2,151 +2,234 @@
 
 .hero {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 100vh; // ✅ zamiast height: 100vh, żeby mógł się zwiększyć jeśli potrzeba
-  padding: 100px 2rem 120px; // ✅ top mniej niż navbar, bottom więcej dla gradientu
+  padding: 120px 2rem 180px;
+  min-height: 100vh;
   background: var(--primary-bg);
   color: var(--text-color);
-  gap: 4rem;
   overflow: hidden;
   z-index: 1;
-  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .glow {
-    content: '';
+  .shapes, .light {
     position: absolute;
-    width: 120%;
-    height: 140%;
-    bottom: -10%;
-    left: -10%;
-    background: radial-gradient(circle at 50% 70%, var(--primary-color), transparent 75%);
-    filter: blur(140px);
-    opacity: 0.25;
+    width: 150%;
+    height: 150%;
+    top: -100px;
+    left: -100px;
     z-index: 0;
-    animation: pulseGlow 8s infinite ease-in-out;
+    animation: moveShapes 14s ease-in-out infinite alternate;
   }
 
-  .imageContainer {
-    flex: 1 1 300px;
-    max-width: 300px;
+  .light {
+    background: radial-gradient(circle at 50% 70%, var(--primary-color), transparent 45%);
+    
+    animation: flicker 6s infinite ease-in-out;
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
     z-index: 2;
-
-    .photo {
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-      object-fit: cover;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-
-      &:hover {
-        transform: scale(1.05);
-      }
-    }
+    padding: 0 1rem;
   }
 
   .content {
-    flex: 1 1 500px;
-    max-width: 600px;
-    text-align: left;
-    z-index: 2;
+    flex: 1;
+    max-width: 700px;
+    animation: slideIn 1.2s ease-out both;
+    display: flex;
+    flex-direction: column;
+    align-items: center; // ✅ teraz wszystko się wyśrodkuje
+    text-align: center;  // ✅ tekst również
+  }  
+
+  .avatarBox {
+    flex-shrink: 0;
+    width: 340px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .intro {
-    font-size: 1.3rem;
+  .avatar {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    object-fit: contain;
+    animation: floatAvatar 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(var(--primary-color-r), var(--primary-color-g), var(--primary-color-b), 0.25));
+  }
+
+  .typedText {
+    font-size: 1.6rem;
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    font-weight: 600;
     font-family: $heading-font;
-    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.6s;
   }
 
-  h1 {
-    font-size: 2.6rem;
-    line-height: 1.3;
-    margin-bottom: 1.5rem;
+  .slogan {
+    font-size: 2.5rem;
+    line-height: 1.4;
+    margin: 2rem 0 1.5rem;
+    font-family: $heading-font;
     font-weight: 700;
-    font-family: $heading-font;
-
-    .highlight {
-      color: var(--primary-color);
-      animation: pulseText 2.5s infinite ease-in-out;
-    }
   }
 
-  .subtext {
-    font-size: 1.1rem;
-    color: var(--secondary-text);
-    margin-bottom: 2rem;
-    font-family: $body-font;
+  .highlight {
+    color: var(--primary-color);
+    font-weight: 700;
+    animation: pulseText 2s infinite ease-in-out;
   }
 
   .terminal {
     background: #111;
-    padding: 1rem 1.2rem;
+    padding: 1rem 1.5rem;
     font-family: 'Courier New', monospace;
     font-size: 1rem;
     color: #0f0;
-    border-radius: 15px;
-    margin-bottom: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    max-width: 600px;
+    box-shadow: 0 0 12px rgba(0, 255, 0, 0.1);
+    text-align: left;
 
+    .info { color: #00bcd4; }
+    .warning { color: #ff9800; }
+    .success { color: #0f0; }
+    
     code {
       display: block;
-      margin: 0.2rem 0;
+      margin: 0.3rem 0;
     }
 
     .success {
-      color: #0f0;
-      animation: blink 1.5s steps(2, start) infinite;
+      animation: blink 1.2s steps(2, start) infinite;
     }
+  }
+
+  .gradientText {
+    background: linear-gradient(
+      90deg,
+      rgba(var(--primary-color-r), var(--primary-color-g), var(--primary-color-b), 0.9) 0%,
+      rgba(var(--primary-color-r), var(--primary-color-g), var(--primary-color-b), 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shine 4s linear infinite;
+    background-size: 200% 200%;
   }
 
   .ctaButton {
-    background: var(--button-bg);
+    background: var(--primary-color);
     color: var(--button-text);
-    padding: 0.9rem 2rem;
+    padding: 1rem 2.2rem;
     font-size: 1.1rem;
     border-radius: 25px;
-    text-decoration: none;
     font-weight: bold;
-    transition: transform 0.2s ease-in-out, background 0.3s, box-shadow 0.3s;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    position: relative; // potrzebne, żeby z-index działał
-    z-index: 3;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.05) rotateZ(1deg);
+    }
+  }
+
+  .waveContainer {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    z-index: 2;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    path {
+      fill: var(--primary-bg);
     }
   }
 }
 
-
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.2; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(1.15); }
+@keyframes moveShapes {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-60px, -40px) scale(1.1); }
 }
 
-@keyframes pulseText {
-  0%, 100% { filter: brightness(1); }
-  50% { filter: brightness(1.5); }
+@keyframes flicker {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes shine {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 @keyframes blink {
-  0% { opacity: 1; }
+  0%, 100% { opacity: 1; }
   50% { opacity: 0; }
-  100% { opacity: 1; }
 }
 
-@media (max-width: 768px) {
+@keyframes pulseText {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+@keyframes floatAvatar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@media (max-width: 900px) {
   .hero {
-    flex-direction: column;
-    text-align: center;
+    .inner {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
 
     .content {
+      align-items: center;
       text-align: center;
+
+      h1, p {
+        text-align: center;
+      }
+    }
+
+    .avatar {
+      max-width: 260px;
+      margin-bottom: 2rem;
+    }
+
+    .slogan {
+      font-size: 2rem;
+    }
+
+    .typedText {
+      font-size: 1.4rem;
     }
   }
 }

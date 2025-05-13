@@ -5,7 +5,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  background: var(--primary-bg);
+  background: transparent; // <--- dzięki temu Hero nie będzie odcięte
   color: var(--text-color);
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }

@@ -27,9 +27,9 @@
   --color-warning: #E74C3C;
   --hero-glow: radial-gradient(circle at 30% 30%, #4CAF50, transparent 70%);
   --primary-bg: #ffffff;
-  --primary-bg-r: 255;
-  --primary-bg-g: 255;
-  --primary-bg-b: 255;
+  --primary-color-r: 76;
+  --primary-color-g: 175;
+  --primary-color-b: 80;  
 }
 
 [data-theme="dark"] {
@@ -57,9 +57,9 @@
   --error-color: #E74C3C;
   --hero-glow: radial-gradient(circle at 30% 30%, #FAF884, transparent 70%);
   --primary-bg: #111111;
-  --primary-bg-r: 17;
-  --primary-bg-g: 17;
-  --primary-bg-b: 17;
+  --primary-color-r: 250;
+  --primary-color-g: 248;
+  --primary-color-b: 132;  
 }
 
 * {
