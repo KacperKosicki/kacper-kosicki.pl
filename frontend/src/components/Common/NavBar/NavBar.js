@@ -57,6 +57,8 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li>
+          <div className={styles.loginWrapper}>
+          <span className={styles.betaLabel}>{t.addProjects}</span>
           <NavLink
             to="/portfolio"
             className={({ isActive }) => (isActive ? styles.active : "")}
@@ -64,6 +66,7 @@ const NavBar = () => {
           >
             {t.portfolio}
           </NavLink>
+          </div>
         </li>
         <li>
           <NavLink
