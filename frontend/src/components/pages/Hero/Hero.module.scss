@@ -12,7 +12,8 @@
   align-items: center;
   justify-content: center;
 
-  .shapes, .light {
+  .shapes,
+  .light {
     position: absolute;
     width: 150%;
     height: 150%;
@@ -24,7 +25,7 @@
 
   .light {
     background: radial-gradient(circle at 50% 70%, var(--primary-color), transparent 45%);
-    
+
     animation: flicker 6s infinite ease-in-out;
   }
 
@@ -46,8 +47,8 @@
     display: flex;
     flex-direction: column;
     align-items: center; // ✅ teraz wszystko się wyśrodkuje
-    text-align: center;  // ✅ tekst również
-  }  
+    text-align: center; // ✅ tekst również
+  }
 
   .avatarBox {
     flex-shrink: 0;
@@ -69,12 +70,19 @@
 
   .typedText {
     font-size: 1.6rem;
+    line-height: 1.6;
     color: var(--primary-color);
     font-weight: 600;
     font-family: $heading-font;
-    opacity: 0;
     animation: fadeIn 1s ease forwards;
     animation-delay: 0.6s;
+    min-height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding-block: 0.2rem; // 🛠 delikatnie "rozpycha" w pionie
   }
 
   .slogan {
@@ -99,17 +107,28 @@
     color: #0f0;
     border-radius: 12px;
     margin: 2rem 0;
-    max-width: 600px;
     box-shadow: 0 0 12px rgba(0, 255, 0, 0.1);
     text-align: left;
+    width: 100%;
+    min-width: 420px;
+    max-width: 500px;
 
-    .info { color: #00bcd4; }
-    .warning { color: #ff9800; }
-    .success { color: #0f0; }
-    
+    .info {
+      color: #00bcd4;
+    }
+
+    .warning {
+      color: #ff9800;
+    }
+
+    .success {
+      color: #0f0;
+    }
+
     code {
       display: block;
       margin: 0.3rem 0;
+      white-space: nowrap;
     }
 
     .success {
@@ -118,11 +137,9 @@
   }
 
   .gradientText {
-    background: linear-gradient(
-      90deg,
-      rgba(var(--primary-color-r), var(--primary-color-g), var(--primary-color-b), 0.9) 0%,
-      rgba(var(--primary-color-r), var(--primary-color-g), var(--primary-color-b), 1) 100%
-    );
+    background: linear-gradient(90deg,
+        rgba(var(--primary-color-r), var(--primary-color-g), var(--primary-color-b), 0.9) 0%,
+        rgba(var(--primary-color-r), var(--primary-color-g), var(--primary-color-b), 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -168,39 +185,81 @@
 }
 
 @keyframes moveShapes {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-60px, -40px) scale(1.1); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-60px, -40px) scale(1.1);
+  }
 }
 
 @keyframes flicker {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.6; }
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
 }
 
 @keyframes shine {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 @keyframes pulseText {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes floatAvatar {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 900px) {
@@ -214,7 +273,8 @@
       align-items: center;
       text-align: center;
 
-      h1, p {
+      h1,
+      p {
         text-align: center;
       }
     }

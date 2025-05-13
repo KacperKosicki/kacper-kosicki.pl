@@ -67,8 +67,14 @@ const translations = {
       "Programowanie to moja pasja."
     ],
     heroImageAlt: "Zdjęcie profilowe Kacpra Kosickiego",
-    viewProjects: "Zobacz projekty",
     contactMe: "Skontaktuj się",
+    heroSloganPrefix: "Tworzę strony, które",
+    heroSlogan1: "wyglądają",
+    heroSlogan2: "działają",
+    heroSlogan3: "przekonują",
+    terminalInfo: "Personalizacja layoutu zakończona",
+    terminalWarning: "🚀 Rozpoczęto wdrażanie...",
+    terminalSuccess: "✅ Sukces! Twoja strona działa 🎉",
 
     // AboutMe
     aboutTitle: "O mnie",
@@ -129,7 +135,7 @@ const translations = {
       "Google Fonts? Wybierz maksymalnie 2–3 kroje.",
       "Zadbaj o tekst alternatywny (alt) przy obrazach.",
       "Nie masz logo? Tekstowe logo z dobrym fontem też działa!",
-    ],    
+    ],
 
     //WhyMe
     whyMeTitle: "Dlaczego ja?",
@@ -303,8 +309,14 @@ const translations = {
       "Programming is my passion."
     ],
     heroImageAlt: "Profile picture of Kacper Kosicki",
-    viewProjects: "View Projects",
     contactMe: "Contact Me",
+    heroSloganPrefix: "I create websites that",
+    heroSlogan1: "look great",
+    heroSlogan2: "work smoothly",
+    heroSlogan3: "convert",
+    terminalInfo: "Custom layout initialized",
+    terminalWarning: "🚀 Deployment started...",
+    terminalSuccess: "✅ Success! Your site is live 🎉",
 
     // AboutMe
     aboutTitle: "About Me",
@@ -365,7 +377,7 @@ const translations = {
       "Google Fonts? Stick to 2–3 typefaces max.",
       "Add alt text to your images – it's good for SEO and accessibility.",
       "No logo? A well-chosen font-based name works too!",
-    ],    
+    ],
 
     //WhyMe
     whyMeTitle: "Why Me?",

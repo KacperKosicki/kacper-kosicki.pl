@@ -58,7 +58,7 @@
 }
 
 .button:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) rotateZ(1deg);
 }
 
 /* SEKCJA ZDJĘCIA */
@@ -71,7 +71,6 @@
   width: 100%;
   max-width: 350px;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
 }
 
