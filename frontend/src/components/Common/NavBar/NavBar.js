@@ -10,8 +10,8 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem("theme") === "dark");
-  const token = localStorage.getItem('token');
-  const userRole = localStorage.getItem('userRole');
+  const token = localStorage.getItem("token");
+  const userRole = localStorage.getItem("userRole");
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", isDarkMode ? "dark" : "light");
@@ -20,12 +20,10 @@ const NavBar = () => {
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
-
   const toggleTheme = () => {
     setIsDarkMode((prevMode) => !prevMode);
     closeMenu();
   };
-
   const handleToggleLanguage = () => {
     toggleLanguage();
     closeMenu();
@@ -39,51 +37,55 @@ const NavBar = () => {
 
   return (
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""} ${isDarkMode ? styles.darkMode : ""}`}>
-      <div className={styles.logo}>kacper-kosicki.pl</div>
+      <div className={styles.left}>
+        <div className={styles.logo}>
+          <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Logo" className={styles.logoIcon} />
+          <div className={styles.separator}></div>
+          <span className={styles.logoText}>kacper-kosicki.pl</span>
+        </div>
+      </div>
 
-      {/* 🔹 Hamburger tylko na mobile */}
-      <button className={styles.hamburger} onClick={toggleMenu} aria-label="Toggle menu">
-        <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
-      </button>
-
-      {/* 🔹 Menu nawigacyjne */}
-      <ul className={`${styles.navLinks} ${isMenuOpen ? styles.showMenu : styles.hideMenu}`}>
+      {/* 🔹 Nawigacja – niezależnie od układu center */}
+      <ul className={`${styles.navLinks} ${isMenuOpen ? styles.showMenu : ""}`}>
         <li>
-          <NavLink to="/" className={({ isActive }) => (isActive ? styles.active : "")} onClick={closeMenu}>
-            {({ isActive }) => (
-              <>
-                {isActive && ""} {t.home}
-              </>
-            )}
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? styles.active : "")}
+            onClick={closeMenu}
+          >
+            {t.home}
           </NavLink>
         </li>
         <li>
-          <NavLink to="/portfolio" className={({ isActive }) => (isActive ? styles.active : "")} onClick={closeMenu}>
-            {({ isActive }) => (
-              <>
-                {isActive && ""} {t.portfolio}
-              </>
-            )}
+          <NavLink
+            to="/portfolio"
+            className={({ isActive }) => (isActive ? styles.active : "")}
+            onClick={closeMenu}
+          >
+            {t.portfolio}
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contact" className={({ isActive }) => (isActive ? styles.active : "")} onClick={closeMenu}>
-            {({ isActive }) => (
-              <>
-                {isActive && ""} {t.contact}
-              </>
-            )}
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? styles.active : "")}
+            onClick={closeMenu}
+          >
+            {t.contact}
           </NavLink>
         </li>
-        <li>
+        <li className={styles.loginItem}>
           {!token ? (
-            <NavLink
-              to="/login"
-              className={({ isActive }) => (isActive ? styles.active : "")}
-              onClick={closeMenu}
-            >
-              Zaloguj
-            </NavLink>
+            <div className={styles.loginWrapper}>
+              <span className={styles.betaLabel}>{t.testing}</span>
+              <NavLink
+                to="/login"
+                className={({ isActive }) => (isActive ? styles.active : "")}
+                onClick={closeMenu}
+              >
+                {t.login}
+              </NavLink>
+            </div>
           ) : userRole === 'admin' ? (
             <NavLink
               to="/admin"
@@ -103,11 +105,11 @@ const NavBar = () => {
           )}
         </li>
 
-        {/* 🔹 Wyraźna przestrzeń oddzielająca linki od przycisków */}
+        {/* 🔹 Separator pod linkami */}
         <div className={styles.mobileSpacer}></div>
 
         {/* 🔹 Przyciski mobilne */}
-        <li className={styles.mobileControls}>
+        <div className={styles.mobileControls}>
           <button className={styles.themeToggle} onClick={toggleTheme}>
             <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
             {t.toggleTheme}
@@ -122,26 +124,30 @@ const NavBar = () => {
             />
             {t.toggleLanguage}
           </button>
-        </li>
+        </div>
       </ul>
 
-      {isMenuOpen && <div className={styles.menuOverlay} onClick={closeMenu}></div>}
-
-      {/* 🔹 Przyciski desktop */}
-      <div className={styles.controls}>
-        <button className={styles.themeToggle} onClick={toggleTheme} aria-label="Toggle theme">
-          <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
-        </button>
-        <button className={styles.languageButton} onClick={handleToggleLanguage} aria-label="Toggle language">
-          <img
-            src={`${process.env.PUBLIC_URL}/images/flags/${language === "pl" ? "us" : "pl"}.png`}
-            width="30"
-            height="20"
-            alt={language === "pl" ? "English" : "Polski"}
-            className={styles.flagIcon}
-          />
+      <div className={styles.right}>
+        <div className={styles.controls}>
+          <button className={styles.themeToggle} onClick={toggleTheme} aria-label="Toggle theme">
+            <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
+          </button>
+          <button className={styles.languageButton} onClick={handleToggleLanguage} aria-label="Toggle language">
+            <img
+              src={`${process.env.PUBLIC_URL}/images/flags/${language === "pl" ? "us" : "pl"}.png`}
+              width="30"
+              height="20"
+              alt={language === "pl" ? "English" : "Polski"}
+              className={styles.flagIcon}
+            />
+          </button>
+        </div>
+        <button className={styles.hamburger} onClick={toggleMenu} aria-label="Toggle menu">
+          <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
         </button>
       </div>
+
+      {isMenuOpen && <div className={styles.menuOverlay} onClick={closeMenu}></div>}
     </nav>
   );
 };
