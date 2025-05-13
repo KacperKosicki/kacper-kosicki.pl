@@ -67,7 +67,7 @@ const AdminPanel = () => {
           >
             Projekty
           </button>
-          <button 
+          <button
             className={activeTab === 'users' ? styles.activeTab : ''}
             onClick={() => setActiveTab('users')}
           >

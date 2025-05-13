@@ -321,9 +321,11 @@ body.lightbox-open {
 /* 🔹 Przycisk zamknięcia - poprawiona pozycja */
 .closeButton {
   position: absolute;
-  top: -70px; /* 🔹 Umieszczony wyżej nad lightboxem */
+  top: -70px;
+  /* 🔹 Umieszczony wyżej nad lightboxem */
   right: 50%;
-  transform: translateX(50%); /* 🔹 Wyśrodkowanie */
+  transform: translateX(50%);
+  /* 🔹 Wyśrodkowanie */
   background: var(--color-warning);
   color: var(--button-text);
   width: auto;
@@ -353,7 +355,8 @@ body.lightbox-open {
   }
 
   .closeButton {
-    top: -50px; /* 🔹 Lekko przesunięty bliżej */
+    top: -50px;
+    /* 🔹 Lekko przesunięty bliżej */
     font-size: 1rem;
     padding: 10px 15px;
   }
@@ -363,6 +366,7 @@ body.lightbox-open {
   .container {
     padding: 2rem;
   }
+
   .portfolio {
     padding: 0;
     margin: 50px auto 50px;

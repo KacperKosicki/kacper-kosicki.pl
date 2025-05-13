@@ -30,17 +30,17 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     if (formData.message.length < 25) {
       setMessageError(t.messageError);
       return;
     }
-  
+
     setIsSending(true);
-  
+
     const minSendingTime = 5000; // 🕒 Minimalny czas trwania "WYSYŁANIE..."
     const startTime = Date.now();
-  
+
     emailjs
       .send(
         "service_533jfup",
@@ -56,13 +56,13 @@ const Contact = () => {
       .then(() => {
         const elapsedTime = Date.now() - startTime;
         const remainingTime = Math.max(0, minSendingTime - elapsedTime);
-  
+
         setTimeout(() => {
           setIsSent(true);
           setShowSuccess(true);
           setIsSending(false);
           setFormData({ name: "", email: "", message: "", option: "" });
-  
+
           // Po 5 sekundach chowamy komunikat "WYSŁANO!"
           setTimeout(() => {
             setShowSuccess(false);
@@ -74,7 +74,7 @@ const Contact = () => {
         console.error("Błąd wysyłania wiadomości: ", err);
         setIsSending(false);
       });
-  };  
+  };
 
   return (
     <div className={styles.container}>

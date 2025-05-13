@@ -26,14 +26,16 @@
 .about h2 {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--primary-color); /* ✅ Zielony nagłówek */
+  color: var(--primary-color);
+  /* ✅ Zielony nagłówek */
   margin-bottom: 1rem;
 }
 
 .about h3 {
   font-size: 1.7rem;
   font-weight: 600;
-  color: var(--primary-color); /* ✅ Zielony tytuł */
+  color: var(--primary-color);
+  /* ✅ Zielony tytuł */
   margin-top: 1.5rem;
 }
 
@@ -80,8 +82,15 @@
 
 /* FADE-IN */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* RESPONSYWNOŚĆ */

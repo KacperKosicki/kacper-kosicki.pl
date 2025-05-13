@@ -19,7 +19,8 @@
 /* 🔹 UKŁAD GRID - 3x2 */
 .steps {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 🔹 Dokładnie 3 kolumny */
+  grid-template-columns: repeat(3, 1fr);
+  /* 🔹 Dokładnie 3 kolumny */
   gap: 2rem;
   justify-content: center;
   align-items: stretch;
@@ -33,7 +34,8 @@
   border-radius: 15px;
   text-align: center;
   transition: transform 0.3s ease-in-out;
-  min-height: 280px; /* Większa wysokość dla wyrównania */
+  min-height: 280px;
+  /* Większa wysokość dla wyrównania */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -57,8 +59,10 @@
 }
 
 .step p {
-  flex: 1; /* 🔹 Rozciąga opis */
-  margin-top: auto; /* 🔹 Wypycha do dołu */
+  flex: 1;
+  /* 🔹 Rozciąga opis */
+  margin-top: auto;
+  /* 🔹 Wypycha do dołu */
   font-size: 1rem;
   line-height: 1.5;
   color: var(--secondary-text);
@@ -67,13 +71,15 @@
 /* 🔹 RESPONSYWNOŚĆ */
 @media (max-width: 1024px) {
   .steps {
-    grid-template-columns: repeat(2, 1fr); /* 2 kolumny na średnich ekranach */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 kolumny na średnich ekranach */
   }
 }
 
 @media (max-width: 600px) {
   .steps {
-    grid-template-columns: 1fr; /* 1 kolumna na bardzo małych ekranach */
+    grid-template-columns: 1fr;
+    /* 1 kolumna na bardzo małych ekranach */
   }
 
   .step {

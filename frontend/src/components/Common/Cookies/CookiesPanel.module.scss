@@ -1,13 +1,13 @@
 @import '../../../styles/variables';
 
 .cookiesPanel {
-    position: fixed;
-    bottom: 100px;
-    left: 25px;
-    width: auto;
-    height: auto;
-    z-index: 1000;
-  }
+  position: fixed;
+  bottom: 100px;
+  left: 25px;
+  width: auto;
+  height: auto;
+  z-index: 1000;
+}
 
 .toggleButton {
   padding: 0.8rem 1.8rem;
@@ -29,107 +29,107 @@
 }
 
 .panel {
-    position: fixed;
-    bottom: 175px;
-    left: 25px;
-    background: var(--primary-bg);
-    border: 2px solid var(--primary-color);
-    color: var(--text-color);
-    border-radius: 15px;
-    padding: 20px;
-    width: auto;
-    min-width: 420px;
-    max-width: 500px;
-    z-index: 1300;
-    height: auto;
-    max-height: 500px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  }
+  position: fixed;
+  bottom: 175px;
+  left: 25px;
+  background: var(--primary-bg);
+  border: 2px solid var(--primary-color);
+  color: var(--text-color);
+  border-radius: 15px;
+  padding: 20px;
+  width: auto;
+  min-width: 420px;
+  max-width: 500px;
+  z-index: 1300;
+  height: auto;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
 
 .panel h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
 }
 
 .panel p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .option {
-    margin: 10px 0;
+  margin: 10px 0;
 
-    label {
-        font-size: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+  label {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }
 
 .acceptButton {
-    margin-top: 15px;
-    padding: 0.8rem 1.8rem;
-    background: var(--primary-color);
-    border: none;
-    color: var(--button-text);
-    font-weight: bold;
-    font-size: 1rem;
-    border-radius: 25px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease-in-out, transform 0.2s;
+  margin-top: 15px;
+  padding: 0.8rem 1.8rem;
+  background: var(--primary-color);
+  border: none;
+  color: var(--button-text);
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
 
-    &:hover {
-        transform: scale(1.05);
-    }
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 🔹 RESPONSYWNOŚĆ */
 @media (max-width: 768px) {
-    .cookiesPanel {
-      margin-top: 1rem;
-      bottom: 100px;
-      left: 25px;
-    }
-
-    .panel {
-        min-width: 280px;
-        max-width: 90%;
-        height: auto;
-        max-height: 400px;
-        bottom: 100px;
-    }
-  
-    .toggleButton {
-      font-size: 1rem;
-      padding: 0.8rem 1.8rem;
-    }
+  .cookiesPanel {
+    margin-top: 1rem;
+    bottom: 100px;
+    left: 25px;
   }
-  
-  @media (max-width: 480px) {
-    .toggleButton {
-      font-size: 1rem;
-      padding: 0.8rem 1.8rem;
-    }
 
-    .acceptButton {
-      font-size: 1rem;
-      padding: 0.8rem 1.8rem;
-    }
+  .panel {
+    min-width: 280px;
+    max-width: 90%;
+    height: auto;
+    max-height: 400px;
+    bottom: 100px;
   }
+
+  .toggleButton {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggleButton {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+  }
+
+  .acceptButton {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+  }
+}

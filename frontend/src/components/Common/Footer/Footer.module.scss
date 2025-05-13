@@ -2,8 +2,10 @@
 
 /* 🔹 STOPKA */
 .footer {
-  background: var(--footer-bg); /* ✅ Dynamiczne tło */
-  color: var(--footer-text); /* ✅ Dynamiczny kolor tekstu */
+  background: var(--footer-bg);
+  /* ✅ Dynamiczne tło */
+  color: var(--footer-text);
+  /* ✅ Dynamiczny kolor tekstu */
   padding: 4rem 2rem;
   text-align: center;
   border-top: 2px solid var(--border-color);
@@ -17,8 +19,15 @@
 
 /* 🔹 FADE-IN ANIMATION */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .fadeIn {
@@ -78,7 +87,8 @@ ul li a {
   transition: color 0.3s ease-in-out, transform 0.2s;
 
   &:hover {
-    color: var(--primary-color-hover); /* ✅ Zmienna CSS zamiast darken() */
+    color: var(--primary-color-hover);
+    /* ✅ Zmienna CSS zamiast darken() */
   }
 }
 
@@ -123,18 +133,22 @@ ul li a {
 /* 🔹 LINIA ODDZIELAJĄCA SEKCJE */
 .divider {
   display: block;
-  width: 50%; /* 🔥 Zmniejszona szerokość */
-  max-width: 600px; /* 🔥 Ograniczona szerokość */
+  width: 50%;
+  /* 🔥 Zmniejszona szerokość */
+  max-width: 600px;
+  /* 🔥 Ograniczona szerokość */
   height: 2px;
   background: var(--border-color);
-  margin: 2rem auto; /* 🔥 Auto wyśrodkowanie */
+  margin: 2rem auto;
+  /* 🔥 Auto wyśrodkowanie */
 }
 
 /* 🔹 PRZYCISK NEWSLETTERA */
 .newsletterForm button {
   padding: 0.8rem 1.8rem;
   border: 2px solid var(--primary-color);
-  background: var(--button-footer-bg); /* ✅ Dynamiczny kolor */
+  background: var(--button-footer-bg);
+  /* ✅ Dynamiczny kolor */
   color: var(--button-text);
   font-size: 1.2em;
   font-weight: bold;
@@ -219,7 +233,8 @@ ul li a {
   }
 
   .divider {
-    width: 100%; /* 🔥 Zmniejszona szerokość */
+    width: 100%;
+    /* 🔥 Zmniejszona szerokość */
   }
 
   .newsletter {

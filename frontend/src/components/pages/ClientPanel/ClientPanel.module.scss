@@ -8,7 +8,7 @@
     background: var(--primary-bg);
     color: var(--text-color);
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-  }
+}
 
 .panelContainer {
     max-width: 1200px;
@@ -41,14 +41,13 @@
     animation: fadeIn 0.5s ease-in-out;
     max-width: 600px; // 🔽 zmniejszona szerokość
     width: 100%;
-  }
-  
-  
+}
+
 .arrow {
     color: var(--primary-color);
     font-weight: bold;
     margin-right: 0.5rem;
-}  
+}
 
 @media (max-width: 600px) {
     .panelContainer {
@@ -56,4 +55,3 @@
         margin: 50px auto 50px;
     }
 }
-  
