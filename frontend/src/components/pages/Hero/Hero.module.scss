@@ -291,5 +291,16 @@
     .typedText {
       font-size: 1.4rem;
     }
+
+    .terminal {
+      max-width: 90vw;
+      min-width: unset;
+      font-size: 0.9rem;
+      padding: 0.8rem 1rem;
+
+      code {
+        font-size: 0.95rem;
+      }
+    }
   }
 }
