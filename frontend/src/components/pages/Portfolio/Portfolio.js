@@ -38,7 +38,7 @@ const projects = [
     disabled: false, // ← nowa flaga
   },
   {
-    title: "Projekt w trakcie konfiguracji...",
+    title: "Projekt w trakcie uzupełniania...",
     description: "-",
     technologies: ["-"],
     github: "https://github.com/example/project3",
@@ -50,7 +50,7 @@ const projects = [
     disabled: true, // ← nowa flaga
   },
   {
-    title: "Projekt w trakcie konfiguracji...",
+    title: "Projekt w trakcie uzupełniania...",
     description: "-",
     technologies: ["-"],
     images: [
@@ -65,7 +65,7 @@ const projects = [
     disabled: true, // ← nowa flaga
   },
   {
-    title: "Projekt w trakcie konfiguracji...",
+    title: "Projekt w trakcie uzupełniania...",
     description: "-",
     technologies: ["-"],
     images: [
@@ -183,7 +183,7 @@ const Portfolio = () => {
                       className={styles.viewGalleryButton}
                       onClick={project.disabled ? null : (e) => openLightbox(e, index)}
                       disabled={project.disabled}
-                      title={project.disabled ? "Projekt w trakcie konfiguracji" : ""}
+                      title={project.disabled ? "Projekt w trakcie uzupełniania" : ""}
                     >
                       Zobacz galerię
                     </button>
@@ -192,7 +192,7 @@ const Portfolio = () => {
                       className={styles.expandButton}
                       onClick={project.disabled ? null : () => toggleExpand(index)}
                       disabled={project.disabled}
-                      title={project.disabled ? "Projekt w trakcie konfiguracji" : ""}
+                      title={project.disabled ? "Projekt w trakcie uzupełniania" : ""}
                     >
                       {expandedProject === index ? "Zwiń opis" : "Zobacz więcej"}
                     </button>
