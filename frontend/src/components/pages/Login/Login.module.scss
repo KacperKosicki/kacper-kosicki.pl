@@ -1,23 +1,75 @@
 @import '../../../styles/variables';
 
-.loginContainer {
-  max-width: 600px;
+/* 🔹 GŁÓWNY WRAPPER */
+.loginWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: 1200px;
   margin: 100px auto 50px;
   padding: 2rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    margin: 80px 1rem;
+  }
+}
+
+/* 🔹 BOXY */
+.loginBox,
+.infoBox {
+  font-family: $heading-font;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
   background: var(--secondary-bg);
+  padding: 2rem;
   border-radius: 15px;
   color: var(--text-color);
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* 🔹 NAGŁÓWKI */
+.loginBox h2,
+.infoBox h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.loginContainer h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--primary-color);
-  margin-bottom: 2rem;
+/* 🔹 TEKST INFORMACYJNY */
+.infoBox p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
+.infoBox ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.infoBox li {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 🔹 FORMULARZ */
 .form {
   display: flex;
   flex-direction: column;
@@ -46,6 +98,7 @@
   font-size: 1.2rem;
   padding: 0.8rem 1.8rem;
   border: none;
+  border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
 }
@@ -54,19 +107,16 @@
   transform: scale(1.05);
 }
 
+/* 🔹 BŁĘDY */
 .error {
   color: var(--error-color);
   font-weight: bold;
   font-size: 0.95rem;
+  text-align: center;
 }
 
-/* 🔹 Responsywność */
+/* 🔹 RWD */
 @media (max-width: 600px) {
-  .loginContainer {
-    padding: 1.5rem;
-    margin: 80px 1rem;
-  }
-
   .form input {
     font-size: 0.95rem;
   }

@@ -60,6 +60,19 @@ const translations = {
     ctaDescription: "Tworzę nowoczesne, wydajne i skalowalne aplikacje webowe.",
     contactMe: "Skontaktuj się ze mną",
 
+    //Login
+    loginTitle: "Logowanie",
+    loginPasswordPlaceholder: "Hasło",
+    loginError: "Błąd logowania",
+    loginConnectionError: "Błąd połączenia z serwerem",
+    loginInfoTitle: "Informacje o panelu",
+    loginInfoIntro: "Dostęp mają wyłącznie osoby, które otrzymały dane logowania. Po zalogowaniu użytkownik otrzymuje dostęp do indywidualnego panelu, w którym:",
+    loginInfo1: "skonfiguruje swoją stronę internetową",
+    loginInfo2: "wybierze kolory, czcionki i styl",
+    loginInfo3: "doda podstrony i inne elementy",
+    loginInfo4: "otrzyma podgląd aktualnego wyglądu strony",
+    loginInfo5: "będzie zatwierdzać kolejne etapy realizacji",
+
     // Hero
     heroTitle: "Cześć! Jestem Kacper.",
     heroPhrases: [
@@ -303,6 +316,19 @@ const translations = {
     ctaTitle: "Interested in working together?",
     ctaDescription: "I create modern, efficient, and scalable web applications.",
     contactMe: "Contact me",
+
+    //Login
+    loginTitle: "Login",
+    loginPasswordPlaceholder: "Password",
+    loginError: "Login error",
+    loginConnectionError: "Connection error",
+    loginInfoTitle: "Panel Information",
+    loginInfoIntro: "Only authorized users with login credentials can access the panel. After logging in, the user can:",
+    loginInfo1: "configure their website",
+    loginInfo2: "choose colors, fonts, and style",
+    loginInfo3: "add subpages and other elements",
+    loginInfo4: "preview the current look of the website",
+    loginInfo5: "approve each stage of development",
 
     // Hero
     heroTitle: "Hi! I'm Kacper.",
