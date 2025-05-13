@@ -62,10 +62,6 @@ const Skills = () => {
           </div>
         ))}
       </div>
-
-      <a href="/portfolio" className={styles.button}>
-       {t.viewProjects}
-      </a>
     </section>
   );
 };

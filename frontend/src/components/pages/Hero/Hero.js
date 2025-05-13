@@ -21,10 +21,8 @@ const Hero = () => {
       <div className={styles.inner}>
         <div className={styles.content} data-aos="fade-up">
           <h1>
-            <span className={styles.gradientText}>{t.heroTitle}</span> 👋
+            <span className={styles.gradientText}>{t.heroTitle}</span>
           </h1>
-
-          <p className={styles.typedText}>{t.heroPhrases[index]}</p>
 
           <h1 className={styles.slogan}>
             {t.heroSloganPrefix}{" "}
@@ -40,6 +38,8 @@ const Hero = () => {
             <code className={styles.warning}>&gt; {t.terminalWarning}</code>
             <code className={styles.success}>&gt; {t.terminalSuccess}</code>
           </div>
+
+          <p className={styles.typedText}>{t.heroPhrases[index]}..</p>
 
           <a href="/contact" className={styles.ctaButton}>
             {t.contactMe}

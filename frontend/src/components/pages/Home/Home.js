@@ -77,7 +77,7 @@ const Home = () => {
         <section className={styles.cta} data-aos="fade-up">
           <h2>🚀 {t.ctaTitle}</h2>
           <p>{t.ctaDescription}</p>
-          <a href="/contact" className={styles.ctaButton}>{t.contactMe}</a>
+          <a href="/contact" className={styles.ctaButton}>{t.ctaContactMe}</a>
         </section>
 
         <FAQ />

@@ -69,10 +69,9 @@
   }
 
   .typedText {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     line-height: 1.6;
-    color: var(--primary-color);
-    font-weight: 600;
+    color: var(--secondary-text); // ✅ Szary kolor zdefiniowany w zmiennych
     font-family: $heading-font;
     animation: fadeIn 1s ease forwards;
     animation-delay: 0.6s;
@@ -82,7 +81,7 @@
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    padding-block: 0.2rem; // 🛠 delikatnie "rozpycha" w pionie
+    padding-block: 0.2rem;
   }
 
   .slogan {
@@ -107,7 +106,7 @@
     color: #0f0;
     border-radius: 12px;
     margin: 2rem 0;
-    box-shadow: 0 0 12px rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 15px rgba(var(--primary-color-r), var(--primary-color-g), var(--primary-color-b), 0.25);
     text-align: left;
     width: 100%;
     min-width: 420px;
@@ -138,14 +137,23 @@
 
   .gradientText {
     background: linear-gradient(90deg,
-        rgba(var(--primary-color-r), var(--primary-color-g), var(--primary-color-b), 0.9) 0%,
-        rgba(var(--primary-color-r), var(--primary-color-g), var(--primary-color-b), 1) 100%);
+        var(--primary-color),
+        #c5ff6c,
+        #ffd700,
+        var(--primary-color));
+    background-size: 300% auto;
+    background-position: 0% center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: shine 4s linear infinite;
-    background-size: 200% 200%;
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    text-align: center;
+    animation: gradientShine 6s ease-in-out infinite;
   }
+
+
 
   .ctaButton {
     background: var(--primary-color);

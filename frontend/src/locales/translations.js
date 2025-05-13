@@ -58,7 +58,7 @@ const translations = {
 
     ctaTitle: "Zainteresowany współpracą?",
     ctaDescription: "Tworzę nowoczesne, wydajne i skalowalne aplikacje webowe.",
-    contactMe: "Skontaktuj się ze mną",
+    ctaContactMe: "Zacznijmy współpracę",
 
     //Login
     loginTitle: "Logowanie",
@@ -315,7 +315,7 @@ const translations = {
 
     ctaTitle: "Interested in working together?",
     ctaDescription: "I create modern, efficient, and scalable web applications.",
-    contactMe: "Contact me",
+    ctaContactMe: "Start your project",
 
     //Login
     loginTitle: "Login",
