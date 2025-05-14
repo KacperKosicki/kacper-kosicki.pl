@@ -50,7 +50,7 @@ const Footer = () => {
             <li><a href="/">{t.home}</a></li>
             <li><a href="/portfolio">{t.portfolio}</a></li>
             <li><a href="/contact">{t.contact}</a></li>
-            <li><a href="/blog">{t.blog}</a></li>
+            <li><a href="/login">{t.login}</a></li>
           </ul>
         </div>
 

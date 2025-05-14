@@ -1,0 +1,75 @@
+@import '../../../styles/variables';
+
+.privacyWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 100px auto 50px;
+  padding: 2rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    margin: 80px 1rem;
+    padding: 1.5rem;
+  }
+}
+
+.policyBox {
+  font-family: $heading-font;
+  background: var(--secondary-bg);
+  color: var(--text-color);
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 900px;
+  width: 100%;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    color: var(--primary-color);
+  }
+
+  p, li {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--secondary-text);
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li::before {
+      content: "✔ ";
+      color: var(--primary-color);
+      margin-right: 0.4rem;
+    }
+  }
+
+  a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--button-hover);
+    }
+  }
+
+  .notice {
+    margin-top: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}

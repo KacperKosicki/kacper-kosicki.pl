@@ -157,6 +157,44 @@
   margin-bottom: 1.5rem;
 }
 
+/* 🔹 RODO ZGODA */
+.rodoGroup {
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.rodoLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+  line-height: 1.5;
+  font-family: $heading-font;
+
+  input[type="checkbox"] {
+    margin-top: 0.3rem;
+    transform: scale(1.2);
+    cursor: pointer;
+    accent-color: var(--primary-color);
+  }
+
+  span {
+    user-select: none;
+
+    a {
+      color: var(--primary-color);
+      text-decoration: underline;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--link-hover, var(--primary-color));
+    }
+  }
+}
+
 .formGroup label {
   font-size: 1rem;
   font-weight: bold;
@@ -229,6 +267,29 @@
   font-size: 1rem;
   font-weight: bold;
   margin-top: 5px;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loaderWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 /* 🔹 RESPONSYWNOŚĆ */

@@ -9,7 +9,7 @@ const translations = {
     testing: "Wersja testowa",
     addProjects: "W trakcie uzupełniania",
     notFound: "Nie znaleziono",
-    notFoundText: "Strona, której szukasz, nie istnieje.",
+    notFoundText: "Podana strona jest niedostępna lub została usunięta. Przepraszamy za niedogodności.",
     goBack: "Powrót na stronę główną",
     chatbot: "Porozmawiaj z ChatBotem",
 
@@ -80,7 +80,7 @@ const translations = {
       "Tworzę nowoczesne aplikacje webowe.",
       "Specjalizuję się w React i Node.js.",
       "Buduję skalowalne rozwiązania backendowe.",
-      "Programowanie to moja pasja."
+      "Programowanie to moja największa pasja."
     ],
     heroImageAlt: "Zdjęcie profilowe Kacpra Kosickiego",
     contactMe: "Skontaktuj się",
@@ -197,25 +197,23 @@ const translations = {
     emailLabel: "Email:",
     optionLabel: "Temat:",
     messageLabel: "Wiadomość:",
-
     placeholderName: "Wpisz swoje imię",
     placeholderEmail: "Wpisz swój email",
     placeholderMessage: "Wpisz swoją wiadomość...",
-
     selectOption: "Wybierz temat",
     optionPricing: "Cennik",
     optionCollaboration: "Współpraca",
     optionProblem: "Problem ze stroną",
     optionBug: "Błąd",
     optionAdvice: "Porada",
-
     scheduleAMeeting: "Umów spotkanie",
-
     sendButton: "Wyślij",
     messageError: "Wiadomość musi zawierać co najmniej 25 znaków.",
-
     sending: "Wysyłanie...",
     sent: "Wysłano!",
+    rodoConsentText: 'Wyrażam zgodę na <strong>przetwarzanie danych osobowych</strong> w celu kontaktu ze mną zgodnie z [link]. *',
+    privacyPolicyLink: 'polityką prywatności',
+
 
     //Help
     helpButton: "Szybka pomoc",
@@ -255,6 +253,26 @@ const translations = {
     post1: "React Hooks – przewodnik",
     post2: "Najlepsze praktyki w MongoDB",
     post3: "Next.js vs. React – co wybrać?",
+
+    // Privacy Policy
+    privacyTitle: "Polityka Prywatności",
+    privacyIntro: "Twoja prywatność jest dla mnie bardzo ważna. Poniżej znajdziesz informacje o tym, jakie dane zbieram, w jakim celu oraz jak są one chronione.",
+    privacyDataCollectedTitle: "Jakie dane są zbierane?",
+    privacyDataCollected1: "📧 Imię i adres e-mail – przesyłane dobrowolnie przez formularz kontaktowy",
+    privacyDataCollected2: "📊 Dane analityczne – anonimowe dane o odwiedzinach (Google Analytics, cookies)",
+    privacyPurposeTitle: "Cel przetwarzania danych:",
+    privacyPurpose1: "📨 Umożliwienie kontaktu ze mną przez formularz",
+    privacyPurpose2: "📈 Ulepszanie działania strony dzięki analizie statystyk",
+    privacyCookiesTitle: "Pliki cookies:",
+    privacyCookiesIntro: "Na tej stronie wykorzystywane są pliki cookies w celach technicznych, analitycznych i marketingowych. Pliki cookies to małe pliki zapisywane w Twojej przeglądarce, które pomagają usprawnić działanie strony oraz dostosować treści do użytkownika.",
+    privacyCookies1: "🔧 Cookies techniczne – niezbędne do prawidłowego działania strony",
+    privacyCookies2: "📊 Cookies analityczne – np. Google Analytics, pomagają mierzyć ruch",
+    privacyCookies3: "🎯 Cookies marketingowe – np. Facebook Pixel, pozwalają dopasować reklamy",
+    privacyCookiesNote: "Możesz zmienić ustawienia cookies w każdej chwili w sekcji Ustawienia cookies dostępnej na stronie.",
+    privacyRightsTitle: "Twoje prawa:",
+    privacyRight1: "🛡️ Masz prawo do wglądu, poprawy lub usunięcia danych",
+    privacyRight2: "🔐 Możesz w każdej chwili zażądać zaprzestania przetwarzania danych",
+    privacyNotice: "Korzystając z tej strony, akceptujesz politykę prywatności oraz zasady używania cookies. W razie pytań – skontaktuj się poprzez zakładkę Kontakt.",
   },
 
   en: {
@@ -266,8 +284,8 @@ const translations = {
     login: "Log in",
     testing: "Testing version",
     addProjects: "More coming soon",
-    notFound: "Not found",
-    notFoundText: "The page you are looking for does not exist.",
+    notFound: "Not Found",
+    notFoundText: "The requested page is unavailable or has been removed. We apologize for the inconvenience.",
     goBack: "Go back to the main page",
     chatbot: "Chat with ChatBot",
 
@@ -338,7 +356,7 @@ const translations = {
       "I create modern web applications.",
       "I specialize in React and Node.js.",
       "I build scalable backend solutions.",
-      "Programming is my passion."
+      "Programming is my greatest passion."
     ],
     heroImageAlt: "Profile picture of Kacper Kosicki",
     contactMe: "Contact Me",
@@ -455,25 +473,22 @@ const translations = {
     emailLabel: "Email:",
     optionLabel: "Subject:",
     messageLabel: "Message:",
-
     placeholderName: "Enter your name",
     placeholderEmail: "Enter your email",
     placeholderMessage: "Enter your message...",
-
     selectOption: "Select a subject",
     optionPricing: "Pricing",
     optionCollaboration: "Collaboration",
     optionProblem: "Website issue",
     optionBug: "Bug",
     optionAdvice: "Advice",
-
     scheduleAMeeting: "Schedule a Meeting",
-
     sendButton: "Send",
     messageError: "The message must be at least 25 characters long.",
-
     sending: "Sending...",
     sent: "Sent!",
+    rodoConsentText: 'I consent to the <strong>processing of personal data</strong> for the purpose of contacting me in accordance with the [link]. *',
+    privacyPolicyLink: 'privacy policy',
 
     //Help
     helpButton: "Quick Help",
@@ -513,6 +528,27 @@ const translations = {
     post1: "React Hooks Guide",
     post2: "Best Practices in MongoDB",
     post3: "Next.js vs. React - What to choose?",
+
+    // Privacy Policy
+    privacyTitle: "Privacy Policy",
+    privacyIntro: "Your privacy is very important to me. Below you'll find what data I collect, why, and how it is protected.",
+    privacyDataCollectedTitle: "What data is collected?",
+    privacyDataCollected1: "📧 Name and email address – voluntarily submitted through the contact form",
+    privacyDataCollected2: "📊 Analytics data – anonymous visit data (Google Analytics, cookies)",
+    privacyPurposeTitle: "Purpose of data processing:",
+    privacyPurpose1: "📨 Enabling contact with me via the form",
+    privacyPurpose2: "📈 Improving website performance through analytics",
+    privacyCookiesTitle: "Cookies:",
+    privacyCookiesIntro: "This site uses cookies for technical, analytical, and marketing purposes. Cookies are small files stored in your browser that help improve the site and personalize content.",
+    privacyCookies1: "🔧 Technical cookies – necessary for the website to function correctly",
+    privacyCookies2: "📊 Analytical cookies – e.g., Google Analytics to measure traffic",
+    privacyCookies3: "🎯 Marketing cookies – e.g., Facebook Pixel to personalize ads",
+    privacyCookiesNote: "You can change your cookie settings at any time in the Cookies Settings section on the website.",
+    privacyRightsTitle: "Your rights:",
+    privacyRight1: "🛡️ You have the right to access, correct, or delete your data",
+    privacyRight2: "🔐 You can request to stop data processing at any time",
+    privacyNotice: "By using this site, you accept the privacy policy and the use of cookies. If you have any questions – contact me via the Contact page.",
+
   }
 };
 

@@ -17,6 +17,7 @@ import ClientPanel from './components/pages/ClientPanel/ClientPanel';
 import ProtectedRoute from './components/pages/ProtectedRoute';
 import CookiesPanel from './components/Common/Cookies/CookiesPanel';
 import ToolsToggle from './components/Common/ToolsToggle/ToolsToggle';
+import PrivacyPolicy from './components/pages/PrivacyPolicy/PrivacyPolicy';
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -64,6 +65,7 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 

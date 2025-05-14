@@ -11,12 +11,16 @@ const Contact = () => {
     email: "",
     message: "",
     option: "",
+    honeypot: "", // 🐝 Ukryte pole do anty-spamu
   });
 
+  const [rodoConsent, setRodoConsent] = useState(false);
   const [messageError, setMessageError] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+
+  const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,20 +30,35 @@ const Contact = () => {
     } else {
       setMessageError("");
     }
+
+    if (e.target.name === "rodoConsent") {
+      setRodoConsent(e.target.checked);
+      return;
+    }
+
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (formData.honeypot) return; // 🐝 spam – nie wysyłaj
+    if (!isValidEmail(formData.email)) {
+      setMessageError("Podaj poprawny adres e-mail.");
+      return;
+    }
     if (formData.message.length < 25) {
       setMessageError(t.messageError);
       return;
     }
 
-    setIsSending(true);
+    if (!rodoConsent) {
+      setMessageError("Musisz wyrazić zgodę na przetwarzanie danych.");
+      return;
+    }
 
-    const minSendingTime = 5000; // 🕒 Minimalny czas trwania "WYSYŁANIE..."
+    setIsSending(true);
     const startTime = Date.now();
+    const minSendingTime = 5000;
 
     emailjs
       .send(
@@ -61,9 +80,8 @@ const Contact = () => {
           setIsSent(true);
           setShowSuccess(true);
           setIsSending(false);
-          setFormData({ name: "", email: "", message: "", option: "" });
+          setFormData({ name: "", email: "", message: "", option: "", honeypot: "" });
 
-          // Po 5 sekundach chowamy komunikat "WYSŁANO!"
           setTimeout(() => {
             setShowSuccess(false);
             setIsSent(false);
@@ -84,15 +102,24 @@ const Contact = () => {
           <h2>📩 {t.contactTitle}</h2>
           <p>{t.contactDescription}</p>
 
-          {/* 📅 Integracja z Calendly */}
           <a href="https://calendly.com/twoj-link" target="_blank" rel="noopener noreferrer">
             <button className={styles.calendlyButton}>{t.scheduleAMeeting} {t.bookMeeting}</button>
           </a>
         </div>
 
-        {/* PRAWY PANEL - FORMULARZ */}
+        {/* FORMULARZ */}
         <div className={styles.contactForm}>
           <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="honeypot"
+              value={formData.honeypot}
+              onChange={handleChange}
+              style={{ display: "none" }}
+              tabIndex="-1"
+              autoComplete="off"
+            />
+
             <div className={styles.formGroup}>
               <label htmlFor="name">{t.nameLabel}</label>
               <input
@@ -106,6 +133,7 @@ const Contact = () => {
                 disabled={isSending}
               />
             </div>
+
             <div className={styles.formGroup}>
               <label htmlFor="email">{t.emailLabel}</label>
               <input
@@ -119,6 +147,7 @@ const Contact = () => {
                 disabled={isSending}
               />
             </div>
+
             <div className={styles.formGroup}>
               <label htmlFor="option">{t.optionLabel}</label>
               <select
@@ -129,9 +158,7 @@ const Contact = () => {
                 required
                 disabled={isSending}
               >
-                <option value="" disabled hidden>
-                  {t.selectOption}
-                </option>
+                <option value="" disabled hidden>{t.selectOption}</option>
                 <option value="Cennik">{t.optionPricing}</option>
                 <option value="Współpraca">{t.optionCollaboration}</option>
                 <option value="Problem ze stroną">{t.optionProblem}</option>
@@ -139,6 +166,7 @@ const Contact = () => {
                 <option value="Porada">{t.optionAdvice}</option>
               </select>
             </div>
+
             <div className={styles.formGroup}>
               <label htmlFor="message">{t.messageLabel}</label>
               <textarea
@@ -154,15 +182,44 @@ const Contact = () => {
               {messageError && <p className={styles.errorMessage}>{messageError}</p>}
             </div>
 
-            {/* PRZYCISK / KOMUNIKAT */}
+            <div className={`${styles.formGroup} ${styles.rodoGroup}`}>
+              <label className={styles.rodoLabel}>
+                <input
+                  type="checkbox"
+                  name="rodoConsent"
+                  checked={rodoConsent}
+                  onChange={handleChange}
+                  disabled={isSending}
+                />
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: t.rodoConsentText.replace(
+                      '[link]',
+                      `<a href="/privacy-policy" target="_blank" rel="noopener noreferrer">${t.privacyPolicyLink}</a>`
+                    )
+                  }}
+                />
+              </label>
+            </div>
+
             {!showSuccess ? (
-              <button type="submit" className={styles.submitButton} disabled={isSending}>
-                {isSending ? t.sending : t.sendButton}
+              <button
+                type="submit"
+                className={styles.submitButton}
+                disabled={isSending}
+                aria-label="Wyślij formularz kontaktowy"
+              >
+                {isSending ? (
+                  <div className={styles.loaderWrapper}>
+                    <span className={styles.spinner}></span> {t.sending}
+                  </div>
+                ) : (
+                  t.sendButton
+                )}
               </button>
             ) : (
-              <div className={styles.successMessage}>{t.sent}</div>
+              <div className={styles.successMessage}>✅ {t.sent}</div>
             )}
-
           </form>
         </div>
       </div>
