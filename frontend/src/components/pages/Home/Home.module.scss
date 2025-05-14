@@ -5,7 +5,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  background: transparent; // <--- dzięki temu Hero nie będzie odcięte
+  background: transparent;
   color: var(--text-color);
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -13,30 +13,38 @@
 /* 🔹 STATYSTYKI */
 .stats {
   display: flex;
-  justify-content: space-around;
-  align-items: stretch; // ✅ Wszystkie statBox będą miały tę samą wysokość
+  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: stretch;
   margin-top: 6rem;
   margin-bottom: 6rem;
   text-align: center;
-  gap: 1.5rem; // ✅ Dodaje odstęp między boxami
+}
+
+.statWrapper {
+  flex: 1;
+  display: flex;
 }
 
 .statBox {
-  background: var(--secondary-bg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
   border-radius: 15px;
-  transition: transform 0.3s ease-in-out;
-  flex: 1; // ✅ Sprawia, że wszystkie boxy będą tej samej szerokości
-  display: flex;
-  flex-direction: column; // ✅ Zachowanie układu pionowego
-  justify-content: center; // ✅ Tekst zawsze będzie wyśrodkowany
-  align-items: center;
-  min-height: 150px; // ✅ Wymuszona minimalna wysokość dla spójnego wyglądu
+  background: var(--secondary-bg);
   color: var(--secondary-text);
-}
+  border-bottom: 3px solid var(--primary-color);
+  min-height: 150px;
+  box-shadow: 0 0 0 transparent;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
 
-.statBox:hover {
-  transform: scale(1.1);
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 }
 
 .icon {
@@ -52,7 +60,7 @@
 }
 
 .overflowWrapper {
-  overflow-x: hidden; // ✅ ZAPOBIEGA przesuwaniu poziomemu
+  overflow-x: hidden;
 }
 
 .testimonialGrid {
@@ -113,7 +121,7 @@
   padding: 0.8rem 1.8rem;
   text-decoration: none;
   font-size: 1.2rem;
-  display: inline-block; // <- DODAJ TO!
+  display: inline-block;
   transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 
   &:hover {
@@ -132,9 +140,18 @@
     align-items: center;
   }
 
+  .statWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
   .statBox {
     width: 90%;
-    margin-bottom: 1rem;
+    flex: unset;
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   .testimonialGrid {
