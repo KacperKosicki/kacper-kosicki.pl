@@ -44,6 +44,20 @@
   flex-direction: column;
   min-height: 220px;
   cursor: pointer;
+  position: relative;
+}
+
+.levelBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--primary-color);
+  color: var(--button-text);
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 0.4rem 0.7rem;
+  border-radius: 15px;
+  z-index: 2;
 }
 
 .skillCard:hover {

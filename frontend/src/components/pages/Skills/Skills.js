@@ -27,13 +27,13 @@ const Skills = () => {
   const { t } = useContext(LanguageContext);
 
   const skills = [
-    { icon: faHtml5, title: t.skillHtml, color: "#E34F26", description: t.skillHtmlDesc },
-    { icon: faCss3, title: t.skillCss, color: "#1572B6", description: t.skillCssDesc },
+    { icon: faHtml5, title: t.skillHtml, color: "#E34F26", description: t.skillHtmlDesc},
+    { icon: faCss3, title: t.skillCss, color: "#1572B6", description: t.skillCssDesc},
     { icon: faMobile, title: t.skillRwd, color: "#FFA500", description: t.skillRwdDesc },
     { icon: faBootstrap, title: t.skillBootstrap, color: "#7952B3", description: t.skillBootstrapDesc },
     { icon: faNpm, title: t.skillNpm, color: "#CB3837", description: t.skillNpmDesc },
     { icon: faGitAlt, title: t.skillGit, color: "#F05032", description: t.skillGitDesc },
-    { icon: faJs, title: t.skillJs, color: "#F7DF1E", description: t.skillJsDesc },
+    { icon: faJs, title: t.skillJs, color: "#F7DF1E", description: t.skillJsDesc},
     { icon: faReact, title: t.skillReact, color: "#61DAFB", description: t.skillReactDesc },
     { icon: faCodeBranch, title: t.skillWebpack, color: "#8DD6F9", description: t.skillWebpackDesc },
     { icon: faDatabase, title: t.skillMongoDb, color: "#47A248", description: t.skillMongoDbDesc },
@@ -54,12 +54,17 @@ const Skills = () => {
       <div className={styles.skillsContainer}>
         {skills.map((skill, index) => (
           <div className={styles.skillCard} key={index} data-aos="fade-up">
+            {skill.level && (
+              <div className={styles.levelBadge}>{skill.level}</div>
+            )}
+
             <FontAwesomeIcon icon={skill.icon} className={styles.icon} style={{ color: skill.color }} />
             <div className={styles.skillContent}>
               <h3>{skill.title}</h3>
               <p>{skill.description}</p>
             </div>
           </div>
+
         ))}
       </div>
     </section>
