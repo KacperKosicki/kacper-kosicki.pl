@@ -256,6 +256,18 @@ const translations = {
     post2: "Najlepsze praktyki w MongoDB",
     post3: "Next.js vs. React – co wybrać?",
 
+    //IdleModal
+    idleModalTitle: "Hej! Jesteś tam jeszcze?",
+    idleModalSubtitle: "Może to Cię zainteresuje:",
+    idleModalClose: "Zamknij",
+    idleModalFacts: [
+      "Czy wiesz, że większość frontendowców boi się backendu bardziej niż ciemności?",
+      "Czysty kod nie istnieje — tylko mniej brudny.",
+      "Pierwsza strona WWW powstała w 1991 roku.",
+      "Programista spędza 80% czasu na debugowaniu... i 20% na psuciu.",
+      "CSS to skrót od 'Czasem Strona Się rozsypie'."
+    ],
+
     // Privacy Policy
     privacyTitle: "Polityka Prywatności",
     privacyIntro: "Twoja prywatność jest dla mnie bardzo ważna. Poniżej znajdziesz informacje o tym, jakie dane zbieram, w jakim celu oraz jak są one chronione.",
@@ -532,6 +544,18 @@ const translations = {
     post1: "React Hooks Guide",
     post2: "Best Practices in MongoDB",
     post3: "Next.js vs. React - What to choose?",
+
+    //IdleModal
+    idleModalTitle: "Hey! Are you still there?",
+    idleModalSubtitle: "This might interest you:",
+    idleModalClose: "Close",
+    idleModalFacts: [
+      "Did you know most frontend devs fear backend more than the dark?",
+      "Clean code doesn't exist – only less dirty.",
+      "The first website was created in 1991.",
+      "A dev spends 80% debugging... and 20% breaking stuff.",
+      "CSS actually stands for 'Can’t Style Stuff'."
+    ],
 
     // Privacy Policy
     privacyTitle: "Privacy Policy",

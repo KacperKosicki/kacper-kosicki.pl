@@ -18,6 +18,7 @@ import ProtectedRoute from './components/pages/ProtectedRoute';
 import CookiesPanel from './components/Common/Cookies/CookiesPanel';
 import ToolsToggle from './components/Common/ToolsToggle/ToolsToggle';
 import PrivacyPolicy from './components/pages/PrivacyPolicy/PrivacyPolicy';
+import IdleModal from './components/Common/IdleModal/IdleModal';
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -42,6 +43,7 @@ const App = () => {
       <div>
         <Header />
         <ScrollToTop />
+        <IdleModal />
 
         <Routes>
           <Route path="/" element={<Home />} />
