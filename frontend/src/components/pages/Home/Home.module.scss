@@ -57,6 +57,7 @@
 .testimonials {
   text-align: center;
   margin-top: 4rem;
+  position: relative;
 }
 
 .overflowWrapper {
@@ -71,6 +72,7 @@
 }
 
 .testimonialBox {
+  position: relative; // ✅ potrzebne dla badge
   background: var(--secondary-bg);
   padding: 1.5rem;
   border-radius: 15px;
@@ -78,8 +80,28 @@
   text-align: center;
 }
 
+.fakeBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--primary-color);
+  color: var(--button-text);
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0 15px 0 15px;
+  font-weight: 600;
+  z-index: 1;
+  font-family: $heading-font;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
 .testimonialIcon {
   font-size: 2rem;
+    margin-top: 2rem; // ✅ nowy odstęp
   color: var(--primary-color);
   margin-bottom: 0.5rem;
 }

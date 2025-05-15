@@ -54,6 +54,7 @@ const translations = {
     testimonialsTitle: "Co mówią o mnie inni?",
     testimonial1: "Świetna współpraca! Projekt dostarczony na czas i działa bezbłędnie.",
     testimonial2: "Pełen profesjonalizm i ogromna wiedza. Polecam!",
+    fakeTestimonialsNote: "Stworzone na potrzeby prezentacji strony!",
     client1: "Jan Kowalski",
     client2: "Anna Nowak",
 
@@ -330,6 +331,7 @@ const translations = {
     testimonialsTitle: "What do people say about me?",
     testimonial1: "Great cooperation! The project was delivered on time and works flawlessly.",
     testimonial2: "Full professionalism and great knowledge. I recommend!",
+    fakeTestimonialsNote: "These are sample testimonials – yours might appear here soon!",
     client1: "John Doe",
     client2: "Anna Smith",
 

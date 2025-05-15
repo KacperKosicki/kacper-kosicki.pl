@@ -25,35 +25,35 @@ const Home = () => {
       <div className={styles.container}>
         {/* SEKCJA STATYSTYK */}
         <section className={styles.stats}>
-  <div className={styles.statWrapper} data-aos="fade-up">
-    <div className={styles.statBox}>
-      <FaCode className={styles.icon} />
-      <h3>500+</h3>
-      <p>{t.codeHours}</p>
-    </div>
-  </div>
-  <div className={styles.statWrapper} data-aos="fade-up" data-aos-delay="200">
-    <div className={styles.statBox}>
-      <FaLaptopCode className={styles.icon} />
-      <h3>30+</h3>
-      <p>{t.projectsCompleted}</p>
-    </div>
-  </div>
-  <div className={styles.statWrapper} data-aos="fade-up" data-aos-delay="400">
-    <div className={styles.statBox}>
-      <FaUsers className={styles.icon} />
-      <h3>?+</h3>
-      <p>{t.happyClients}</p>
-    </div>
-  </div>
-  <div className={styles.statWrapper} data-aos="fade-up" data-aos-delay="600">
-    <div className={styles.statBox}>
-      <FaBriefcase className={styles.icon} />
-      <h3>2+</h3>
-      <p>{t.yearsExperience}</p>
-    </div>
-  </div>
-</section>
+          <div className={styles.statWrapper} data-aos="fade-up">
+            <div className={styles.statBox}>
+              <FaCode className={styles.icon} />
+              <h3>500+</h3>
+              <p>{t.codeHours}</p>
+            </div>
+          </div>
+          <div className={styles.statWrapper} data-aos="fade-up" data-aos-delay="200">
+            <div className={styles.statBox}>
+              <FaLaptopCode className={styles.icon} />
+              <h3>30+</h3>
+              <p>{t.projectsCompleted}</p>
+            </div>
+          </div>
+          <div className={styles.statWrapper} data-aos="fade-up" data-aos-delay="400">
+            <div className={styles.statBox}>
+              <FaUsers className={styles.icon} />
+              <h3>?+</h3>
+              <p>{t.happyClients}</p>
+            </div>
+          </div>
+          <div className={styles.statWrapper} data-aos="fade-up" data-aos-delay="600">
+            <div className={styles.statBox}>
+              <FaBriefcase className={styles.icon} />
+              <h3>2+</h3>
+              <p>{t.yearsExperience}</p>
+            </div>
+          </div>
+        </section>
 
 
         {/* SEKCJE */}
@@ -69,13 +69,16 @@ const Home = () => {
             <h2 data-aos="zoom-in" data-aos-delay="200">💬 {t.testimonialsTitle}</h2>
             <div className={styles.testimonialGrid}>
               <div className={styles.testimonialBox} data-aos="fade-right" data-aos-delay="400">
+                <div className={styles.fakeBadge}>{t.fakeTestimonialsNote}</div>
                 <FaCommentDots className={styles.testimonialIcon} />
                 <p>{t.testimonial1}</p>
                 <h4>- {t.client1}</h4>
               </div>
+
               <div className={styles.testimonialBox} data-aos="fade-left" data-aos-delay="400">
+                <div className={styles.fakeBadge}>{t.fakeTestimonialsNote}</div>
                 <FaCommentDots className={styles.testimonialIcon} />
-                <p>{t.testimonial2}</p>
+                <p>{t.testimonial1}</p>
                 <h4>- {t.client2}</h4>
               </div>
             </div>
