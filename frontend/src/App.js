@@ -19,6 +19,7 @@ import CookiesPanel from './components/Common/Cookies/CookiesPanel';
 import ToolsToggle from './components/Common/ToolsToggle/ToolsToggle';
 import PrivacyPolicy from './components/pages/PrivacyPolicy/PrivacyPolicy';
 import IdleModal from './components/Common/IdleModal/IdleModal';
+import DeveloperMode from './components/Common/DeveloperMode/DeveloperMode';
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -44,6 +45,7 @@ const App = () => {
         <Header />
         <ScrollToTop />
         <IdleModal />
+        <DeveloperMode />
 
         <Routes>
           <Route path="/" element={<Home />} />
