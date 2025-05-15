@@ -13,6 +13,8 @@ const Footer = () => {
   const [time, setTime] = useState(new Date());
   const [visitCount, setVisitCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [newsletterSent, setNewsletterSent] = useState(false);
+  const [newsletterEmail, setNewsletterEmail] = useState('');
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -35,6 +37,13 @@ const Footer = () => {
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    setNewsletterSent(true);
+    setNewsletterEmail(''); // ✅ czyści input
+    setTimeout(() => setNewsletterSent(false), 5000);
+  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -83,9 +92,16 @@ const Footer = () => {
       <div className={`${styles.section} ${styles.newsletter}`}>
         <h3>📩 {t.newsletter}</h3>
         <p>{t.newsletterText}</p>
-        <form className={styles.newsletterForm}>
-          <input type="email" placeholder={t.emailPlaceholder} required />
+        <form className={styles.newsletterForm} onSubmit={handleNewsletterSubmit}>
+          <input
+            type="email"
+            placeholder={t.emailPlaceholder}
+            required
+            value={newsletterEmail}
+            onChange={(e) => setNewsletterEmail(e.target.value)}
+          />
           <button type="submit">{t.subscribe}</button>
+          {newsletterSent && <p className={styles.newsletterNote}>{t.newsletterPlaceholderNote}</p>}
         </form>
       </div>
 
