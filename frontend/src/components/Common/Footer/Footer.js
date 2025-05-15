@@ -51,6 +51,7 @@ const Footer = () => {
             <li><a href="/portfolio">{t.portfolio}</a></li>
             <li><a href="/contact">{t.contact}</a></li>
             <li><a href="/login">{t.login}</a></li>
+            <li><a href="/privacy-policy">{t.privacy}</a></li>
           </ul>
         </div>
 
