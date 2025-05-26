@@ -74,6 +74,7 @@ const translations = {
     loginInfo3: "doda podstrony i inne elementy",
     loginInfo4: "otrzyma podgląd aktualnego wyglądu strony",
     loginInfo5: "będzie zatwierdzać kolejne etapy realizacji",
+    offPanelText: "Logowanie jest tymczasowo niedostępne z powodów technicznych. Pracuje nad przywróceniem usługi.",
 
     // Hero
     heroTitle: "Cześć! Jestem Kacper.",
@@ -364,6 +365,7 @@ const translations = {
     loginInfo3: "add subpages and other elements",
     loginInfo4: "preview the current look of the website",
     loginInfo5: "approve each stage of development",
+    offPanelText: "Login is temporarily unavailable due to technical issues. I'm working on restoring the service.",
 
     // Hero
     heroTitle: "Hi! I'm Kacper.",
