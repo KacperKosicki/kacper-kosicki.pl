@@ -10,6 +10,7 @@
   margin: 100px auto 50px;
   padding: 2rem;
   flex-wrap: wrap;
+  align-items: stretch;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -112,6 +113,12 @@
   font-weight: bold;
   font-size: 0.95rem;
   text-align: center;
+}
+
+.offPanel {
+  color: var(--secondary-text);
+  text-align: center;
+  font-size: 16px;
 }
 
 /* 🔹 RWD */

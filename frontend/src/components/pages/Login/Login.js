@@ -65,6 +65,9 @@ const Login = ({ onLoginSuccess }) => {
           />
           <button type="submit">{t.login}</button>
           {error && <p className={styles.error}>{error}</p>}
+          <p className={styles.offPanel}>
+            🔧 Logowanie jest tymczasowo niedostępne z powodów technicznych. Pracuje nad przywróceniem usługi.
+          </p>
         </form>
       </div>
 
